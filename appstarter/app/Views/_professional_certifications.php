@@ -1,0 +1,10 @@
+<!-- EMBED -->
+<div class="bg-white d-inline-block rounded-1"><div data-iframe-width="150" data-iframe-height="240" data-share-badge-id="18359323-27a9-417f-a721-dc02a450bf11" data-share-badge-host="https://www.credly.com"></div></div>
+<div class="bg-white d-inline-block rounded-1"><div data-iframe-width="150" data-iframe-height="240" data-share-badge-id="ce16e50d-4345-4a90-ad02-a447f259ebec" data-share-badge-host="https://www.credly.com"></div></div>
+<div class="bg-white d-inline-block rounded-1"><div data-iframe-width="150" data-iframe-height="240" data-share-badge-id="d818bb6f-393f-4b04-9bb2-9c98547dd066" data-share-badge-host="https://www.credly.com"></div></div>
+<div class="bg-white d-inline-block rounded-1"><div data-iframe-width="150" data-iframe-height="240" data-share-badge-id="45b01461-905e-4fe1-8357-00ca88e4b810" data-share-badge-host="https://www.credly.com"></div></div>
+<div class="bg-white d-inline-block rounded-1"><div data-iframe-width="150" data-iframe-height="240" data-share-badge-id="ae58262f-01ba-4886-b93d-4359646a8152" data-share-badge-host="https://www.credly.com"></div></div>
+<div class="bg-white d-inline-block rounded-1"><div data-iframe-width="150" data-iframe-height="240" data-share-badge-id="143271c6-2815-40cb-a381-4f4e479f47b7" data-share-badge-host="https://www.credly.com"></div></div>
+<div class="bg-white d-inline-block rounded-1"><div data-iframe-width="150" data-iframe-height="240" data-share-badge-id="f668d4fd-1d12-4ac6-8aef-9e82e5893857" data-share-badge-host="https://www.credly.com"></div></div>
+<div class="bg-white d-inline-block rounded-1"><div data-iframe-width="150" data-iframe-height="240" data-share-badge-id="1ceac238-28ac-40d4-a92e-d4a52c4bd1e7" data-share-badge-host="https://www.credly.com"></div></div>
+<script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
