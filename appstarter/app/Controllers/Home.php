@@ -1663,6 +1663,25 @@ class Home extends BaseController
      */
     public function business_card(): string
     {
+        $locale = $this->request->getLocale();
+        $data   = [
+            'locale'  => $locale,
+            'contact' => [
+                'fa-solid fa-globe-asia'  => base_url(),
+                'fa-solid fa-envelope'    => 'mailto:lee.ratinan@gmail.com',
+                'fa-brands fa-github'     => 'https://github.com/lee-ratinan',
+                'fa-brands fa-linkedin'   => 'https://www.linkedin.com/in/ratinanlee',
+                'fa-brands fa-whatsapp'   => base_url('whatsapp'),
+                'fa-brands fa-telegram'   => 'https://t.me/rikikawa_eikin',
+                'fa-brands fa-line'       => 'https://line.me/ti/p/ME2Tsnm9nr',
+                'fa-brands fa-instagram'  => 'https://www.instagram.com/ratinanlee/',
+            ]
+        ];
+        return view('business_card_3', $data);
+    }
+
+    public function business_card2(): string
+    {
         $locale       = $this->getLocale();
         $translations = [
             'en'         => [

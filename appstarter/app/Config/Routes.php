@@ -20,6 +20,7 @@ $routes->get('{locale}/personal-life', 'Home::personal_life');
 $routes->get('{locale}/portfolio', 'Home::portfolio');
 $routes->get('{locale}/certifications', 'Home::certifications');
 $routes->get('{locale}/writing', 'Home::writing');
+$routes->get('{locale}/business-card', 'Home::business_card');
 $routes->get('{locale}/calendar', 'Home::calendar');
 $routes->get('{locale}/trip', 'Home::trip');
 $routes->get('{locale}/trip/(:any)', 'Home::trip_data/$1');

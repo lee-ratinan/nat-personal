@@ -57,7 +57,7 @@
         </div><!-- End Section Title -->
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row gy-5">
-                <div class="col-12 text-center" data-aos="zoom-in" data-aos-delay="150">
+                <div class="col-12" data-aos="zoom-in" data-aos-delay="150">
                     <?php include "_professional_certifications.php"; ?>
                 </div>
                 <div class="col-12" data-aos="zoom-in" data-aos-delay="200">
