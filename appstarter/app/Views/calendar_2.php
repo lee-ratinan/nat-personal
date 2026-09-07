@@ -56,6 +56,15 @@
             border-radius: 0.175rem;
         }
     </style>
+    <script>
+        function applySystemTheme(e) {
+            const isDark = e.matches;
+            document.documentElement.setAttribute('data-bs-theme', isDark ? 'dark' : 'light');
+        }
+        const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        applySystemTheme(colorSchemeQuery);
+        colorSchemeQuery.addEventListener('change', applySystemTheme);
+    </script>
 </head>
 <body class="<?= $locale ?>">
 <div class="container">

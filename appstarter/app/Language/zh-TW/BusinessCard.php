@@ -2,6 +2,7 @@
 return [
     'title'         => '名片',
     'name'          => '<ruby>李<rt>ㄌㄧˇ</rt>榮<rt>ㄖㄨㄥˊ</rt>欽<rt>ㄑㄧㄣ</rt></ruby>',
+    'name2'         => '',
     'tagline'       => '理學碩士、PSM 1，2、PSPO 1，2',
     'dob'           => '出生日期：民國78年11月15日',
     'passport'      => '泰國',

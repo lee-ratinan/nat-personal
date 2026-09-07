@@ -2,6 +2,7 @@
 return [
     'title'         => 'Business Card',
     'name'          => 'Ratinan “Nat” Lee',
+    'name2'         => '',
     'tagline'       => 'MSc, PSM™ I-II, PSPO™ I-II',
     'dob'           => 'DOB: 15 November 1989',
     'passport'      => 'Thai',

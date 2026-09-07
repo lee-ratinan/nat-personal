@@ -55,14 +55,23 @@
             font-size: 0.75rem;
             border-radius: 0.175rem;
         }
-        .ja .upright, .zh-TW .upright {writing-mode: vertical-rl; text-orientation: upright !important; margin-bottom: 50px;}
-        .badge {border: solid 2px; border-radius: 12px; color: #444; font-size: 0.8em; padding: 0.25em 0.5em;}
+        .ja .upright, .zh-TW .upright {writing-mode: vertical-rl; text-orientation: upright !important; margin-bottom: 50px; float: right;}
+        .badge {border: solid 2px; border-radius: 12px; font-size: 0.8em; padding: 0.25em 0.5em;}
         .badge-iq {border-color: #800;}
         .badge-mbti {border-color: #30a474;}
         .badge-hogwarts-house {border-color: #265ca9;}
         .badge-camp-half-blood {border-color: #f8900b;}
         a.btn {margin-right: .5rem; margin-bottom: .5rem;}
     </style>
+    <script>
+        function applySystemTheme(e) {
+            const isDark = e.matches;
+            document.documentElement.setAttribute('data-bs-theme', isDark ? 'dark' : 'light');
+        }
+        const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        applySystemTheme(colorSchemeQuery);
+        colorSchemeQuery.addEventListener('change', applySystemTheme);
+    </script>
 </head>
 <body class="<?= $locale ?>">
 <div class="container">
@@ -76,7 +85,16 @@
                 <a class="btn btn-<?= 'ja' == $locale ? '' : 'outline-' ?>success btn-xs" href="<?= base_url('ja/business-card') ?>">日本語</a>
                 <a class="btn btn-<?= 'en-Shaw' == $locale ? '' : 'outline-' ?>success btn-xs" href="<?= base_url('en-Shaw/business-card') ?>">𐑖𐑱𐑝𐑾𐑯</a>
             </p>
-            <h1 class="upright"><?= lang('BusinessCard.name') ?></h1>
+            <h1 class="upright">
+                <?php
+                echo lang('BusinessCard.name');
+                $name2 = lang('BusinessCard.name2');
+                if (!empty($name2)) {
+                    echo '<br/><br/>' . $name2;
+                }
+                ?>
+            </h1>
+            <div style="clear: both;"></div>
             <h2><?= lang('BusinessCard.tagline') ?></h2>
             <hr class="my-2" />
             <p class="mb-5">
