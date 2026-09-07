@@ -3,11 +3,14 @@ return [
     'title'         => 'Business Card',
     'name'          => 'Ratinan “Nat” Lee',
     'tagline'       => 'MSc, PSM™ I-II, PSPO™ I-II',
+    'dob'           => 'DOB: 15 November 1989',
+    'passport'      => 'Thai',
+    'residency'     => 'Singapore',
     'badges'        => [
         'iq'              => ['IQ', '135'],
         'mbti'            => ['MBTI', 'INFP-T (Mediator)'],
         'hogwarts-house'  => ['Hogwarts House', 'Ravenclaw'],
-        'camp-half-blood' => ['Camp Half-Blood', 'Athena'],
+        'camp-half-blood' => ['Camp Half-Blood Cabin', 'Athena'],
     ],
     'contact'       => 'Contact Information',
     'contact-key'   => [

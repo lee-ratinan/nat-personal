@@ -3,6 +3,9 @@ return [
     'title'         => '名片',
     'name'          => '<ruby>李<rt>ㄌㄧˇ</rt>榮<rt>ㄖㄨㄥˊ</rt>欽<rt>ㄑㄧㄣ</rt></ruby>',
     'tagline'       => '理學碩士、PSM 1，2、PSPO 1，2',
+    'dob'           => '出生日期：民國78年11月15日',
+    'passport'      => '泰國',
+    'residency'     => '新加坡',
     'badges'        => [
         'iq'              => ['IQ', '135'],
         'mbti'            => ['MBTI 人格類型', 'INFP-T (調停者)'],
@@ -11,8 +14,8 @@ return [
     ],
     'contact'       => '联系信息',
     'contact-key'   => [
-        'fa-globe-asia' => 'Website',
-        'fa-envelope'   => 'Email',
+        'fa-globe-asia' => '網站',
+        'fa-envelope'   => '電子郵件',
         'fa-github'     => 'GitHub',
         'fa-linkedin'   => 'LinkedIn',
         'fa-line'       => 'LINE',
@@ -24,11 +27,11 @@ return [
         'title' => '學歷',
         'table' => [
             [
-                '2015: 資訊系統理學碩士',
+                '民國104年: 資訊系統理學碩士',
                 '南洋理工大學・黃金輝傳播與信息學院'
             ],
             [
-                '2012: 電腦科學理學學士（一等榮譽）',
+                '民國101年: 電腦科學理學學士（一等榮譽）',
                 '泰國法政大學・席琳通國際科技學院'
             ]
         ]

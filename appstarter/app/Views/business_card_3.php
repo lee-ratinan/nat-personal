@@ -34,10 +34,10 @@
     <link rel="alternate" hreflang="th" href="<?= base_url('business-card?hl=th') ?>"/>
     <link rel="alternate" hreflang="ja" href="<?= base_url('business-card?hl=ja') ?>"/>
     <link rel="alternate" hreflang="zh-TW" href="<?= base_url('business-card?hl=zh-TW') ?>"/>
-    <link rel="alternate" hreflang="ko" href="<?= base_url('business-card?hl=ko') ?>"/>
-    <link rel="alternate" hreflang="vi" href="<?= base_url('business-card?hl=vi') ?>"/>
-    <link rel="alternate" hreflang="es" href="<?= base_url('business-card?hl=es') ?>"/>
-    <link rel="alternate" hreflang="id" href="<?= base_url('business-card?hl=id') ?>"/>
+<!--    <link rel="alternate" hreflang="ko" href="--><?php //= base_url('business-card?hl=ko') ?><!--"/>-->
+<!--    <link rel="alternate" hreflang="vi" href="--><?php //= base_url('business-card?hl=vi') ?><!--"/>-->
+<!--    <link rel="alternate" hreflang="es" href="--><?php //= base_url('business-card?hl=es') ?><!--"/>-->
+<!--    <link rel="alternate" hreflang="id" href="--><?php //= base_url('business-card?hl=id') ?><!--"/>-->
     <link rel="alternate" hreflang="en-Shaw" href="<?= base_url('business-card?hl=en-Shaw') ?>"/>
     <link rel="alternate" hreflang="x-default" href="<?= base_url('business-card') ?>"/>
     <link rel="canonical" href="<?= current_url() . (empty($hl) ? '' : '?hl=' . $hl) ?>">
@@ -87,6 +87,9 @@
                 <?php foreach (lang('BusinessCard.badges') as $key => $value) : ?>
                     <span class="badge badge-<?= $key ?>"><?= $value[0] ?>: <?= $value[1] ?></span>
                 <?php endforeach; ?>
+                <span class="badge border-primary"><?= lang('BusinessCard.dob') ?></span>
+                <span class="badge border-danger"><i class="fa-solid fa-passport"></i> <?= lang('BusinessCard.passport') ?></span>
+                <span class="badge border-warning"><i class="fa-solid fa-home"></i> <?= lang('BusinessCard.residency') ?></span>
             </p>
             <h3><?= lang('BusinessCard.contact') ?></h3>
             <p>
@@ -99,7 +102,7 @@
             <h3><?= lang('BusinessCard.education.title') ?></h3>
             <ul>
                 <?php foreach (lang('BusinessCard.education.table') as $row) : ?>
-                <li><?= $row[0] ?><br/><?= $row[1] ?></li>
+                    <li><?= $row[0] ?><br/><?= $row[1] ?></li>
                 <?php endforeach; ?>
             </ul>
             <hr/>
@@ -109,6 +112,12 @@
                     <li><?= $row ?></li>
                 <?php endforeach; ?>
             </ul>
+            <p>
+                <a href="https://www.scrum.org/user/1457291" class="btn btn-outline-success btn-sm">Scrum.org</a>
+                <a href="https://www.credly.com/users/ratinanlee" class="btn btn-outline-success btn-sm">Credly.com</a>
+                <a href="https://www.scrumalliance.org/members/1729850" class="btn btn-outline-success btn-sm">ScrumAlliance.org</a>
+
+            </p>
             <hr/>
             <h3><?= lang('BusinessCard.language.title') ?></h3>
             <ul>
@@ -120,6 +129,8 @@
         </div>
         <div class="col-12 mb-5">
             <?php include "_professional_certifications.php"; ?>
+            <hr/>
+            <p class="small text-end">Updated: 7 Sep 2026</p>
         </div>
     </div>
 </div>

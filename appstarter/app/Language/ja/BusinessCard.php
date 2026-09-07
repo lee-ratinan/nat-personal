@@ -3,6 +3,9 @@ return [
     'title'         => '名刺',
     'name'          => '<ruby>力<rt>りき　</rt>川<rt>かわ　</rt>栄<rt>えい　</rt>欽<rt>きん　</rt></ruby>',
     'tagline'       => '理学修士（MSc）、PSM 1〜2、PSPO 1〜2',
+    'dob'           => '生年月日：平成元年11月15日',
+    'passport'      => 'タイ',
+    'residency'     => 'シンガポール',
     'badges'        => [
         'iq'              => ['IQ', '135'],
         'mbti'            => ['MBTI診断', 'INFP-T (仲介者)'],
@@ -11,8 +14,8 @@ return [
     ],
     'contact'       => '連絡先',
     'contact-key'   => [
-        'fa-globe-asia' => 'Website',
-        'fa-envelope'   => 'Email',
+        'fa-globe-asia' => 'ウェブサイト',
+        'fa-envelope'   => 'メール',
         'fa-github'     => 'GitHub',
         'fa-linkedin'   => 'LinkedIn',
         'fa-line'       => 'LINE',
@@ -24,11 +27,11 @@ return [
         'title' => '学歴',
         'table' => [
             [
-                '2015: 情報システム理学修士',
+                '平成27年: 情報システム理学修士',
                 '南洋理工大学 ウィー・キム・ウィー情報コミュニケーション学部'
             ],
             [
-                '2012: コンピュータサイエンス理学学士（第一級優等学位）',
+                '平成24年: コンピュータサイエンス理学学士（第一級優等学位）',
                 'タマサート大学・シリンドーン国際工学部'
             ]
         ]
