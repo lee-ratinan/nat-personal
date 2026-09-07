@@ -31,7 +31,7 @@
     <link href="<?= base_url('assets/vendor/bootstrap-icons/bootstrap-icons.css') ?>" rel="stylesheet">
     <link href="<?= base_url('assets/vendor/aos/aos.css') ?>" rel="stylesheet">
     <link href="<?= base_url('assets/vendor/glightbox/css/glightbox.min.css') ?>" rel="stylesheet">
-    <link href="<?= base_url('assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet') ?>">
+    <link href="<?= base_url('assets/vendor/swiper/swiper-bundle.min.css') ?>" rel="stylesheet">
     <!-- hreflang -->
     <link rel="alternate" hreflang="en" href="<?= base_url('business-card?hl=en') ?>"/>
     <link rel="alternate" hreflang="th" href="<?= base_url('business-card?hl=th') ?>"/>
