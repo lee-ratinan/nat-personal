@@ -117,7 +117,7 @@ include "_header.php";
                         </div>
                         <div class="profile-actions">
                             <a href="#" class="btn-primary d-none"><i class="bi bi-download"></i> <?= lang('Home.sections.about.download-cv') ?></a>
-                            <a href="#contact" class="btn-secondary"><i class="bi bi-envelope"></i> <?= lang('Home.sections.contact.title') ?></a>
+                            <a href="<?= base_url($locale . '/business-card') ?>" class="btn-secondary"><i class="bi bi-envelope"></i> <?= lang('Home.sections.contact.title') ?></a>
                         </div>
                         <div class="social-connect">
                             <a href="https://www.linkedin.com/in/ratinanlee" target="_blank"><i class="bi bi-linkedin"></i></a>
@@ -372,7 +372,7 @@ include "_header.php";
                                 <p><?= lang('Home.sections.services.cta-paragraph') ?></p>
                             </div>
                             <div class="col-lg-4 text-lg-end text-center">
-                                <a href="#contact" class="cta-btn"><?= lang('Home.sections.services.cta') ?></a>
+                                <a href="<?= base_url($locale . '/business-card') ?>" class="cta-btn"><?= lang('Home.sections.services.cta') ?></a>
                             </div>
                         </div>
                     </div>
@@ -499,112 +499,12 @@ include "_header.php";
                         <p><?= lang('Home.sections.portfolio.cta-paragraph') ?></p>
                     </div>
                     <div class="col-lg-4 text-lg-end">
-                        <a href="#contact" class="btn btn-accent"><?= lang('Home.sections.portfolio.cta') ?></a>
+                        <a href="<?= base_url($locale . '/business-card') ?>" class="btn btn-accent"><?= lang('Home.sections.portfolio.cta') ?></a>
                     </div>
                 </div>
             </div>
         </div>
     </section><!-- /Portfolio Section -->
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <span class="subtitle"><?= lang('Home.numbers.5') ?></span>
-            <h2><?= lang('Home.sections.contact.title') ?></h2>
-        </div><!-- End Section Title -->
-        <div class="container">
-            <div class="row gy-4">
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="info-item">
-                        <div class="icon-wrapper">
-                            <i class="bi bi-linkedin"></i>
-                        </div>
-                        <div>
-                            <h3><?= lang('Home.sections.contact.linkedin') ?></h3>
-                            <p><a href="https://www.linkedin.com/in/ratinanlee" target="_blank">/in/ratinanlee</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="info-item">
-                        <div class="icon-wrapper">
-                            <i class="bi bi-github"></i>
-                        </div>
-                        <div>
-                            <h3><?= lang('Home.sections.contact.github') ?></h3>
-                            <p><a href="https://github.com/lee-ratinan" target="_blank">/lee-ratinan</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="info-item">
-                        <div class="icon-wrapper">
-                            <i class="bi bi-instagram"></i>
-                        </div>
-                        <div>
-                            <h3><?= lang('Home.sections.contact.instagram') ?></h3>
-                            <p><a href="https://www.instagram.com/ratinanlee/" target="_blank">/ratinanlee</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="info-item">
-                        <div class="icon-wrapper">
-                            <i class="bi bi-line"></i>
-                        </div>
-                        <div>
-                            <h3><?= lang('Home.sections.contact.line') ?></h3>
-                            <p><a href="https://line.me/ti/p/ME2Tsnm9nr" target="_blank">Nat-エイキン</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="info-item">
-                        <div class="icon-wrapper">
-                            <i class="bi bi-medium"></i>
-                        </div>
-                        <div>
-                            <h3><?= lang('Home.sections.contact.medium') ?></h3>
-                            <p><a href="https://medium.com/@ratinanlee" target="_blank">@ratinanlee</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="info-item">
-                        <div class="icon-wrapper">
-                            <i class="bi bi-messenger"></i>
-                        </div>
-                        <div>
-                            <h3><?= lang('Home.sections.contact.facebook') ?></h3>
-                            <p><a href="https://www.messenger.com/t/lee.ratinan/" target="_blank">/lee.ratinan</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="info-item">
-                        <div class="icon-wrapper">
-                            <i class="bi bi-telegram"></i>
-                        </div>
-                        <div>
-                            <h3><?= lang('Home.sections.contact.telegram') ?></h3>
-                            <p><a href="https://t.me/rikikawa_eikin" target="_blank">@rikikawa_eikin</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="info-item">
-                        <div class="icon-wrapper">
-                            <i class="bi bi-whatsapp"></i>
-                        </div>
-                        <div>
-                            <h3><?= lang('Home.sections.contact.whatsapp') ?></h3>
-                            <p><a href="<?= base_url('whatsapp') ?>" target="_blank">Ratinan “Nat” Lee</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section><!-- /Contact Section -->
 </main>
 <?php include "_footer.php"; ?>
 </body>
