@@ -1562,6 +1562,19 @@ class Home extends BaseController
     public function calendar(): string
     {
         $data = [
+            'locale'  => $this->request->getLocale()
+        ];
+        return view('calendar_2', $data);
+    }
+
+    /**
+     * @deprecated
+     * Calendar page
+     * @return string
+     */
+    public function calendar2(): string
+    {
+        $data = [
             'slug'   => 'calendar',
             'locale' => $this->request->getLocale()
         ];
@@ -1680,6 +1693,10 @@ class Home extends BaseController
         return view('business_card_3', $data);
     }
 
+    /**
+     * @deprecated
+     * @return string
+     */
     public function business_card2(): string
     {
         $locale       = $this->getLocale();

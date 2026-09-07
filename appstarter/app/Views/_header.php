@@ -12,7 +12,6 @@
                 <li><a href="<?= 'portfolio' != $slug ? base_url($locale . '/portfolio') : '#' ?>"><?= lang('Home.sections.portfolio.title') ?></a></li>
                 <li><a href="<?= 'certifications' != $slug ? base_url($locale . '/certifications') : '#' ?>"><?= lang('Certifications.title') ?></a></li>
                 <li><a href="<?= 'writing' != $slug ? base_url($locale . '/writing') : '#' ?>"><?= lang('Writing.title') ?></a></li>
-                <li><a href="<?= 'calendar' != $slug ? base_url($locale . '/calendar') : '#' ?>"><?= lang('Home.calendar') ?></a></li>
                 <li><a href="<?= 'blog' != $slug ? base_url($locale . '/blog') : '?' ?>"><?= lang('Home.system.pages.blog') ?></a></li>
                 <li><a href="#footer"><i class="bi bi-translate"></i></a></li>
             </ul>

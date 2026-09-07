@@ -30,17 +30,13 @@
     <link href="<?= base_url('assets/vendor/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
     <link href="<?= base_url('assets/vendor/fontawesome-free-7.1.0-web/css/all.min.css') ?>" rel="stylesheet">
     <!-- hreflang -->
-    <link rel="alternate" hreflang="en" href="<?= base_url('business-card?hl=en') ?>"/>
-    <link rel="alternate" hreflang="th" href="<?= base_url('business-card?hl=th') ?>"/>
-    <link rel="alternate" hreflang="ja" href="<?= base_url('business-card?hl=ja') ?>"/>
-    <link rel="alternate" hreflang="zh-TW" href="<?= base_url('business-card?hl=zh-TW') ?>"/>
-<!--    <link rel="alternate" hreflang="ko" href="--><?php //= base_url('business-card?hl=ko') ?><!--"/>-->
-<!--    <link rel="alternate" hreflang="vi" href="--><?php //= base_url('business-card?hl=vi') ?><!--"/>-->
-<!--    <link rel="alternate" hreflang="es" href="--><?php //= base_url('business-card?hl=es') ?><!--"/>-->
-<!--    <link rel="alternate" hreflang="id" href="--><?php //= base_url('business-card?hl=id') ?><!--"/>-->
-    <link rel="alternate" hreflang="en-Shaw" href="<?= base_url('business-card?hl=en-Shaw') ?>"/>
+    <link rel="alternate" hreflang="en" href="<?= base_url('en/business-card') ?>"/>
+    <link rel="alternate" hreflang="th" href="<?= base_url('th/business-card') ?>"/>
+    <link rel="alternate" hreflang="ja" href="<?= base_url('ja/business-card') ?>"/>
+    <link rel="alternate" hreflang="zh-TW" href="<?= base_url('zh-TW/business-card') ?>"/>
+    <link rel="alternate" hreflang="en-Shaw" href="<?= base_url('en-Shaw/business-card') ?>"/>
     <link rel="alternate" hreflang="x-default" href="<?= base_url('business-card') ?>"/>
-    <link rel="canonical" href="<?= current_url() . (empty($hl) ? '' : '?hl=' . $hl) ?>">
+    <link rel="canonical" href="<?= current_url() ?>">
     <style>
         body {
         <?php if (in_array($locale, ['en', 'vi', 'id', 'es'])) : ?> font-family: "Noto Serif", serif;
