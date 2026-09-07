@@ -6,6 +6,13 @@
                     <span class="sitename"><?= lang('Home.system.site-name-head') ?></span>
                 </a>
                 <p><?= lang('Home.system.footer-msg') ?></p>
+                <p>
+                    <i class="bi bi-calendar-week"></i>
+                    <a href="<?= base_url($locale . '/calendar') ?>"><?= lang('Home.calendar') ?></a>
+                    &nbsp; &nbsp;
+                    <i class="bi bi-person-vcard"></i>
+                    <a href="<?= base_url($locale . '/business-card') ?>"><?= lang('BusinessCard.title') ?></a>
+                </p>
             </div>
             <div class="col-lg-3 col-6 footer-links">
                 <h4><?= lang('Home.system.useful-links') ?></h4>
