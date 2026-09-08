@@ -4,7 +4,7 @@ return [
     'name'          => '·𐑮𐑳𐑑𐑦𐑯𐑳𐑯 “𐑯𐑨𐑑” 𐑤𐑰',
     'name2'         => '',
     'tagline'       => 'MSc, PSM™ I-II, PSPO™ I-II',
-    'dob'           => '𐑛𐑱𐑑 𐑝 𐑚𐑻𐑔: 15 𐑯𐑴𐑝𐑧𐑥𐑚𐑼 1989',
+    'dob'           => '𐑚𐑻𐑔 𐑘𐑽: 1989',
     'passport'      => '·𐑑𐑲',
     'residency'     => '·𐑕𐑦𐑙𐑩𐑐𐑹',
     'badges'        => [

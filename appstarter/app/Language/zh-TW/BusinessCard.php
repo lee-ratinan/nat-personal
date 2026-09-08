@@ -2,9 +2,9 @@
 return [
     'title'         => '名片',
     'name'          => '<ruby>李<rt>ㄌㄧˇ</rt>榮<rt>ㄖㄨㄥˊ</rt>欽<rt>ㄑㄧㄣ</rt></ruby>',
-    'name2'         => '',
+    'name2'         => '（NAT）',
     'tagline'       => '理學碩士、PSM 1，2、PSPO 1，2',
-    'dob'           => '出生日期：民國78年11月15日',
+    'dob'           => '出生年: 民國78年',
     'passport'      => '泰國',
     'residency'     => '新加坡',
     'badges'        => [

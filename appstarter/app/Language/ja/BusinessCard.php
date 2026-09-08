@@ -2,9 +2,9 @@
 return [
     'title'         => '名刺',
     'name'          => '<ruby>力<rt>りき　</rt>川<rt>かわ　</rt>栄<rt>えい　</rt>欽<rt>きん　</rt></ruby>',
-    'name2'         => '『ナット』',
+    'name2'         => '（ナット）',
     'tagline'       => '理学修士（MSc）、PSM 1〜2、PSPO 1〜2',
-    'dob'           => '生年月日：平成元年11月15日',
+    'dob'           => '出生年: 平成元年',
     'passport'      => 'タイ',
     'residency'     => 'シンガポール',
     'badges'        => [

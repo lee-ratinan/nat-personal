@@ -90,7 +90,7 @@
                 echo lang('BusinessCard.name');
                 $name2 = lang('BusinessCard.name2');
                 if (!empty($name2)) {
-                    echo '<br/><br/>' . $name2;
+                    echo '<br/><br/><small>' . $name2 . '</small>';
                 }
                 ?>
             </h1>
@@ -99,11 +99,11 @@
             <hr class="my-2" />
             <p class="mb-5">
                 <?php foreach (lang('BusinessCard.badges') as $key => $value) : ?>
-                    <span class="badge badge-<?= $key ?>"><?= $value[0] ?>: <?= $value[1] ?></span>
+                    <span class="badge text-body badge-<?= $key ?>"><?= $value[0] ?>: <?= $value[1] ?></span>
                 <?php endforeach; ?>
-                <span class="badge border-primary"><?= lang('BusinessCard.dob') ?></span>
-                <span class="badge border-danger"><i class="fa-solid fa-passport"></i> <?= lang('BusinessCard.passport') ?></span>
-                <span class="badge border-warning"><i class="fa-solid fa-home"></i> <?= lang('BusinessCard.residency') ?></span>
+                <span class="badge text-body border-primary"><?= lang('BusinessCard.dob') ?></span>
+                <span class="badge text-body border-danger"><i class="fa-solid fa-passport"></i> <?= lang('BusinessCard.passport') ?></span>
+                <span class="badge text-body border-warning"><i class="fa-solid fa-home"></i> <?= lang('BusinessCard.residency') ?></span>
             </p>
             <h3><?= lang('BusinessCard.contact') ?></h3>
             <p>
