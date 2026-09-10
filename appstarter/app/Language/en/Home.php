@@ -225,6 +225,7 @@ return [
         ],
     ],
     'calendar'       => 'Calendar',
+    'calendar_title' => 'Ratinan’s Calendar',
     'read-cnt'       => '${minutes} minute${minutes !== 1 ? "s" : ""} read (${words} words)',
     'password'       => 'Password',
     'password-error' => 'Password is incorrect',

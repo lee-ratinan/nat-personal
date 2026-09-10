@@ -225,6 +225,7 @@ return [
         ],
     ],
     'calendar'       => 'ปฏิทิน',
+    'calendar_title' => 'ปฏิทินของไอ้นัท',
     'read-cnt'       => 'อ่าน ${minutes} นาที (${words} คำ)',
     'password'       => 'รหัสผ่าน',
     'password-error' => 'รหัสผ่านไม่ถูกต้อง',

@@ -225,6 +225,7 @@ return [
         ],
     ],
     'calendar'       => 'カレンダー',
+    'calendar_title' => 'エイキンのカレンダー',
     'read-cnt'       => '所要時間${minutes}分（${words}語）',
     'password'       => 'パスワード',
     'password-error' => 'パスワードが間違っています',

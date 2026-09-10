@@ -81,8 +81,8 @@
             <p>/ <a href="<?= base_url($locale) ?>"><i class="fa-solid fa-home"></i></a> / <?= lang('Home.calendar') ?> /</p>
             <h1><?= lang('Home.calendar') ?></h1>
             <iframe
-                src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FSingapore&showPrint=0&title=Nat%20Lee's%20Calendar&showCalendars=0&showTabs=0&showTitle=1&src=bGVlLnJhdGluYW5AZ21haWwuY29t&color=%237cb342"
-                style="border-width:0; margin: 0 auto -25px auto; max-width:100%;"
+                src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Asia%2FSingapore&showPrint=0&mode=WEEK&title=<?= urlencode(lang('Home.calendar_title')) ?>&showCalendars=0&&src=bGVlLnJhdGluYW5AZ21haWwuY29t&color=%237cb342"
+                style="border-width:0;margin:0 auto -25px auto;max-width:100%;max-height:80vh;"
                 width="800"
                 height="600"
                 frameborder="0"

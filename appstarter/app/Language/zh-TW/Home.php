@@ -225,6 +225,7 @@ return [
         ],
     ],
     'calendar'       => '日曆',
+    'calendar_title' => '阿欽的日曆',
     'read-cnt'       => '閱讀時間：${minutes}分鐘（${words}字）',
     'password'       => '密碼',
     'password-error' => '密碼錯誤',
