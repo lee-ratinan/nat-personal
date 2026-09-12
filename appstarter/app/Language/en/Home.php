@@ -83,6 +83,19 @@ return [
                 'records' => [
                     '1' => [
                         'current'   => 'Current',
+                        'title'     => 'Independent Technology Consultant',
+                        'companies' => 'Freelance',
+                        'paragraph' => 'Freelance project lead delivering end-to-end website solutions for clients across diverse sectors and countries, managing requirements, development, and quality to ship polished, performance-focused digital experiences.',
+                        'tags'      => [
+                            '1' => 'Management',
+                            '2' => 'Creativity',
+                            '3' => 'SEO',
+                            '4' => 'Leadership'
+                        ],
+                        'country'   => 'Singapore, Bangkok',
+                        'year'      => [2024, 0],
+                    ],
+                    '2' => [
                         'title'     => 'Technical Team Leader, Project Manager',
                         'companies' => 'Moolahgo, Irvins, Secretlab',
                         'paragraph' => 'Project manager and technical lead with experience across e-commerce and fintech, guiding cross-functional teams, streamlining delivery, and driving high-quality, scalable solutions from concept to release.',
@@ -93,20 +106,7 @@ return [
                             '4' => 'Innovation'
                         ],
                         'country'   => 'Singapore',
-                        'year'      => [2018, 0],
-                    ],
-                    '2' => [
-                        'title'     => 'Independent Technology Consultant',
-                        'companies' => 'Freelance',
-                        'paragraph' => 'Freelance project lead delivering end-to-end website solutions for clients across diverse sectors and countries, managing requirements, development, and quality to ship polished, performance-focused digital experiences.',
-                        'tags'      => [
-                            '1' => 'Management',
-                            '2' => 'Creativity',
-                            '3' => 'SEO',
-                            '4' => 'Communication'
-                        ],
-                        'country'   => 'Singapore, Bangkok',
-                        'year'      => [2024, 0],
+                        'year'      => [2018, 2025],
                     ],
                     '3' => [
                         'title'     => 'Software Engineer',

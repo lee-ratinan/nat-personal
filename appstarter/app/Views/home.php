@@ -211,7 +211,7 @@ include "_header.php";
                                 <div class="card-body">
                                     <h3><?= lang('Home.sections.resume.experience.records.1.title') ?></h3>
                                     <p class="company-name"><?= lang('Home.sections.resume.experience.records.1.companies') ?></p>
-                                    <span class="duration"><?= calculate_years([2018, 0], $locale, ' - ') ?></span>
+                                    <span class="duration"><?= calculate_years(lang('Home.sections.resume.experience.records.1.year'), $locale, ' - ') ?></span>
                                     <p class="description"><?= lang('Home.sections.resume.experience.records.1.paragraph') ?></p>
                                     <div class="skills-tags">
                                         <span class="skill-tag"><?= lang('Home.sections.resume.experience.records.1.tags.1') ?></span>
@@ -230,7 +230,7 @@ include "_header.php";
                                 <div class="card-body">
                                     <h3><?= lang('Home.sections.resume.experience.records.2.title') ?></h3>
                                     <p class="company-name"><?= lang('Home.sections.resume.experience.records.2.companies') ?></p>
-                                    <span class="duration"><?= calculate_years([2024, 0], $locale, ' - ') ?></span>
+                                    <span class="duration"><?= calculate_years(lang('Home.sections.resume.experience.records.2.year'), $locale, ' - ') ?></span>
                                     <p class="description"><?= lang('Home.sections.resume.experience.records.2.paragraph') ?></p>
                                     <div class="skills-tags">
                                         <span class="skill-tag"><?= lang('Home.sections.resume.experience.records.2.tags.1') ?></span>
@@ -249,7 +249,7 @@ include "_header.php";
                                 <div class="card-body">
                                     <h3><?= lang('Home.sections.resume.experience.records.3.title') ?></h3>
                                     <p class="company-name"><?= lang('Home.sections.resume.experience.records.3.companies') ?></p>
-                                    <span class="duration"><?= calculate_years([2012, 2017], $locale, ' - ') ?></span>
+                                    <span class="duration"><?= calculate_years(lang('Home.sections.resume.experience.records.3.year'), $locale, ' - ') ?></span>
                                     <p class="description"><?= lang('Home.sections.resume.experience.records.3.paragraph') ?></p>
                                     <div class="skills-tags">
                                         <span class="skill-tag"><?= lang('Home.sections.resume.experience.records.3.tags.1') ?></span>
