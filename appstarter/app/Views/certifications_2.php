@@ -316,21 +316,24 @@
                             'institution' => 'Chulalongkorn University Academic Testing Center',
                             'country'     => 'th',
                             'date'        => ['2007-11-04'],
-                            'certificate' => 'https://drive.google.com/file/d/1nlDMxBIC4RE7o0Fi70o009jEd7BSw-EV/view'
+                            'certificate' => 'https://drive.google.com/file/d/1nlDMxBIC4RE7o0Fi70o009jEd7BSw-EV/view',
+                            'result'      => 'B1'
                         ],
                         [
                             'title'       => 'General English Test (TU-GET)',
                             'institution' => 'Language Institute, Thammasat University',
                             'country'     => 'th',
                             'date'        => ['2010-09-00'],
-                            'certificate' => 'https://drive.google.com/file/d/1MbfI1rGCHA5kVHA4ggB47asY6RXxKoB6/view'
+                            'certificate' => 'https://drive.google.com/file/d/1MbfI1rGCHA5kVHA4ggB47asY6RXxKoB6/view',
+                            'result'      => 'B2-C1'
                         ],
                         [
                             'title'       => 'EF SET Certificate',
                             'institution' => 'EF SET',
                             'country'     => 'ch',
                             'date'        => ['2025-08-08'],
-                            'certificate' => 'https://drive.google.com/file/d/18piWVwM1u3UT2zCmABG8uasEyYcuMHdv/view'
+                            'certificate' => 'https://drive.google.com/file/d/18piWVwM1u3UT2zCmABG8uasEyYcuMHdv/view',
+                            'result'      => 'C2'
                         ]
                     ]
                 ],
@@ -432,10 +435,11 @@
                                             <tr <?= (empty($cert['certificate']) ? 'class="wishlisted"' : '') ?>>
                                                 <td style="width:40%"><?= $cert['title'] ?></td>
                                                 <td style="width:35%"><?= $cert['institution'] . (!empty($cert['country']) ? ', ' . lang('Certifications.country.' . $cert['country']) : '') ?></td>
-                                                <td class="text-center"
-                                                    style="width:15%"><?= !empty($cert['date']) ? format_date($cert['date'], $locale) : '<i class="fa-solid fa-bullseye"></i>' ?></td>
-                                                <td class="text-end"
-                                                    style="width:10%"><?= !empty($cert['certificate']) ? '<a class="btn btn-outline-success btn-xs" href="' . $cert['certificate'] . '" target="_blank"><i class="fa-solid fa-file-pdf"></i></a>' : '' ?></td>
+                                                <td class="text-center" style="width:15%"><?= !empty($cert['date']) ? format_date($cert['date'], $locale) : '<i class="fa-solid fa-bullseye"></i>' ?></td>
+                                                <td class="text-end" style="width:10%">
+                                                    <?= !empty($cert['result']) ? $cert['result'] : '' ?>
+                                                    <?= !empty($cert['certificate']) ? '<a class="btn btn-outline-success btn-xs" href="' . $cert['certificate'] . '" target="_blank"><i class="fa-solid fa-file-pdf"></i></a>' : '' ?>
+                                                </td>
                                             </tr>
                                         <?php endforeach; ?>
                                     </table>
