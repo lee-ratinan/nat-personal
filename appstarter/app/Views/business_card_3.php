@@ -85,6 +85,7 @@
                 <a class="btn btn-<?= 'ja' == $locale ? '' : 'outline-' ?>success btn-xs" href="<?= base_url('ja/business-card') ?>">日本語</a>
                 <a class="btn btn-<?= 'en-Shaw' == $locale ? '' : 'outline-' ?>success btn-xs" href="<?= base_url('en-Shaw/business-card') ?>">𐑖𐑱𐑝𐑾𐑯</a>
             </p>
+            <p>/ <a href="<?= base_url($locale) ?>"><i class="fa-solid fa-home"></i></a> / <?= lang('BusinessCard.title') ?> /</p>
             <h1 class="upright">
                 <?php
                 echo lang('BusinessCard.name');
