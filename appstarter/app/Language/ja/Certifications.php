@@ -1,15 +1,22 @@
 <?php
 return [
-    'title'        => '認証',
-    'table'        => [
+    'title'         => '認証',
+    'table'         => [
         'title'           => '資格名称',
         'certifying-body' => '認証機関',
         'date'            => '取得日',
     ],
-    'academic'     => '学術資格',
-    'professional' => '専門資格',
-    'others'       => 'その他の資格',
-    'data'         => [
+    'document-type' => [
+        'certificate' => 'Certificate',
+        'transcript'  => 'Transcript',
+    ],
+    'academic'      => '学術資格',
+    'professional'  => '専門資格',
+    'others'        => 'その他の資格',
+    'data'          => [
+        'academic'                         => '学術資格',
+        'professional'                     => '専門資格',
+        'blank'                            => '',
         'primary'                          => '小学',
         'secondary'                        => '中学と高学',
         'tertiary'                         => '大学',
@@ -39,10 +46,20 @@ return [
             '2030s'   => '将来（2030年代に）',
         ]
     ],
-    'cefr'         => [
+    'cefr'          => [
         'title'         => 'CEFRレベル',
         'language'      => '言語',
         'test'          => '能力試験',
         'mother-tongue' => '母語'
-    ]
+    ],
+    'country'       => [
+        'sg' => '🇸🇬 シンガポール',
+        'au' => '🇦🇺 オーストラリア',
+        'th' => '🇹🇭 タイ',
+        'us' => '🇺🇸 アメリカ',
+        'jp' => '🇯🇵 日本',
+        'tw' => '🇹🇼 台湾',
+        'ch' => '🇨🇭 スイス'
+    ],
+    'wishlisted' => '今後の計画'
 ];

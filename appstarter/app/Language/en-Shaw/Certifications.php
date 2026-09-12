@@ -1,15 +1,22 @@
 <?php
 return [
-    'title'        => '𐑕𐑻𐑑𐑦𐑓𐑦𐑒𐑱𐑖𐑩𐑯𐑟',
-    'table'        => [
+    'title'         => '𐑕𐑻𐑑𐑦𐑓𐑦𐑒𐑱𐑖𐑩𐑯𐑟',
+    'table'         => [
         'title'           => '𐑑𐑲𐑑𐑩𐑤',
         'certifying-body' => '𐑕𐑻𐑑𐑦𐑓𐑲𐑦𐑙 𐑚𐑪𐑛𐑦',
         'date'            => '𐑛𐑱𐑑',
     ],
-    'academic'     => '𐑨𐑒𐑩𐑛𐑧𐑥𐑦𐑒',
-    'professional' => '𐑐𐑮𐑩𐑓𐑧𐑖𐑩𐑯𐑩𐑤',
-    'others'       => '𐑳𐑞𐑼𐑟',
-    'data'         => [
+    'document-type' => [
+        'certificate' => '𐑕𐑼𐑑𐑦𐑓𐑦𐑒𐑩𐑑',
+        'transcript'  => '𐑑𐑮𐑨𐑯𐑕𐑒𐑮𐑦𐑐𐑑',
+    ],
+    'academic'      => '𐑨𐑒𐑩𐑛𐑧𐑥𐑦𐑒',
+    'professional'  => '𐑐𐑮𐑩𐑓𐑧𐑖𐑩𐑯𐑩𐑤',
+    'others'        => '𐑳𐑞𐑼𐑟',
+    'data'          => [
+        'academic'                         => '𐑨𐑒𐑩𐑛𐑧𐑥𐑦𐑒',
+        'professional'                     => '𐑐𐑮𐑩𐑓𐑧𐑖𐑩𐑯𐑩𐑤',
+        'blank'                            => '',
         'primary'                          => '𐑐𐑮𐑲𐑥𐑼𐑦',
         'secondary'                        => '𐑕𐑧𐑒𐑩𐑯𐑛𐑼𐑦',
         'tertiary'                         => '𐑑𐑻𐑖𐑼𐑦',
@@ -39,10 +46,20 @@ return [
             '2030s'   => '𐑓𐑿𐑗𐑼 (2030s)',
         ]
     ],
-    'cefr'         => [
+    'cefr'          => [
         'title'         => 'CEFR 𐑤𐑧𐑝𐑩𐑤𐑟',
         'language'      => '𐑤𐑨𐑙𐑜𐑢𐑦𐑡',
         'test'          => '𐑐𐑮𐑩𐑓𐑦𐑖𐑩𐑯𐑕𐑦 𐑑𐑧𐑕𐑑',
         'mother-tongue' => '𐑥𐑳𐑞𐑼 𐑑𐑳𐑙'
-    ]
+    ],
+    'country'       => [
+        'sg' => '🇸🇬 ·𐑕𐑦𐑙𐑩𐑐𐑹',
+        'au' => '🇦🇺 ·𐑪𐑕𐑑𐑮𐑱𐑤𐑾',
+        'th' => '🇹🇭 ·𐑑𐑲𐑤𐑨𐑯𐑛',
+        'us' => '🇺🇸 ·𐑿𐑯𐑲𐑑𐑩𐑛 𐑕𐑑𐑱𐑑𐑕',
+        'jp' => '🇯🇵 ·𐑡𐑩𐑐𐑨𐑯',
+        'tw' => '🇹🇼 ·𐑑𐑲𐑢𐑭𐑯',
+        'ch' => '🇨🇭 ·𐑕𐑢𐑦𐑑𐑕𐑼𐑤𐑩𐑯𐑛'
+    ],
+    'wishlisted' => '𐑓𐑿𐑗𐑼 𐑐𐑤𐑨𐑯'
 ];

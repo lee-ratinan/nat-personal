@@ -1,15 +1,22 @@
 <?php
 return [
-    'title'        => 'Certifications',
-    'table'        => [
+    'title'         => 'Certifications',
+    'table'         => [
         'title'           => 'Title',
         'certifying-body' => 'Certifying Body',
         'date'            => 'Date',
     ],
-    'academic'     => 'Academic',
-    'professional' => 'Professional',
-    'others'       => 'Others',
-    'data'         => [
+    'document-type' => [
+        'certificate' => 'Certificate',
+        'transcript'  => 'Transcript',
+    ],
+    'academic'      => 'Academic',
+    'professional'  => 'Professional',
+    'others'        => 'Others',
+    'data'          => [
+        'academic'                         => 'Academic',
+        'professional'                     => 'Professional',
+        'blank'                            => '',
         'primary'                          => 'Primary',
         'secondary'                        => 'Secondary',
         'tertiary'                         => 'Tertiary',
@@ -39,10 +46,20 @@ return [
             '2030s'   => 'Future (2030s)',
         ]
     ],
-    'cefr'         => [
+    'cefr'          => [
         'title'         => 'CEFR Levels',
         'language'      => 'Language',
         'test'          => 'Proficiency Test',
         'mother-tongue' => 'Mother Tongue'
-    ]
+    ],
+    'country'       => [
+        'sg' => '🇸🇬 Singapore',
+        'au' => '🇦🇺 Australia',
+        'th' => '🇹🇭 Thailand',
+        'us' => '🇺🇸 United States',
+        'jp' => '🇯🇵 Japan',
+        'tw' => '🇹🇼 Taiwan',
+        'ch' => '🇨🇭 Switzerland'
+    ],
+    'wishlisted' => 'Future plan'
 ];

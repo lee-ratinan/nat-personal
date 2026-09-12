@@ -1,15 +1,22 @@
 <?php
 return [
-    'title'        => '認證',
-    'table'        => [
+    'title'         => '認證',
+    'table'         => [
         'title'           => '證書名稱',
         'certifying-body' => '認證機構',
         'date'            => '日期',
     ],
-    'academic'     => '學術認證',
-    'professional' => '專業認證',
-    'others'       => '其他認證',
-    'data'         => [
+    'document-type' => [
+        'certificate' => 'Certificate',
+        'transcript'  => 'Transcript',
+    ],
+    'academic'      => '學術認證',
+    'professional'  => '專業認證',
+    'others'        => '其他認證',
+    'data'          => [
+        'academic'                         => '學術認證',
+        'professional'                     => '專業認證',
+        'blank'                            => '',
         'primary'                          => '小學',
         'secondary'                        => '中學，高血',
         'tertiary'                         => '大學',
@@ -39,10 +46,20 @@ return [
             '2030s'   => '未來 (120年代)',
         ]
     ],
-    'cefr'         => [
+    'cefr'          => [
         'title'         => 'CEFR 等級',
         'language'      => '語言',
         'test'          => '能力測驗',
         'mother-tongue' => '母語'
-    ]
+    ],
+    'country'       => [
+        'sg' => '🇸🇬 新加坡',
+        'au' => '🇦🇺 澳大利亞',
+        'th' => '🇹🇭 泰國',
+        'us' => '🇺🇸 美國',
+        'jp' => '🇯🇵 日本',
+        'tw' => '🇹🇼 台灣',
+        'ch' => '🇨🇭 瑞士'
+    ],
+    'wishlisted' => '未來計劃'
 ];
