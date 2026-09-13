@@ -2,9 +2,11 @@
 return [
     'title'         => 'ประกาศนียบัตร',
     'table'         => [
+        'type'            => 'ประเภท',
+        'result'          => 'ผล',
         'title'           => 'รายการ',
         'certifying-body' => 'หน่วยงานที่ออก',
-        'date'            => 'วันที่ได้รับ',
+        'date'            => 'วันที่',
     ],
     'document-type' => [
         'certificate' => 'ประกาศนียบัตร',

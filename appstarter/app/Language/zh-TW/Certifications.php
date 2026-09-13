@@ -2,6 +2,8 @@
 return [
     'title'         => '認證',
     'table'         => [
+        'type'            => '類型',
+        'result'          => '結果',
         'title'           => '證書名稱',
         'certifying-body' => '認證機構',
         'date'            => '日期',

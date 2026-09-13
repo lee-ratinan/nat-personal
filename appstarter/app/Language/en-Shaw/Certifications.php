@@ -2,6 +2,8 @@
 return [
     'title'         => '𐑕𐑻𐑑𐑦𐑓𐑦𐑒𐑱𐑖𐑩𐑯𐑟',
     'table'         => [
+        'type'            => '𐑑𐑲𐑐',
+        'result'          => '𐑮𐑦𐑟𐑳𐑤𐑑',
         'title'           => '𐑑𐑲𐑑𐑩𐑤',
         'certifying-body' => '𐑕𐑻𐑑𐑦𐑓𐑲𐑦𐑙 𐑚𐑪𐑛𐑦',
         'date'            => '𐑛𐑱𐑑',

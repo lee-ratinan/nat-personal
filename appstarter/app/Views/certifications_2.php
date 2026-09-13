@@ -39,6 +39,8 @@
     <link rel="alternate" hreflang="en-Shaw" href="<?= base_url('en-Shaw/certifications') ?>"/>
     <link rel="alternate" hreflang="x-default" href="<?= base_url('business-card') ?>"/>
     <link rel="canonical" href="<?= current_url() ?>">
+    <link href="https://cdn.datatables.net/v/dt/dt-3.0.0/datatables.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/v/dt/dt-3.0.0/datatables.min.js"></script>
     <style>
         body {
         <?php if (in_array($locale, ['en', 'vi', 'id', 'es'])) : ?> font-family: "Noto Serif", serif;
@@ -87,7 +89,7 @@
 <body class="<?= $locale ?>">
 <div class="container">
     <div class="row mt-5">
-        <div class="col">
+        <div class="col-12 mb-5">
             <p class="small text-end">
                 <i class="fa-solid fa-language me-3"></i>
                 <a class="btn btn-<?= 'en' == $locale ? '' : 'outline-' ?>success btn-xs" href="<?= base_url('en/certifications') ?>">English</a>
@@ -364,18 +366,28 @@
             ];
             ?>
             <div class="table-responsive">
-                <table class="table table-striped table-hover table-sm mb-5">
+                <table id="certifications" class="table table-striped table-hover table-sm mb-5">
+                    <thead>
+                        <tr>
+                            <th class="text-center"><?= lang('Certifications.table.date') ?></th>
+                            <th><?= lang('Certifications.table.type') ?></th>
+                            <th><?= lang('Certifications.table.title') ?></th>
+                            <th><?= lang('Certifications.table.certifying-body') ?></th>
+                            <th><?= lang('Certifications.document-type.certificate') ?></th>
+                            <th><?= lang('Certifications.table.result') ?></th>
+                        </tr>
+                    </thead>
+                    <tbody>
                     <?php foreach ($rows as $type => $subtypes) : ?>
                         <?php foreach ($subtypes as $row) : ?>
                             <tr <?= (empty($row['certificate']) ? 'class="wishlisted"' : '') ?>>
+                                <td class="text-center small" data-sort="<?= $row['date'][0] ?? '9999-12-31' ?>"><?= !empty($row['date']) ? format_date($row['date'], $locale) : '<i class="fa-solid fa-bullseye"></i>' ?></td>
                                 <td class="text-center"><?= lang('Certifications.data.' . $type) ?></td>
                                 <td style="max-width:200px"><?= $row['title'] ?></td>
                                 <td style="max-width:180px">
                                     <?= $row['institution'] . (isset($row['country']) ? ', ' . lang('Certifications.country.' . $row['country']) : '') ?>
                                 </td>
-                                <td class="text-center small"
-                                    data-sort="<?= @$row['date'][0] ?>"><?= !empty($row['date']) ? format_date($row['date'], $locale) : '<i class="fa-solid fa-bullseye"></i>' ?></td>
-                                <td>
+                                <td data-filter="<?= (empty($row['certificate']) ? 'future' : 'completed') ?>">
                                     <?= !empty($row['certificate']) ? '<a class="btn btn-outline-success btn-xs" href="' . $row['certificate'] . '" target="_blank"><i class="fa-solid fa-file-pdf"></i> ' . lang('Certifications.document-type.certificate') . '</a>' : '' ?>
                                     <?= !empty($row['transcript']) ? '<a class="btn btn-outline-success btn-xs" href="' . $row['transcript'] . '" target="_blank"><i class="fa-solid fa-file-pdf"></i> ' . lang('Certifications.document-type.transcript') . '</a>' : '' ?>
                                     <?= !empty($row['profile']) ? '<a class="btn btn-outline-success btn-xs" href="' . $row['profile'] . '" target="_blank"><i class="fa-solid fa-external-link"></i></a>' : '' ?>
@@ -386,6 +398,7 @@
                             </tr>
                         <?php endforeach; ?>
                     <?php endforeach; ?>
+                    </tbody>
                 </table>
             </div>
             <h2><?= lang('Certifications.cefr.title') ?></h2>
@@ -423,14 +436,39 @@
             </div>
             <p class="mb-5"><i class="fa-solid fa-bullseye"></i> = <?= lang('Certifications.wishlisted') ?></p>
         </div>
+        <div class="col-12 mb-5">
+            <?php include "_professional_certifications.php"; ?>
+            <hr/>
+            <p class="small text-end">Updated: 14 Sep 2026</p>
+        </div>
     </div>
 </div>
 </body>
 <script>
-    document.getElementById('toggle-wishlist').addEventListener('click', function() {
-        let wishlistItems = document.querySelectorAll('.wishlisted');
-        wishlistItems.forEach(function(item) {
-            item.classList.toggle('d-none');
+    document.addEventListener("DOMContentLoaded", function() {
+        let table = new DataTable('#certifications', {paging: false, ordering: true, info: true});
+        const states = ['all', 'completed', 'future'];
+        let currentStateIndex = 0; // Starts at 'all'
+        DataTable.ext.search.push(function (settings, data, dataIndex) {
+            const currentState = states[currentStateIndex];
+            // If state is 'all', show every row
+            if (currentState === 'all') {
+                return true;
+            }
+            // Target column index 1 (Status column)
+            const columnIndex = 4;
+            // Get the HTML node of the status cell for this row
+            const cellNode = table.cell(dataIndex, columnIndex).node();
+            // Read the data-filter attribute directly from the cell node
+            const statusValue = cellNode.getAttribute('data-filter') || '';
+            console.log(currentState + ' = ' + statusValue);
+            // Keep row if attribute matches the current state
+            return statusValue.toLowerCase() === currentState;
+        });
+        document.getElementById('toggle-wishlist').addEventListener('click', function() {
+            currentStateIndex = (currentStateIndex + 1) % states.length;
+            console.log(states[currentStateIndex]);
+            table.draw();
         });
     });
 </script>

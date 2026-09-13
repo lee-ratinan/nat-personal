@@ -2,6 +2,8 @@
 return [
     'title'         => 'Certifications',
     'table'         => [
+        'type'            => 'Type',
+        'result'          => 'Result',
         'title'           => 'Title',
         'certifying-body' => 'Certifying Body',
         'date'            => 'Date',
