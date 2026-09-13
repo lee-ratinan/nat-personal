@@ -29,9 +29,9 @@ return [
         'hwn'                              => 'Horwang Nonthaburi 學校',
         'thammasat-university'             => '泰國法政大學',
         'nanyang-technological-university' => '南洋理工大學',
-        'australia'                        => '澳洲（目標是新南威爾斯大學）',
+        'australia'                        => '目標是新南威爾斯大學',
         'jlpt-body'                        => 'The Japan Foundation, Japan Educational Exchanges and Services',
-        'tocfl-body'                       => 'The Steering Committee for the Test Of Proficiency-Huayu (SC-TOP)',
+        'tocfl-body'                       => '國家華語測驗推動工作委員會',
         'english'                          => '英語',
         'japanese'                         => '日語',
         'taiwanese'                        => '國語',
@@ -44,7 +44,8 @@ return [
             'by-2029' => '未來 (至118年底)',
             'by-2030' => '未來 (至119年底)',
             '2030s'   => '未來 (120年代)',
-        ]
+        ],
+        'language'      => '語言',
     ],
     'cefr'          => [
         'title'         => 'CEFR 等級',

@@ -29,7 +29,7 @@ return [
         'hwn'                              => 'Horwang Nonthaburi School',
         'thammasat-university'             => 'Thammasat University',
         'nanyang-technological-university' => 'Nanyang Technological University',
-        'australia'                        => 'Australia (aim for University of New South Wales)',
+        'australia'                        => 'aim for University of New South Wales',
         'jlpt-body'                        => 'The Japan Foundation, Japan Educational Exchanges and Services',
         'tocfl-body'                       => 'The Steering Committee for the Test Of Proficiency-Huayu (SC-TOP)',
         'english'                          => 'English',
@@ -44,7 +44,8 @@ return [
             'by-2029' => 'Future (by 2029)',
             'by-2030' => 'Future (by 2030)',
             '2030s'   => 'Future (2030s)',
-        ]
+        ],
+        'language'      => 'Language',
     ],
     'cefr'          => [
         'title'         => 'CEFR Levels',

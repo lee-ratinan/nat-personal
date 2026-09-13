@@ -29,7 +29,7 @@ return [
         'hwn'                              => 'โรงเรียนนวมินทราชินูทิศ หอวัง นนทบุรี',
         'thammasat-university'             => 'มหาวิทยาลัยธรรมศาสตร์',
         'nanyang-technological-university' => 'มหาวิทยาลัยเทคโนโลยีนันยาง',
-        'australia'                        => 'ออสเตรเลีย (เป้าหมาย: มหาวิทยาลัยนิวเซาท์เวลส์)',
+        'australia'                        => 'เป้าหมาย: มหาวิทยาลัยนิวเซาท์เวลส์',
         'jlpt-body'                        => 'The Japan Foundation, Japan Educational Exchanges and Services',
         'tocfl-body'                       => 'The Steering Committee for the Test Of Proficiency-Huayu (SC-TOP)',
         'english'                          => 'ภาษาอังกฤษ',
@@ -44,7 +44,8 @@ return [
             'by-2029' => 'อนาคต (ภายใน 2572)',
             'by-2030' => 'อนาคต (ภายใน 2573)',
             '2030s'   => 'อนาคต (หลัง 2574)',
-        ]
+        ],
+        'language'      => 'ภาษา',
     ],
     'cefr'          => [
         'title'         => 'ระดับ CEFR',

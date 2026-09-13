@@ -29,7 +29,7 @@ return [
         'hwn'                              => 'Horwang Nonthaburi School',
         'thammasat-university'             => 'タンマサート大学',
         'nanyang-technological-university' => '南洋理工大学',
-        'australia'                        => 'オーストラリア (ニューサウスウェールズ大学を目指す)',
+        'australia'                        => 'ニューサウスウェールズ大学を目指す',
         'jlpt-body'                        => '国際交流基金、日本国際教育支援協会',
         'tocfl-body'                       => 'The Steering Committee for the Test Of Proficiency-Huayu (SC-TOP)',
         'english'                          => '英語',
@@ -44,7 +44,8 @@ return [
             'by-2029' => '将来（2029年まで）',
             'by-2030' => '将来（2030年まで）',
             '2030s'   => '将来（2030年代に）',
-        ]
+        ],
+        'language'      => '言語',
     ],
     'cefr'          => [
         'title'         => 'CEFRレベル',

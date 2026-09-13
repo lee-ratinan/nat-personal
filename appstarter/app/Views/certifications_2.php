@@ -69,7 +69,8 @@
         }
 
         .wishlisted td {
-            background-color: #a8a8a8;
+            color: #888;
+            font-size: 0.85em;
             font-style: italic;
         }
     </style>
@@ -78,7 +79,6 @@
             const isDark = e.matches;
             document.documentElement.setAttribute('data-bs-theme', isDark ? 'dark' : 'light');
         }
-
         const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
         applySystemTheme(colorSchemeQuery);
         colorSchemeQuery.addEventListener('change', applySystemTheme);
@@ -105,6 +105,24 @@
                 / <?= lang('Certifications.title') ?> /</p>
             <h1><?= lang('Certifications.title') ?></h1>
             <?php
+            $languages = [
+                [
+                    'cefr' => 'C2', // English
+                    'flag' => '🇺🇸🇬🇧🇦🇺'
+                ],
+                [
+                    'cefr' => 'Native', // Thai
+                    'flag' => '🇹🇭'
+                ],
+                [
+                    'cefr' => 'A2', // Taiwanese Mandarin
+                    'flag' => '🇹🇼'
+                ],
+                [
+                    'cefr' => 'A1', // Japanese
+                    'flag' => '🇯🇵'
+                ]
+            ];
             $rows = [
                 'academic'     => [
                     [
@@ -147,6 +165,11 @@
                         'result'      => 'CGPA: 3.95/5.00'
                     ],
                     [
+                        'title'       => lang('Certifications.data.mba'),
+                        'institution' => lang('Certifications.data.australia'),
+                        'country'     => 'au',
+                    ],
+                    [
                         'title'       => 'Foundations of Computation Thinking and Programming',
                         'institution' => lang('Certifications.data.nanyang-technological-university'),
                         'country'     => 'sg',
@@ -181,11 +204,6 @@
                         'certificate' => 'https://drive.google.com/file/d/1-KmSpTwNve4MxNwwfH87B2E-9mJQvWDx/view?usp=sharing',
                         'transcript'  => 'https://drive.google.com/file/d/1-CWpg04gpDnJT-JUMuM0PVVP7QRg9PMD/view?usp=sharing',
                         'result'      => 'B',
-                    ],
-                    [
-                        'title'       => lang('Certifications.data.mba'),
-                        'institution' => lang('Certifications.data.australia'),
-                        'country'     => 'au',
                     ]
                 ],
                 'professional' => [
@@ -297,6 +315,49 @@
                         'country'     => 'us',
                     ],
                 ],
+                'language'     => [
+                    [
+                        'title'       => $languages[0]['flag'] . ' ' . lang('BusinessCard.language.table.0.0') . ': Test of English Proficiency (CU-TEP)',
+                        'institution' => 'Chulalongkorn University Academic Testing Center',
+                        'country'     => 'th',
+                        'date'        => ['2007-11-04'],
+                        'certificate' => 'https://drive.google.com/file/d/1nlDMxBIC4RE7o0Fi70o009jEd7BSw-EV/view',
+                        'result'      => 'B1',
+                    ],
+                    [
+                        'title'       => $languages[0]['flag'] . ' ' . lang('BusinessCard.language.table.0.0') . ': General English Test (TU-GET)',
+                        'institution' => 'Language Institute, Thammasat University',
+                        'country'     => 'th',
+                        'date'        => ['2010-09-00'],
+                        'certificate' => 'https://drive.google.com/file/d/1MbfI1rGCHA5kVHA4ggB47asY6RXxKoB6/view',
+                        'result'      => 'B2-C1',
+                    ],
+                    [
+                        'title'       => $languages[0]['flag'] . ' ' . lang('BusinessCard.language.table.0.0') . ': EF SET Certificate',
+                        'institution' => 'Education First',
+                        'country'     => 'ch',
+                        'date'        => ['2025-08-08'],
+                        'certificate' => 'https://drive.google.com/file/d/18piWVwM1u3UT2zCmABG8uasEyYcuMHdv/view',
+                        'result'      => 'C2'
+                    ],
+                    [
+                        'title'       => $languages[2]['flag'] . ' ' . lang('BusinessCard.language.table.2.0') . ': ' . lang('Certifications.data.tocfl'),
+                        'institution' => lang('Certifications.data.tocfl-body'),
+                        'country'     => 'tw',
+                    ],
+                    [
+                        'title'       => $languages[3]['flag'] . ' ' . lang('BusinessCard.language.table.3.0') . ': Japanese Beginner Course',
+                        'institution' => 'Tomo Japanese Language School',
+                        'country'     => 'sg',
+                        'date'        => ['2025-09-22'],
+                        'certificate' => 'https://drive.google.com/file/d/1lD7jXK5PMW8M7DS0BmxXCS-aqq_X0GTA/view'
+                    ],
+                    [
+                        'title'       => $languages[3]['flag'] . ' ' . lang('BusinessCard.language.table.3.0') . ': ' . lang('Certifications.data.jlpt'),
+                        'country'     => 'jp',
+                        'institution' => lang('Certifications.data.jlpt-body')
+                    ],
+                ]
             ];
             $cefr = [
                 'A1' => 'Beginner',
@@ -304,72 +365,7 @@
                 'B1' => 'Intermediate',
                 'B2' => 'Upper-Intermediate',
                 'C1' => 'Advanced',
-                'C2' => 'Proficiency'
-            ];
-            $languages = [
-                [
-                    'cefr'           => 'C2', // English
-                    'flag'           => '🇺🇸🇬🇧🇦🇺',
-                    'certifications' => [
-                        [
-                            'title'       => 'Test of English Proficiency (CU-TEP)',
-                            'institution' => 'Chulalongkorn University Academic Testing Center',
-                            'country'     => 'th',
-                            'date'        => ['2007-11-04'],
-                            'certificate' => 'https://drive.google.com/file/d/1nlDMxBIC4RE7o0Fi70o009jEd7BSw-EV/view',
-                            'result'      => 'B1'
-                        ],
-                        [
-                            'title'       => 'General English Test (TU-GET)',
-                            'institution' => 'Language Institute, Thammasat University',
-                            'country'     => 'th',
-                            'date'        => ['2010-09-00'],
-                            'certificate' => 'https://drive.google.com/file/d/1MbfI1rGCHA5kVHA4ggB47asY6RXxKoB6/view',
-                            'result'      => 'B2-C1'
-                        ],
-                        [
-                            'title'       => 'EF SET Certificate',
-                            'institution' => 'EF SET',
-                            'country'     => 'ch',
-                            'date'        => ['2025-08-08'],
-                            'certificate' => 'https://drive.google.com/file/d/18piWVwM1u3UT2zCmABG8uasEyYcuMHdv/view',
-                            'result'      => 'C2'
-                        ]
-                    ]
-                ],
-                [
-                    'cefr' => 'Native', // Thai
-                    'flag' => '🇹🇭'
-                ],
-                [
-                    'cefr'           => 'A2', // Taiwanese Mandarin
-                    'flag'           => '🇹🇼',
-                    'certifications' => [
-                        [
-                            'title'       => 'TOCFL',
-                            'country'     => 'tw',
-                            'institution' => 'SC-TOP'
-                        ]
-                    ]
-                ],
-                [
-                    'cefr'           => 'A1', // Japanese
-                    'flag'           => '🇯🇵',
-                    'certifications' => [
-                        [
-                            'title'       => 'Japanese Beginner Course',
-                            'institution' => 'Tomo Japanese Language School',
-                            'country'     => 'sg',
-                            'date'        => ['2025-09-22'],
-                            'certificate' => 'https://drive.google.com/file/d/1lD7jXK5PMW8M7DS0BmxXCS-aqq_X0GTA/view'
-                        ],
-                        [
-                            'title'       => '日本語能力試験 (JLPT) N5',
-                            'country'     => 'jp',
-                            'institution' => 'Japan Foundation'
-                        ]
-                    ]
-                ]
+                'C2' => 'Proficient'
             ];
             ?>
             <div class="table-responsive">
@@ -427,25 +423,6 @@
                                 <?php endif; ?>
                             </td>
                         </tr>
-                        <?php if (!empty($languages[$i]['certifications'])) : ?>
-                            <tr>
-                                <td class="ps-5" colspan="2">
-                                    <table class="table table-sm table-striped table-hover mb-0">
-                                        <?php foreach ($languages[$i]['certifications'] as $cert) : ?>
-                                            <tr <?= (empty($cert['certificate']) ? 'class="wishlisted"' : '') ?>>
-                                                <td style="width:40%"><?= $cert['title'] ?></td>
-                                                <td style="width:35%"><?= $cert['institution'] . (!empty($cert['country']) ? ', ' . lang('Certifications.country.' . $cert['country']) : '') ?></td>
-                                                <td class="text-center" style="width:15%"><?= !empty($cert['date']) ? format_date($cert['date'], $locale) : '<i class="fa-solid fa-bullseye"></i>' ?></td>
-                                                <td class="text-end" style="width:10%">
-                                                    <?= !empty($cert['result']) ? $cert['result'] : '' ?>
-                                                    <?= !empty($cert['certificate']) ? '<a class="btn btn-outline-success btn-xs" href="' . $cert['certificate'] . '" target="_blank"><i class="fa-solid fa-file-pdf"></i></a>' : '' ?>
-                                                </td>
-                                            </tr>
-                                        <?php endforeach; ?>
-                                    </table>
-                                </td>
-                            </tr>
-                        <?php endif; ?>
                     <?php endforeach; ?>
                 </table>
             </div>
