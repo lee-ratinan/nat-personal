@@ -90,20 +90,15 @@
         <div class="col">
             <p class="small text-end">
                 <i class="fa-solid fa-language me-3"></i>
-                <a class="btn btn-<?= 'en' == $locale ? '' : 'outline-' ?>success btn-xs"
-                   href="<?= base_url('en/certifications') ?>">English</a>
-                <a class="btn btn-<?= 'th' == $locale ? '' : 'outline-' ?>success btn-xs"
-                   href="<?= base_url('th/certifications') ?>">ภาษาไทย</a>
-                <a class="btn btn-<?= 'zh-TW' == $locale ? '' : 'outline-' ?>success btn-xs"
-                   href="<?= base_url('zh-TW/certifications') ?>">國語</a>
-                <a class="btn btn-<?= 'ja' == $locale ? '' : 'outline-' ?>success btn-xs"
-                   href="<?= base_url('ja/certifications') ?>">日本語</a>
-                <a class="btn btn-<?= 'en-Shaw' == $locale ? '' : 'outline-' ?>success btn-xs"
-                   href="<?= base_url('en-Shaw/certifications') ?>">𐑖𐑱𐑝𐑾𐑯</a>
+                <a class="btn btn-<?= 'en' == $locale ? '' : 'outline-' ?>success btn-xs" href="<?= base_url('en/certifications') ?>">English</a>
+                <a class="btn btn-<?= 'th' == $locale ? '' : 'outline-' ?>success btn-xs" href="<?= base_url('th/certifications') ?>">ภาษาไทย</a>
+                <a class="btn btn-<?= 'zh-TW' == $locale ? '' : 'outline-' ?>success btn-xs" href="<?= base_url('zh-TW/certifications') ?>">國語</a>
+                <a class="btn btn-<?= 'ja' == $locale ? '' : 'outline-' ?>success btn-xs" href="<?= base_url('ja/certifications') ?>">日本語</a>
+                <a class="btn btn-<?= 'en-Shaw' == $locale ? '' : 'outline-' ?>success btn-xs" href="<?= base_url('en-Shaw/certifications') ?>">𐑖𐑱𐑝𐑾𐑯</a>
             </p>
-            <p>/ <a href="<?= base_url($locale) ?>"><i class="fa-solid fa-home"></i></a>
-                / <?= lang('Certifications.title') ?> /</p>
+            <p>/ <a href="<?= base_url($locale) ?>"><i class="fa-solid fa-home"></i></a> / <?= lang('Certifications.title') ?> /</p>
             <h1><?= lang('Certifications.title') ?></h1>
+            <button type="button" class="btn btn-outline-primary btn-sm mb-3" id="toggle-wishlist"><?= lang('Certifications.hide-toggle') ?></button>
             <?php
             $languages = [
                 [
@@ -431,4 +426,12 @@
     </div>
 </div>
 </body>
+<script>
+    document.getElementById('toggle-wishlist').addEventListener('click', function() {
+        let wishlistItems = document.querySelectorAll('.wishlisted');
+        wishlistItems.forEach(function(item) {
+            item.classList.toggle('d-none');
+        });
+    });
+</script>
 </html>

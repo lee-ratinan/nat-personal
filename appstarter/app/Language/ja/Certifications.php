@@ -10,6 +10,7 @@ return [
         'certificate' => 'Certificate',
         'transcript'  => 'Transcript',
     ],
+    'hide-toggle'   => '将来の予定項目を表示／非表示にする。',
     'academic'      => '学術資格',
     'professional'  => '専門資格',
     'others'        => 'その他の資格',

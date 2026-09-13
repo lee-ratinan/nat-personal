@@ -10,6 +10,7 @@ return [
         'certificate' => 'Certificate',
         'transcript'  => 'Transcript',
     ],
+    'hide-toggle'   => '隱藏/顯示未來計劃的項目。',
     'academic'      => '學術認證',
     'professional'  => '專業認證',
     'others'        => '其他認證',

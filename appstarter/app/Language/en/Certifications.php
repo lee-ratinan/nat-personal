@@ -10,6 +10,7 @@ return [
         'certificate' => 'Certificate',
         'transcript'  => 'Transcript',
     ],
+    'hide-toggle'   => 'Hide/Show Future Plans',
     'academic'      => 'Academic',
     'professional'  => 'Professional',
     'others'        => 'Others',
