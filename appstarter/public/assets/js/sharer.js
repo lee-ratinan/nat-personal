@@ -7,28 +7,35 @@ const shareData = {
 
 // Main handler function
 let qrGenerated = false;
+function removeLocaleFromUrl(url) {
+    const parsedUrl = new URL(url);
+    // Matches a 2-letter language code (e.g., /en/)
+    // or language-region code (e.g., /en-US/ or /th-TH/) right after the origin
+    parsedUrl.pathname = parsedUrl.pathname.replace(/^\/[a-z]{2}(?:-[a-zA-Z]{2})?(?=\/|$)/, '');
+    return parsedUrl.href;
+}
 function handleShare(event) {
     // Find the closest button with the class 'btn-share'
     const button = event.target.closest('.btn-share');
     if (!button) return; // Exit if a share button wasn't clicked
-
+    let shareUrl = removeLocaleFromUrl(shareData.url);
     // Determine the action based on the second class name
     const isClass = (cls) => button.classList.contains(cls);
     try {
         if (isClass('btn-share-facebook')) {
-            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareData.url)}`, '_blank', 'noopener,noreferrer');
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank', 'noopener,noreferrer');
         }
         else if (isClass('btn-share-twitter')) {
-            window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareData.url)}&text=${encodeURIComponent(shareData.text)}`, '_blank', 'noopener,noreferrer');
+            window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareData.text)}`, '_blank', 'noopener,noreferrer');
         }
         else if (isClass('btn-share-threads')) {
-            window.open(`https://www.threads.net/intent/post?text=${encodeURIComponent(shareData.text + ' ' + shareData.url)}`, '_blank', 'noopener,noreferrer');
+            window.open(`https://www.threads.net/intent/post?text=${encodeURIComponent(shareData.text + ' ' + shareUrl)}`, '_blank', 'noopener,noreferrer');
         }
         else if (isClass('btn-share-bookmark')) {
             alert("Press " + (navigator.userAgent.indexOf('Mac') != -1 ? 'Cmd + D' : 'Ctrl + D') + " to bookmark this page.");
         }
         else if (isClass('btn-share-copy-link')) {
-            navigator.clipboard.writeText(shareData.url)
+            navigator.clipboard.writeText(shareUrl)
                 .then(() => {
                     button.textContent = "Copied!";
                     setTimeout(() => $('.btn-share-copy-link').html('<i class="bi bi-clipboard-check"></i> Copy'), 5000);
@@ -38,7 +45,7 @@ function handleShare(event) {
         else if (isClass('btn-share-qr')) {
             $('#qr-code').slideToggle();
             if (!qrGenerated) {
-                generateQRCode(shareData.url);
+                generateQRCode(shareUrl);
                 qrGenerated = true;
             }
         }
