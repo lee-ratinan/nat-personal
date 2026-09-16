@@ -386,7 +386,7 @@
             const imgSrc  = post.mediaObj?.source_url || '';
             const imgAlt  = post.mediaObj?.alt_text   || title;
             const imgHtml = imgSrc
-                ? `<div class="text-center"><img class="img-fluid rounded mb-3" style="width:100%;max-width:400px;" src="${imgSrc}" alt="${_esc(imgAlt)}"></div>`
+                ? `<div class="text-center"><img class="img-fluid rounded mb-3" style="width:100%;" src="${imgSrc}" alt="${_esc(imgAlt)}"></div>`
                 : '';
 
             // Author — with avatar if available
