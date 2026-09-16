@@ -85,17 +85,17 @@
                         <div class="row g-4 mb-5">
                             <div class="col-6">
                                 <div class="stat-item text-center">
-                                    <div class="stat-number fw-bold" id="api_country_count">###</div>
+                                    <div class="stat-number fw-bold" id="api_country_count"><?= number_format($country_count) ?></div>
                                     <div class="stat-label"><?= lang('PersonalLife.sections.about.box-1') ?></div>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="stat-item text-center">
-                                    <div class="stat-number fw-bold" id="api_journey_distance_km">###</div>
+                                    <div class="stat-number fw-bold" id="api_journey_distance_km"><?= number_format($journey_distance['km']) ?></div>
                                     <div class="stat-label">
                                         <?= lang('PersonalLife.sections.about.box-2') ?>
                                         <?php if ('en' == $locale) : ?>
-                                            <br><span style="font-size:0.7em">(<span id="api_journey_distance_miles">###</span> miles)</span>
+                                            <br><span style="font-size:0.7em">(<span id="api_journey_distance_miles"><?= number_format($journey_distance['mile']) ?></span> miles)</span>
                                         <?php endif; ?>
                                     </div>
                                 </div>
@@ -109,7 +109,7 @@
                             </div>
                             <div class="col-6">
                                 <div class="stat-item text-center">
-                                    <div class="stat-number fw-bold" id="api_flight_count">###</div>
+                                    <div class="stat-number fw-bold" id="api_flight_count"><?= number_format($flight_cnt) ?></div>
                                     <div class="stat-label"><?= lang('PersonalLife.sections.about.box-4') ?></div>
                                 </div>
                             </div>
@@ -349,32 +349,5 @@
     </script>
 </main>
 <?php include "_footer.php"; ?>
-<script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
-<script>
-    $(function () {
-        $.get(
-            'https://admin.ratinan.com/api/journey-stats',
-            function (response) {
-                if ('OK' === response.status) {
-                    $('#api_country_count').html((response.data.country_count).toLocaleString());
-                    $('#api_flight_count').html((response.data.flight_count).toLocaleString());
-                    $('#api_journey_distance_km').html((response.data.journey_distance.km).toLocaleString());
-                    $('#api_journey_distance_miles').html((response.data.journey_distance.mile).toLocaleString());
-                    // flags
-                    let half = Math.ceil(response.data.country_count/2),
-                        counter = 0;
-                    $.each(response.data.country_breakdown, function (key, value) {
-                        let flag_url = 'https://admin.ratinan.com/assets/vendor/flag-icon/flags/4x3/' + key.toLowerCase() + '.svg';
-                        $('#flag-badges').append(`<span class="badge text-bg-success flag-badge"><img src="${flag_url}" alt="${key}" title="${key}" /> ${value}</span>`);
-                        counter++;
-                        if (counter === half) {
-                            $('#flag-badges').append(`<br/>`);
-                        }
-                    });
-                }
-            }
-        );
-    });
-</script>
 </body>
 </html>
