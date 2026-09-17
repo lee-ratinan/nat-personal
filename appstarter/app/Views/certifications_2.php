@@ -130,7 +130,7 @@
             ];
             ?>
             <div class="table-responsive">
-                <table id="certifications" class="table table-striped table-hover table-sm mb-5">
+                <table id="certifications" class="table table-striped table-hover table-sm">
                     <thead>
                         <tr>
                             <th style="min-width:125px" class="text-center"><?= lang('Certifications.table.date') ?></th>
@@ -165,7 +165,7 @@
                     </tbody>
                 </table>
             </div>
-            <h2><?= lang('Certifications.cefr.title') ?></h2>
+            <h2 class="mt-5"><?= lang('Certifications.cefr.title') ?></h2>
             <div class="table-responsive">
                 <table class="table table-striped table-hover table-sm mb-5">
                     <?php foreach (lang('BusinessCard.language.table') as $i => $row) : ?>
