@@ -13,6 +13,11 @@ return [
         'transcript'  => 'Transcript',
     ],
     'hide-toggle'   => 'Hide/Show Future Plans',
+    'states'        => [
+        'all'       => 'All',
+        'completed' => 'Completed',
+        'future'    => 'Future',
+    ],
     'academic'      => 'Academic',
     'professional'  => 'Professional',
     'others'        => 'Others',
@@ -48,7 +53,7 @@ return [
             'by-2030' => 'Future (by 2030)',
             '2030s'   => 'Future (2030s)',
         ],
-        'language'      => 'Language',
+        'language'                         => 'Language',
     ],
     'cefr'          => [
         'title'         => 'CEFR Levels',
@@ -65,5 +70,5 @@ return [
         'tw' => '🇹🇼 Taiwan',
         'ch' => '🇨🇭 Switzerland'
     ],
-    'wishlisted' => 'Future plan'
+    'wishlisted'    => 'Future plan'
 ];

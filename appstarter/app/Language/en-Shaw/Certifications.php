@@ -13,6 +13,11 @@ return [
         'transcript'  => '𐑑𐑮𐑨𐑯𐑕𐑒𐑮𐑦𐑐𐑑',
     ],
     'hide-toggle'   => '𐑣𐑲𐑛/𐑖𐑴 𐑓𐑿𐑗𐑼 𐑐𐑤𐑨𐑯𐑟',
+    'states'        => [
+        'all'       => '𐑷𐑤',
+        'completed' => '𐑒𐑩𐑥𐑐𐑤𐑰𐑑𐑩𐑛',
+        'future'    => '𐑓𐑿𐑗𐑼',
+    ],
     'academic'      => '𐑨𐑒𐑩𐑛𐑧𐑥𐑦𐑒',
     'professional'  => '𐑐𐑮𐑩𐑓𐑧𐑖𐑩𐑯𐑩𐑤',
     'others'        => '𐑳𐑞𐑼𐑟',

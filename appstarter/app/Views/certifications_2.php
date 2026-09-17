@@ -100,7 +100,7 @@
             </p>
             <p>/ <a href="<?= base_url($locale) ?>"><i class="fa-solid fa-home"></i></a> / <?= lang('Certifications.title') ?> /</p>
             <h1><?= lang('Certifications.title') ?></h1>
-            <button type="button" class="btn btn-outline-primary btn-sm mb-3" id="toggle-wishlist"><?= lang('Certifications.hide-toggle') ?></button>
+            <button type="button" class="btn btn-outline-primary btn-sm mb-3" id="toggle-wishlist"><?= lang('Certifications.hide-toggle') ?> (<span id="state-label"><?= lang('Certifications.states.all') ?></span>)</button>
             <?php
             $languages = [
                 [
@@ -212,6 +212,7 @@
     document.addEventListener("DOMContentLoaded", function() {
         let table = new DataTable('#certifications', {paging: false});
         const states = ['all', 'completed', 'future'];
+        const stateLabels = ['<?= lang('Certifications.states.all') ?>', '<?= lang('Certifications.states.completed') ?>', '<?= lang('Certifications.states.future') ?>'];
         let currentStateIndex = 0; // Starts at 'all'
         DataTable.ext.search.push(function (settings, data, dataIndex) {
             const currentState = states[currentStateIndex];
@@ -231,7 +232,8 @@
         });
         document.getElementById('toggle-wishlist').addEventListener('click', function() {
             currentStateIndex = (currentStateIndex + 1) % states.length;
-            console.log(states[currentStateIndex]);
+            // console.log(states[currentStateIndex]);
+            document.getElementById('state-label').innerText = stateLabels[currentStateIndex];
             table.draw();
         });
     });
