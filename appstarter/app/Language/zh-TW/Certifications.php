@@ -59,7 +59,15 @@ return [
         'title'         => 'CEFR 等級',
         'language'      => '語言',
         'test'          => '能力測驗',
-        'mother-tongue' => '母語'
+        'mother-tongue' => '母語',
+        'levels'        => [
+            'A1' => '入門',
+            'A2' => '初級',
+            'B1' => '中級',
+            'B2' => '中高級',
+            'C1' => '高級',
+            'C2' => '精通',
+        ]
     ],
     'country'       => [
         'sg' => '🇸🇬 新加坡',

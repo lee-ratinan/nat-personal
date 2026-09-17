@@ -121,12 +121,12 @@
                 ]
             ];
             $cefr = [
-                'A1' => 'Beginner',
-                'A2' => 'Elementary',
-                'B1' => 'Intermediate',
-                'B2' => 'Upper-Intermediate',
-                'C1' => 'Advanced',
-                'C2' => 'Proficient'
+                'A1' => lang('Certifications.cefr.levels.A1'),
+                'A2' => lang('Certifications.cefr.levels.A2'),
+                'B1' => lang('Certifications.cefr.levels.B1'),
+                'B2' => lang('Certifications.cefr.levels.B2'),
+                'C1' => lang('Certifications.cefr.levels.C1'),
+                'C2' => lang('Certifications.cefr.levels.C2')
             ];
             ?>
             <div class="table-responsive">
