@@ -120,242 +120,6 @@
                     'flag' => '🇯🇵'
                 ]
             ];
-            $rows = [
-                'academic'     => [
-                    [
-                        'title'       => lang('Certifications.data.primary'),
-                        'institution' => lang('Certifications.data.ptd'),
-                        'country'     => 'th',
-                        'date'        => ['2002-03-29'],
-                        'certificate' => 'https://drive.google.com/file/d/10ViQHpZiz-kUiVnKbYXcPtvavwh3xyPo/view?usp=sharing'
-                    ],
-                    [
-                        'title'       => lang('Certifications.data.junior-high'),
-                        'institution' => lang('Certifications.data.hwn'),
-                        'country'     => 'th',
-                        'date'        => ['2005-03-31'],
-                        'certificate' => 'https://drive.google.com/file/d/10QZRJ9KK4KeKAlpMDHA7BpYICmh3zRDt/view?usp=sharing',
-                    ],
-                    [
-                        'title'       => lang('Certifications.data.senior-high'),
-                        'institution' => lang('Certifications.data.hwn'),
-                        'country'     => 'th',
-                        'date'        => ['2008-03-31'],
-                        'certificate' => 'https://drive.google.com/file/d/10MLhTM_ojBrlIdXQH4PpFkZ9lE_i4-iF/view?usp=sharing'
-                    ],
-                    [
-                        'title'       => lang('Certifications.data.bsc'),
-                        'institution' => lang('Certifications.data.thammasat-university'),
-                        'country'     => 'th',
-                        'date'        => ['2012-03-31'],
-                        'certificate' => 'https://drive.google.com/file/d/1roWRsOGKt-LQhI26jbHAhe037hIqBP0X/view?usp=sharing',
-                        'transcript'  => 'https://drive.google.com/file/d/1dvTLm62H5Wd4SAIbUFIxdLfmUiEMRfLq/view?usp=sharing',
-                        'result'      => 'CGPA: 3.59/4.00'
-                    ],
-                    [
-                        'title'       => lang('Certifications.data.msc'),
-                        'institution' => lang('Certifications.data.nanyang-technological-university'),
-                        'country'     => 'sg',
-                        'date'        => ['2015-07-01'],
-                        'certificate' => 'https://drive.google.com/file/d/1oxnmnAjZW2qXWWwZNaObFYOf1zTdTOWg/view?usp=sharing',
-                        'transcript'  => 'https://drive.google.com/file/d/1-vFq49tucHCFGUloaQgpx_8llzA2e6de/view?usp=sharing',
-                        'result'      => 'CGPA: 3.95/5.00'
-                    ],
-                    [
-                        'title'       => lang('Certifications.data.mba'),
-                        'institution' => lang('Certifications.data.australia'),
-                        'country'     => 'au',
-                    ],
-                    [
-                        'title'       => 'Foundations of Computation Thinking and Programming',
-                        'institution' => lang('Certifications.data.nanyang-technological-university'),
-                        'country'     => 'sg',
-                        'date'        => ['2024-04-02'],
-                        'certificate' => 'https://drive.google.com/file/d/1-CUDwSjYyGIIhzRLejIrGV4gdb6u2HCz/view?usp=sharing',
-                        'transcript'  => 'https://drive.google.com/file/d/1-CKqDhytzI3tec5agDCOBhAIRZ7-7HmG/view?usp=sharing',
-                        'result'      => 'P'
-                    ],
-                    [
-                        'title'       => 'AI Foundation',
-                        'institution' => lang('Certifications.data.nanyang-technological-university'),
-                        'country'     => 'sg',
-                        'date'        => ['2024-05-13'],
-                        'certificate' => 'https://drive.google.com/file/d/1-Df0frwNRIXYGKr-vQWeqBDOJTU6GC-A/view?usp=sharing',
-                        'transcript'  => 'https://drive.google.com/file/d/1-G_ZpLFBG0MjANwYxziI_Uq2KRfVEU60/view?usp=sharing',
-                        'result'      => 'A'
-                    ],
-                    [
-                        'title'       => 'Computational Game Theory',
-                        'institution' => lang('Certifications.data.nanyang-technological-university'),
-                        'country'     => 'sg',
-                        'date'        => ['2024-06-11'],
-                        'certificate' => 'https://drive.google.com/file/d/1-FCfU5WHzAA7xrTCcl1nFD09eSpE1ODt/view?usp=sharing',
-                        'transcript'  => 'https://drive.google.com/file/d/1-HRdY91zXTumznLT6gUisef2LQ-Zs8_M/view?usp=sharing',
-                        'result'      => 'A-',
-                    ],
-                    [
-                        'title'       => 'Introduction to Computer Vision',
-                        'institution' => lang('Certifications.data.nanyang-technological-university'),
-                        'country'     => 'sg',
-                        'date'        => ['2024-04-16'],
-                        'certificate' => 'https://drive.google.com/file/d/1-KmSpTwNve4MxNwwfH87B2E-9mJQvWDx/view?usp=sharing',
-                        'transcript'  => 'https://drive.google.com/file/d/1-CWpg04gpDnJT-JUMuM0PVVP7QRg9PMD/view?usp=sharing',
-                        'result'      => 'B',
-                    ]
-                ],
-                'professional' => [
-                    [
-                        'title'       => 'AWS Fundamentals',
-                        'institution' => 'Coursera / AWS',
-                        'country'     => 'us',
-                        'date'        => ['2024-08-18'],
-                        'certificate' => 'https://drive.google.com/file/d/10rcXIhelLxR69IzRz9S7Xgy8esqtRO8-/view?usp=sharing'
-                    ],
-                    [
-                        'title'       => 'AWS Cloud Practitioner Essentials',
-                        'institution' => 'Coursera / AWS',
-                        'country'     => 'us',
-                        'date'        => ['2024-09-09'],
-                        'certificate' => 'https://drive.google.com/file/d/10xufFvuFwHpsnfkcH95oDEhpQpqi1ULs/view?usp=sharing'
-                    ],
-                    [
-                        'title'       => 'Google ProjectManagement',
-                        'institution' => 'Coursera / Google',
-                        'country'     => 'us',
-                        'date'        => ['2024-09-06'],
-                        'certificate' => 'https://drive.google.com/file/d/10awMV64SaHAWuO0upOjSokFS06CcOLn6/view?usp=sharing'
-                    ],
-                    [
-                        'title'       => 'Google AI Essentials',
-                        'institution' => 'Coursera / Google',
-                        'country'     => 'us',
-                        'date'        => ['2024-09-12'],
-                        'certificate' => 'https://drive.google.com/file/d/10jpbZByUaNmu0_s3WfM_zgr1Fb27zCLz/view?usp=sharing'
-                    ],
-                    [
-                        'title'       => 'Google UX Design',
-                        'institution' => 'Coursera / Google',
-                        'country'     => 'us',
-                        'date'        => ['2024-09-24'],
-                        'certificate' => 'https://drive.google.com/file/d/10ouk8JgocsF2Ja2-1rYETea8xWnhzccx/view?usp=sharing'
-                    ],
-                    [
-                        'title'       => 'Google Data Analytics',
-                        'institution' => 'Coursera / Google',
-                        'country'     => 'us',
-                        'date'        => ['2024-10-10'],
-                        'certificate' => 'https://drive.google.com/file/d/10lrFQfwTKMfPK3p3YzQHInBL7FQ3bLSd/view?usp=sharing'
-                    ],
-                    [
-                        'title'       => 'CSM (Certified ScrumMaster)',
-                        'institution' => 'Scrum Alliance',
-                        'country'     => 'us',
-                        'date'        => ['2025-02-09'],
-                        'certificate' => 'https://drive.google.com/file/d/1UX9LUM3Zub8dcc8AFOxrDhXmc20IDti5/view?usp=sharing',
-                        'profile'     => 'https://www.scrumalliance.org/members/1729850'
-                    ],
-                    [
-                        'title'       => 'PSM I (Professional Scrum Master)',
-                        'institution' => 'Scrum.org',
-                        'country'     => 'us',
-                        'date'        => ['2024-10-02'],
-                        'certificate' => 'https://drive.google.com/file/d/1-oclvFtaaWkdJh7IuQ5C7f5u1FW3vX7v/view?usp=sharing',
-                        'profile'     => 'https://www.scrum.org/user/1457291'
-                    ],
-                    [
-                        'title'       => 'PSM II (Professional Scrum Master)',
-                        'institution' => 'Scrum.org',
-                        'date'        => ['2024-11-17'],
-                        'country'     => 'us',
-                        'certificate' => 'https://drive.google.com/file/d/1-pHldM2W9NPDHUZPofa-KlFke5XHUaZx/view?usp=sharing',
-                        'profile'     => 'https://www.scrum.org/user/1457291'
-                    ],
-                    [
-                        'title'       => 'PSM III (Professional Scrum Master)',
-                        'institution' => 'Scrum.org',
-                        'country'     => 'us',
-                    ],
-                    [
-                        'title'       => 'PSM AI (Professional Scrum Master - AI Essentials)',
-                        'institution' => 'Scrum.org',
-                        'country'     => 'us',
-                    ],
-                    [
-                        'title'       => 'PAL (Professional Agile Leadership)',
-                        'institution' => 'Scrum.org',
-                        'country'     => 'us',
-                    ],
-                    [
-                        'title'       => 'PSPO I (Professional Scrum Product Owner)',
-                        'institution' => 'Scrum.org',
-                        'country'     => 'us',
-                        'date'        => ['2024-10-16'],
-                        'certificate' => 'https://drive.google.com/file/d/1-pwoQ_ZiirRcddUA66Q4tv5YT_5Re-Nw/view?usp=sharing',
-                        'profile'     => 'https://www.scrum.org/user/1457291'
-                    ],
-                    [
-                        'title'       => 'PSPO II (Professional Scrum Product Owner)',
-                        'institution' => 'Scrum.org',
-                        'country'     => 'us',
-                        'date'        => ['2025-02-05'],
-                        'certificate' => 'https://drive.google.com/file/d/16RU0OgvyPdeLw8anCE8khn9z8UCKKhRu/view?usp=sharing',
-                        'profile'     => 'https://www.scrum.org/user/1457291'
-                    ],
-                    [
-                        'title'       => 'PSPO III (Professional Scrum Product Owner)',
-                        'institution' => 'Scrum.org',
-                        'country'     => 'us',
-                    ],
-                    [
-                        'title'       => 'PSPO AI (Professional Scrum Product Owner - AI Essentials)',
-                        'institution' => 'Scrum.org',
-                        'country'     => 'us',
-                    ],
-                ],
-                'language'     => [
-                    [
-                        'title'       => $languages[0]['flag'] . ' ' . lang('BusinessCard.language.table.0.0') . ': Test of English Proficiency (CU-TEP)',
-                        'institution' => 'Chulalongkorn University Academic Testing Center',
-                        'country'     => 'th',
-                        'date'        => ['2007-11-04'],
-                        'certificate' => 'https://drive.google.com/file/d/1nlDMxBIC4RE7o0Fi70o009jEd7BSw-EV/view',
-                        'result'      => 'B1',
-                    ],
-                    [
-                        'title'       => $languages[0]['flag'] . ' ' . lang('BusinessCard.language.table.0.0') . ': General English Test (TU-GET)',
-                        'institution' => 'Language Institute, Thammasat University',
-                        'country'     => 'th',
-                        'date'        => ['2010-09-00'],
-                        'certificate' => 'https://drive.google.com/file/d/1MbfI1rGCHA5kVHA4ggB47asY6RXxKoB6/view',
-                        'result'      => 'B2-C1',
-                    ],
-                    [
-                        'title'       => $languages[0]['flag'] . ' ' . lang('BusinessCard.language.table.0.0') . ': EF SET Certificate',
-                        'institution' => 'Education First',
-                        'country'     => 'ch',
-                        'date'        => ['2025-08-08'],
-                        'certificate' => 'https://drive.google.com/file/d/18piWVwM1u3UT2zCmABG8uasEyYcuMHdv/view',
-                        'result'      => 'C2'
-                    ],
-                    [
-                        'title'       => $languages[2]['flag'] . ' ' . lang('BusinessCard.language.table.2.0') . ': ' . lang('Certifications.data.tocfl'),
-                        'institution' => lang('Certifications.data.tocfl-body'),
-                        'country'     => 'tw',
-                    ],
-                    [
-                        'title'       => $languages[3]['flag'] . ' ' . lang('BusinessCard.language.table.3.0') . ': Japanese Beginner Course',
-                        'institution' => 'Tomo Japanese Language School',
-                        'country'     => 'sg',
-                        'date'        => ['2025-09-22'],
-                        'certificate' => 'https://drive.google.com/file/d/1lD7jXK5PMW8M7DS0BmxXCS-aqq_X0GTA/view'
-                    ],
-                    [
-                        'title'       => $languages[3]['flag'] . ' ' . lang('BusinessCard.language.table.3.0') . ': ' . lang('Certifications.data.jlpt'),
-                        'country'     => 'jp',
-                        'institution' => lang('Certifications.data.jlpt-body')
-                    ],
-                ]
-            ];
             $cefr = [
                 'A1' => 'Beginner',
                 'A2' => 'Elementary',
@@ -369,34 +133,34 @@
                 <table id="certifications" class="table table-striped table-hover table-sm mb-5">
                     <thead>
                         <tr>
-                            <th class="text-center"><?= lang('Certifications.table.date') ?></th>
+                            <th style="min-width:125px" class="text-center"><?= lang('Certifications.table.date') ?></th>
                             <th><?= lang('Certifications.table.type') ?></th>
-                            <th><?= lang('Certifications.table.title') ?></th>
+                            <th style="max-width:200px"><?= lang('Certifications.table.title') ?></th>
                             <th><?= lang('Certifications.table.certifying-body') ?></th>
                             <th><?= lang('Certifications.document-type.certificate') ?></th>
                             <th><?= lang('Certifications.table.result') ?></th>
                         </tr>
                     </thead>
                     <tbody>
-                    <?php foreach ($rows as $type => $subtypes) : ?>
-                        <?php foreach ($subtypes as $row) : ?>
-                            <tr <?= (empty($row['certificate']) ? 'class="wishlisted"' : '') ?>>
-                                <td class="text-center small" data-sort="<?= $row['date'][0] ?? '9999-12-31' ?>"><?= !empty($row['date']) ? format_date($row['date'], $locale) : '<i class="fa-solid fa-bullseye"></i>' ?></td>
-                                <td class="text-center"><?= lang('Certifications.data.' . $type) ?></td>
-                                <td style="max-width:200px"><?= $row['title'] ?></td>
-                                <td style="max-width:180px">
-                                    <?= $row['institution'] . (isset($row['country']) ? ', ' . lang('Certifications.country.' . $row['country']) : '') ?>
-                                </td>
-                                <td data-filter="<?= (empty($row['certificate']) ? 'future' : 'completed') ?>">
-                                    <?= !empty($row['certificate']) ? '<a class="btn btn-outline-success btn-xs" href="' . $row['certificate'] . '" target="_blank"><i class="fa-solid fa-file-pdf"></i> ' . lang('Certifications.document-type.certificate') . '</a>' : '' ?>
-                                    <?= !empty($row['transcript']) ? '<a class="btn btn-outline-success btn-xs" href="' . $row['transcript'] . '" target="_blank"><i class="fa-solid fa-file-pdf"></i> ' . lang('Certifications.document-type.transcript') . '</a>' : '' ?>
-                                    <?= !empty($row['profile']) ? '<a class="btn btn-outline-success btn-xs" href="' . $row['profile'] . '" target="_blank"><i class="fa-solid fa-external-link"></i></a>' : '' ?>
-                                </td>
-                                <td class="text-center small">
-                                    <?= @$row['result'] ?>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
+                    <?php foreach ($db_rows as $row) : ?>
+                        <tr <?= (empty($row['certification_link']) ? 'class="wishlisted"' : '') ?>>
+                            <td class="text-center small" data-sort="<?= $row['completed_date'] ?? '9999-12-31' ?>"><?= !empty($row['completed_date']) ? format_date([$row['completed_date']], $locale) : '<i class="fa-solid fa-bullseye"></i>' ?></td>
+                            <td class="text-center"><?= lang('Certifications.data.' . $row['certification_type']) ?></td>
+                            <td><?= $row['certification_title'] ?></td>
+                            <td style="max-width:180px">
+                                <?= $row['institution_name'] ?>
+                                <?= empty($row['institution_native_name']) ? '' : ' <small>(' . $row['institution_native_name'] . ')</small>' ?>
+                                <?= empty($row['country_code']) ? '' : ' - ' . lang('Certifications.country.' . strtolower($row['country_code'])) ?>
+                            </td>
+                            <td data-filter="<?= (empty($row['certification_link']) ? 'future' : 'completed') ?>">
+                                <?= !empty($row['certification_link']) ? '<a class="btn btn-outline-success btn-xs" href="' . $row['certification_link'] . '" target="_blank"><i class="fa-solid fa-file-pdf"></i> ' . lang('Certifications.document-type.certificate') . '</a>' : '' ?>
+                                <?= !empty($row['academic_result_link']) ? '<a class="btn btn-outline-success btn-xs" href="' . $row['academic_result_link'] . '" target="_blank"><i class="fa-solid fa-file-pdf"></i> ' . lang('Certifications.document-type.transcript') . '</a>' : '' ?>
+                                <?= !empty($row['external_link']) ? '<a class="btn btn-outline-success btn-xs" href="' . $row['external_link'] . '" target="_blank"><i class="fa-solid fa-external-link"></i></a>' : '' ?>
+                            </td>
+                            <td class="text-center small">
+                                <?= $row['result_value'] ?>
+                            </td>
+                        </tr>
                     <?php endforeach; ?>
                     </tbody>
                 </table>
@@ -446,7 +210,7 @@
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        let table = new DataTable('#certifications', {paging: false, ordering: true, info: true});
+        let table = new DataTable('#certifications', {paging: false});
         const states = ['all', 'completed', 'future'];
         let currentStateIndex = 0; // Starts at 'all'
         DataTable.ext.search.push(function (settings, data, dataIndex) {

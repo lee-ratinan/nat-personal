@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\CertificationMasterModel;
 use App\Models\JourneyMasterModel;
 use App\Models\JourneyTransportModel;
 use CodeIgniter\Exceptions\PageNotFoundException;
@@ -1365,9 +1366,11 @@ class Home extends BaseController
     public function certifications(): string
     {
         $locale = $this->request->getLocale();
-        $data = [
-            'slug'         => 'certifications',
-            'locale'       => $locale
+        $model  = new CertificationMasterModel();
+        $rows   = $model->retrieveData();
+        $data   = [
+            'locale'  => $locale,
+            'db_rows' => $rows,
         ];
         return view('certifications_2', $data);
     }
