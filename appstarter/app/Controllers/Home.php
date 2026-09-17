@@ -5,6 +5,8 @@ namespace App\Controllers;
 use App\Models\CertificationMasterModel;
 use App\Models\JourneyMasterModel;
 use App\Models\JourneyTransportModel;
+use App\Models\TripLinkModel;
+use App\Models\TripMasterModel;
 use CodeIgniter\Exceptions\PageNotFoundException;
 use CodeIgniter\HTTP\RedirectResponse;
 
@@ -13,6 +15,10 @@ class Home extends BaseController
 
     private array $business_card_languages = ['en', 'th', 'ja', 'zh-TW', 'en-Shaw', 'ko', 'id', 'vi', 'lo', 'es', 'art-x-navi'];
 
+    /**
+     * @deprecated
+     * @var array|array[]
+     */
     private array $trips = [
         [
             'code'      => 'jhb2026',
@@ -1325,6 +1331,7 @@ class Home extends BaseController
         // DATA
         $model      = new JourneyTransportModel();
         $model2     = new JourneyMasterModel();
+        $model3     = new TripMasterModel();
         // Count everything that departs before end of today
         $end_today  = date(DATE_FORMAT_DB) . ' 23:59:59';
         $raw_data   = $model->where('journey_status', 'as_planned')->where('departure_date_time <=', $end_today)->findAll();
@@ -1342,10 +1349,11 @@ class Home extends BaseController
         foreach ($countries as $country) {
             $country_cnt[$country['country_code']] = $country['country_count'];
         }
-        $data   = [
+        $galleries = $model3->getGalleries($locale);
+        $data      = [
             'slug'                 => 'personal-life',
             'locale'               => $locale,
-            'galleries'            => $this->trips,
+            'galleries'            => $galleries,
             'bucket_lists'         => $this->bucket_lists,
             'bucket_lists_to_fill' => $this->bucket_lists_to_fill,
             'flight_cnt'           => $flight_cnt,
