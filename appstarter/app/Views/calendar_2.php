@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title><?= lang('Home.calendar') ?> - lee.ratinan.com</title>
+    <title><?= lang('Home.calendar') ?> - <?= lang('Home.system.website-name') ?></title>
     <meta name="description" content="<?= lang('Home.system.seo.description') ?>">
     <meta name="keywords" content="<?= lang('Home.system.seo.keywords') ?>">
     <meta name="author" content="<?= lang('Home.system.seo.author') ?>">
@@ -67,9 +67,9 @@
     </script>
 </head>
 <body class="<?= $locale ?>">
-<div class="container">
-    <div class="row mt-5">
-        <div class="col">
+<div class="container" style="max-width:800px;">
+    <div class="row my-5">
+        <div class="col mb-5">
             <p class="small text-end">
                 <i class="fa-solid fa-language me-3"></i>
                 <a class="btn btn-<?= 'en' == $locale ? '' : 'outline-' ?>success btn-xs" href="<?= base_url('en/calendar') ?>">English</a>
@@ -90,6 +90,7 @@
             </iframe>
         </div>
     </div>
+    <?php $slug="calendar"; include_once "_footer_menu.php"; ?>
 </div>
 </body>
 </html>

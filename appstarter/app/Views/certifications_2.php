@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title><?= lang('Certifications.title') ?> - lee.ratinan.com</title>
+    <title><?= lang('Certifications.title') ?> - <?= lang('Home.system.website-name') ?></title>
     <meta name="description" content="<?= lang('Home.system.seo.description') ?>">
     <meta name="keywords" content="<?= lang('Home.system.seo.keywords') ?>">
     <meta name="author" content="<?= lang('Home.system.seo.author') ?>">
@@ -206,6 +206,7 @@
             <p class="small text-end">Updated: 14 Sep 2026</p>
         </div>
     </div>
+    <?php $slug="certifications"; include_once "_footer_menu.php"; ?>
 </div>
 </body>
 <script>
