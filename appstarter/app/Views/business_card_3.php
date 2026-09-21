@@ -74,9 +74,12 @@
     </script>
 </head>
 <body class="<?= $locale ?>">
-<div class="container">
-    <div class="row mt-5">
-        <div class="col">
+<div class="container" style="max-width:800px;">
+    <div class="row">
+        <div class="col-12">
+            <img src="<?= base_url('assets/img/business-card-hero.webp') ?>" class="img-fluid" alt="Business Card">
+        </div>
+        <div class="col-12 mt-5">
             <p class="small text-end">
                 <i class="fa-solid fa-language me-3"></i>
                 <a class="btn btn-<?= 'en' == $locale ? '' : 'outline-' ?>success btn-xs" href="<?= base_url('en/business-card') ?>">English</a>
