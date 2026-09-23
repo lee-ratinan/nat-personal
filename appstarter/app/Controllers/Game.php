@@ -1,0 +1,289 @@
+<?php
+
+namespace App\Controllers;
+
+class Game extends BaseController
+{
+
+    public function index(): string
+    {
+        return view('game/index');
+    }
+
+    // SCRUM
+
+    public function scrum(): string
+    {
+        return view('game/scrum');
+    }
+
+    // JAPANESE
+
+    /**
+     * @param array $types
+     * @return array
+     */
+    private function japaneseRetrieveCharacters(array $types): array
+    {
+        $characters = [
+            'hiragana' => [
+                'a'  =>  ['a'   => 'あ', 'i' => 'い', 'u' => 'う', 'e' => 'え', 'o' => 'お'],
+                'ka' =>  ['ka'  => 'か', 'ki' => 'き', 'ku' => 'く', 'ke' => 'け', 'ko' => 'こ'],
+                'sa' =>  ['sa'  => 'さ', 'shi' => 'し', 'su' => 'す', 'se' => 'せ', 'so' => 'そ'],
+                'ta' =>  ['ta'  => 'た', 'chi' => 'ち', 'tsu' => 'つ', 'te' => 'て', 'to' => 'と'],
+                'na' =>  ['na'  => 'な', 'ni' => 'に', 'nu' => 'ぬ', 'ne' => 'ね', 'no' => 'の'],
+                'ha' =>  ['ha'  => 'は', 'hi' => 'ひ', 'fu' => 'ふ', 'he' => 'へ', 'ho' => 'ほ'],
+                'ma' =>  ['ma'  => 'ま', 'mi' => 'み', 'mu' => 'む', 'me' => 'め', 'mo' => 'も'],
+                'ya' =>  ['ya'  => 'や', 'yu' => 'ゆ', 'yo' => 'よ'],
+                'ra' =>  ['ra'  => 'ら', 'ri' => 'り', 'ru' => 'る', 're' => 'れ', 'ro' => 'ろ'],
+                'wa' =>  ['wa'  => 'わ', 'wo' => 'を'],
+                'n'  =>  ['n'   => 'ん'],
+                'ga' =>  ['ga'  => 'が', 'gi' => 'ぎ', 'gu' => 'ぐ', 'ge' => 'げ', 'go' => 'ご'],
+                'za' =>  ['za'  => 'ざ', 'ji' => 'じ', 'zu' => 'ず', 'ze' => 'ぜ', 'zo' => 'ぞ'],
+                'da' =>  ['da'  => 'だ', 'ji' => 'ぢ', 'zu' => 'づ', 'de' => 'で', 'do' => 'ど'],
+                'ba' =>  ['ba'  => 'ば', 'bi' => 'び', 'bu' => 'ぶ', 'be' => 'べ', 'bo' => 'ぼ'],
+                'pa' =>  ['pa'  => 'ぱ', 'pi' => 'ぴ', 'pu' => 'ぷ', 'pe' => 'ぺ', 'po' => 'ぽ'],
+                'kya' => ['kya' => 'きゃ', 'kyu' => 'きゅ', 'kyo' => 'きょ'],
+                'sha' => ['sha' => 'しゃ', 'shu' => 'しゅ', 'sho' => 'しょ'],
+                'cha' => ['cha' => 'ちゃ', 'chu' => 'ちゅ', 'cho' => 'ちょ'],
+                'nya' => ['nya' => 'にゃ', 'nyu' => 'にゅ', 'nyo' => 'にょ'],
+                'hya' => ['hya' => 'ひゃ', 'hyu' => 'ひゅ', 'hyo' => 'ひょ'],
+                'mya' => ['mya' => 'みゃ', 'myu' => 'みゅ', 'myo' => 'みょ'],
+                'rya' => ['rya' => 'りゃ', 'ryu' => 'りゅ', 'ryo' => 'りょ'],
+                'gya' => ['gya' => 'ぎゃ', 'gyu' => 'ぎゅ', 'gyo' => 'ぎょ'],
+                'ja'  => ['ja'  => 'じゃ', 'ju'  => 'じゅ', 'jo'  => 'じょ'],
+                'bya' => ['bya' => 'びゃ', 'byu' => 'びゅ', 'byo' => 'びょ'],
+                'pya' => ['pya' => 'ぴゃ', 'pyu' => 'ぴゅ', 'pyo' => 'ぴょ'],
+            ],
+            'katakana' => [
+                'a'  =>  ['a'   => 'ア', 'i' => 'イ', 'u' => 'ウ', 'e' => 'エ', 'o' => 'オ'],
+                'ka' =>  ['ka'  => 'カ', 'ki' => 'キ', 'ku' => 'ク', 'ke' => 'ケ', 'ko' => 'コ'],
+                'sa' =>  ['sa'  => 'サ', 'shi' => 'シ', 'su' => 'ス', 'se' => 'セ', 'so' => 'ソ'],
+                'ta' =>  ['ta'  => 'タ', 'chi' => 'チ', 'tsu' => 'ツ', 'te' => 'テ', 'to' => 'ト'],
+                'na' =>  ['na'  => 'ナ', 'ni' => 'ニ', 'nu' => 'ヌ', 'ne' => 'ネ', 'no' => 'ノ'],
+                'ha' =>  ['ha'  => 'ハ', 'hi' => 'ヒ', 'fu' => 'フ', 'he' => 'ヘ', 'ho' => 'ホ'],
+                'ma' =>  ['ma'  => 'マ', 'mi' => 'ミ', 'mu' => 'ム', 'me' => 'メ', 'mo' => 'モ'],
+                'ya' =>  ['ya'  => 'ヤ', 'yu' => 'ユ', 'yo' => 'ヨ'],
+                'ra' =>  ['ra'  => 'ラ', 'ri' => 'リ', 'ru' => 'ル', 're' => 'レ', 'ro' => 'ロ'],
+                'wa' =>  ['wa'  => 'ワ', 'wo' => 'ヲ'],
+                'n'  =>  ['n'   => 'ン'],
+                'ga' =>  ['ga'  => 'ガ', 'gi' => 'ギ', 'gu' => 'グ', 'ge' => 'ゲ', 'go' => 'ゴ'],
+                'za' =>  ['za'  => 'ザ', 'ji' => 'ジ', 'zu' => 'ズ', 'ze' => 'ゼ', 'zo' => 'ゾ'],
+                'da' =>  ['da'  => 'ダ', 'ji' => 'ヂ', 'zu' => 'ジ', 'de' => 'デ', 'do' => 'ド'],
+                'ba' =>  ['ba'  => 'バ', 'bi' => 'ビ', 'bu' => 'ブ', 'be' => 'ベ', 'bo' => 'ボ'],
+                'pa' =>  ['pa'  => 'パ', 'pi' => 'ピ', 'pu' => 'プ', 'pe' => 'ペ', 'po' => 'ポ'],
+                'kya' => ['kya' => 'キャ', 'kyu' => 'キュ', 'kyo' => 'キョ'],
+                'sha' => ['sha' => 'シャ', 'shu' => 'シュ', 'sho' => 'ショ'],
+                'cha' => ['cha' => 'チャ', 'chu' => 'チュ', 'cho' => 'チョ'],
+                'nya' => ['nya' => 'ニャ', 'nyu' => 'ニュ', 'nyo' => 'ニョ'],
+                'hya' => ['hya' => 'ヒャ', 'hyu' => 'ヒュ', 'hyo' => 'ヒョ'],
+                'mya' => ['mya' => 'ミャ', 'myu' => 'ミュ', 'myo' => 'ミョ'],
+                'rya' => ['rya' => 'リャ', 'ryu' => 'リュ', 'ryo' => 'リョ'],
+                'gya' => ['gya' => 'ギャ', 'gyu' => 'ギュ', 'gyo' => 'ギョ'],
+                'ja'  => ['ja'  => 'ジャ', 'ju'  => 'ジュ', 'jo'  => 'ジョ'],
+                'bya' => ['bya' => 'ビャ', 'byu' => 'ビュ', 'byo' => 'ビョ'],
+                'pya' => ['pya' => 'ピャ', 'pyu' => 'ピュ', 'pyo' => 'ピョ'],
+            ]
+        ];
+        $result_set = [];
+        foreach ($types as $type) {
+            $result_set[$type] = $characters[$type];
+        }
+        return $result_set;
+    }
+
+    private function japaneseFlattenSet(array $character_sets): array
+    {
+        $final_set = [];
+        foreach ($character_sets as $letters) {
+            foreach ($letters as $romaji => $kana) {
+                $final_set[] = [$romaji, $kana];
+            }
+        }
+        return $final_set;
+    }
+
+    private function romajiPickKana(array $character_sets, string $kana_type): array
+    {
+        $kana_set = $this->japaneseFlattenSet($character_sets[$kana_type]);
+        $init_set = [];
+        while (count($init_set) < 15) {
+            $index = rand(0, 103);
+            if (!in_array($index, $init_set)) {
+                $init_set[] = $index;
+            }
+        }
+        $question_set = [];
+        foreach ($init_set as $index) {
+            $answer_choices = [];
+            $answer_choices[] = $kana_set[$index][1];
+            while (count($answer_choices) < 5) {
+                $x = rand(0, 103);
+                if (!in_array($kana_set[$x][1], $answer_choices)) {
+                    $answer_choices[] = $kana_set[$x][1];
+                }
+            }
+            shuffle($answer_choices);
+            $question_set[] = [
+                'question' => $kana_set[$index][0],
+                'answer'   => $kana_set[$index][1],
+                'choices'  => $answer_choices
+            ];
+        }
+        return $question_set;
+    }
+
+    private function romajiTypeKana(array $character_sets, string $kana_type): array
+    {
+        $kana_set = $this->japaneseFlattenSet($character_sets[$kana_type]);
+        $init_set = [];
+        while (count($init_set) < 15) {
+            $index = rand(0, 103);
+            if (!in_array($index, $init_set)) {
+                $init_set[] = $index;
+            }
+        }
+        $question_set = [];
+        foreach ($init_set as $index) {
+            $question_set[] = [
+                'question' => $kana_set[$index][0],
+                'answer'   => $kana_set[$index][1],
+            ];
+        }
+        return $question_set;
+    }
+
+    private function kanaPickRomaji(array $character_sets, string $kana_type): array
+    {
+        if ('all' == $kana_type) {
+            $set1 = $this->japaneseFlattenSet($character_sets['hiragana']);
+            $set2 = $this->japaneseFlattenSet($character_sets['katakana']);
+            $kana_set = array_merge($set1, $set2);
+        } else {
+            $kana_set = $this->japaneseFlattenSet($character_sets[$kana_type]);
+        }
+        $kana_count = count($kana_set)-1;
+        $init_set = [];
+        while (count($init_set) < 15) {
+            $index = rand(0, $kana_count);
+            if (!in_array($index, $init_set)) {
+                $init_set[] = $index;
+            }
+        }
+        $question_set = [];
+        foreach ($init_set as $index) {
+            $answer_choices = [];
+            $answer_choices[] = $kana_set[$index][0];
+            while (count($answer_choices) < 5) {
+                $x = rand(0, $kana_count);
+                if (!in_array($kana_set[$x][0], $answer_choices)) {
+                    $answer_choices[] = $kana_set[$x][0];
+                }
+            }
+            shuffle($answer_choices);
+            $question_set[] = [
+                'question' => $kana_set[$index][1],
+                'answer'   => $kana_set[$index][0],
+                'choices'  => $answer_choices
+            ];
+        }
+        return $question_set;
+    }
+
+    private function kanaTypeRomaji(array $character_sets, string $kana_type): array
+    {
+        if ('all' == $kana_type) {
+            $set1 = $this->japaneseFlattenSet($character_sets['hiragana']);
+            $set2 = $this->japaneseFlattenSet($character_sets['katakana']);
+            $kana_set = array_merge($set1, $set2);
+        } else {
+            $kana_set = $this->japaneseFlattenSet($character_sets[$kana_type]);
+        }
+        $kana_count = count($kana_set)-1;
+        $init_set = [];
+        while (count($init_set) < 15) {
+            $index = rand(0, $kana_count);
+            if (!in_array($index, $init_set)) {
+                $init_set[] = $index;
+            }
+        }
+        $question_set = [];
+        foreach ($init_set as $index) {
+            $question_set[] = [
+                'question' => $kana_set[$index][1],
+                'answer'   => $kana_set[$index][0],
+            ];
+        }
+        return $question_set;
+    }
+
+    /**
+     * Game menu
+     * @return string
+     */
+    public function japaneseHome(): string
+    {
+        return view('game/japanese_home');
+    }
+
+    /**
+     * Review all kana
+     * @return string
+     */
+    public function japaneseReview(): string
+    {
+        $data = [
+            'characters' => $this->japaneseRetrieveCharacters(['hiragana', 'katakana'])
+        ];
+        return view('game/japanese_review', $data);
+    }
+
+    /**
+     * Rules!
+     * @param string $game
+     * @param string $kana_set
+     * @return string
+     */
+    public function japaneseEntry(string $game, string $kana_set): string
+    {
+        $data = [
+            'game'     => $game,
+            'kana_set' => $kana_set,
+        ];
+        return view('game/japanese_entry', $data);
+    }
+
+    /**
+     * Game!
+     * @param string $game
+     * @param string $kana_set
+     * @return string
+     */
+    public function japaneseGame(string $game, string $kana_set): string
+    {
+        $types = [$kana_set];
+        if ('all' == $kana_set) {
+            $types = ['hiragana', 'katakana'];
+        }
+        $character_sets = $this->japaneseRetrieveCharacters($types);
+        $game_data      = [];
+        $format         = 'type';
+        if ('romaji-pick-kana' == $game) {
+            $game_data = $this->romajiPickKana($character_sets, $kana_set);
+            $format    = 'pick';
+        } else if ('romaji-type-kana' == $game) {
+            $game_data = $this->romajiTypeKana($character_sets, $kana_set);
+        } else if ('kana-pick-romaji' == $game) {
+            $game_data = $this->kanaPickRomaji($character_sets, $kana_set);
+            $format    = 'pick';
+        } else if ('kana-type-romaji' == $game) {
+            $game_data = $this->kanaTypeRomaji($character_sets, $kana_set);
+        }
+        $data = [
+            'game_name' => $game,
+            'game_data' => $game_data,
+            'format'    => $format,
+        ];
+        return view('game/japanese_game', $data);
+    }
+}

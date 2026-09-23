@@ -16,6 +16,14 @@ $routes->get('trip', 'Home::trip');
 $routes->get('trip/(:any)', 'Home::trip_data/$1');
 $routes->get('blog', 'Home::blog');
 $routes->get('blog-post/(:num)/(:any)', 'Home::blog_post/$1/$2');
+// game
+$routes->get('game', 'Game::index');
+$routes->get('game/scrum', 'Game::scrum');
+$routes->get('game/japanese', 'Game::japaneseHome');
+$routes->get('game/japanese/review', 'Game::japaneseReview');
+$routes->get('game/japanese/entry/(:any)/(:any)', 'Game::japaneseEntry/$1/$2');
+$routes->get('game/japanese/game/(:any)/(:any)', 'Game::japaneseGame/$1/$2');
+// locale
 $routes->get('{locale}/personal-life', 'Home::personal_life');
 $routes->get('{locale}/portfolio', 'Home::portfolio');
 $routes->get('{locale}/certifications', 'Home::certifications');

@@ -50,7 +50,7 @@
         .wp-post__title, .wp-post__meta, .wp-post__excerpt {font-family: Ubuntu, 'Noto Sans Thai', 'Noto Sans JP', 'Noto Sans TC', sans-serif !important;}
     </style>
 </head>
-<body class="calendar-page <?= $locale ?>">
+<body class="<?= $locale ?>">
 <?php include "_header.php"; ?>
 <main class="main mt-5 pt-5">
     <section id="about" class="about section">

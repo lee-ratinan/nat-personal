@@ -53,7 +53,7 @@
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
 </head>
-<body class="calendar-page <?= $locale ?>">
+<body class="<?= $locale ?>">
 <?php include "_header.php"; ?>
 <main class="main mt-5 pt-5">
     <section id="about" class="about section">
