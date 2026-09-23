@@ -167,13 +167,13 @@
                         <div class="col-lg-3 col-md-4 col-6 portfolio-item isotope-item <?= ($i < 12 ? 'filter-first-twelve' : '') ?> <?= 'filter-' . $gallery['filter'] ?>">
                             <div class="portfolio-card">
                                 <div class="portfolio-image-container">
-                                    <img src="<?= base_url('assets/img/gallery/' . $gallery['code'] . '.jpg') ?>" alt="<?= $gallery['title'] ?>" class="img-fluid" loading="lazy">
+                                    <img src="<?= base_url('assets/img/gallery/' . $gallery['code'] . '.webp') ?>" alt="<?= $gallery['title'] ?>" class="img-fluid" loading="lazy">
                                     <div class="portfolio-overlay">
                                         <div class="portfolio-info">
                                             <h4><?= $gallery['title'] ?></h4>
                                         </div>
                                         <div class="portfolio-actions">
-                                            <a href="<?= base_url('assets/img/gallery/' . $gallery['code'] . '.jpg') ?>" class="glightbox portfolio-link" data-glightbox="title:<?= $gallery['title'] ?>;description: <i class='bi bi-geo-alt'></i> <?= implode(get_comma($locale), $locations) ?> <i class='bi bi-calendar-heart'></i> <?= $date_str ?> <?= (!empty($gallery['detail']) ? '<br>' . $gallery['detail'] : '')?>"><i class="bi bi-plus-lg"></i></a>
+                                            <a href="<?= base_url('assets/img/gallery/' . $gallery['code'] . '.webp') ?>" class="glightbox portfolio-link" data-glightbox="title:<?= $gallery['title'] ?>;description: <i class='bi bi-geo-alt'></i> <?= implode(get_comma($locale), $locations) ?> <i class='bi bi-calendar-heart'></i> <?= $date_str ?> <?= (!empty($gallery['detail']) ? '<br>' . $gallery['detail'] : '')?>"><i class="bi bi-plus-lg"></i></a>
                                             <?php if (!empty($gallery['link'])) : ?>
                                                 <a href="<?= str_replace('[[LOCALE]]', $locale, $gallery['link']) ?>" class="portfolio-details" target="_blank"><i class="bi bi-arrow-right"></i></a>
                                             <?php endif ?>
@@ -259,13 +259,13 @@
                         <div class="col-lg-3 col-md-4 col-6 portfolio-item isotope-item <?= ($i < 12 ? 'filter-first-twelve' : '') ?> <?= 'filter-' . $item['filter'] ?>">
                             <div class="portfolio-card">
                                 <div class="portfolio-image-container">
-                                    <img src="<?= base_url('assets/img/bucket-lists/' . $item['code'] . '.jpg') ?>" alt="<?= $item['title'] ?>" class="img-fluid" loading="lazy">
+                                    <img src="<?= base_url('assets/img/bucket-lists/' . $item['code'] . '.webp') ?>" alt="<?= $item['title'] ?>" class="img-fluid" loading="lazy">
                                     <div class="portfolio-overlay">
                                         <div class="portfolio-info">
                                             <h4><?= $item['title'] ?></h4>
                                         </div>
                                         <div class="portfolio-actions">
-                                            <a href="<?= base_url('assets/img/bucket-lists/' . $item['code'] . '.jpg') ?>" class="glightbox portfolio-link" data-glightbox="title:<?= lang('PersonalLife.sections.bucket-list.filters.' . $item['filter']) ?> / <?= $item['title'] ?>; description: <i class='bi bi-geo-alt'></i> <?= implode(get_comma($locale), $locations) ?> <i class='bi bi-calendar-heart'></i> <?= $date_str ?>"><i class="bi bi-plus-lg"></i></a>
+                                            <a href="<?= base_url('assets/img/bucket-lists/' . $item['code'] . '.webp') ?>" class="glightbox portfolio-link" data-glightbox="title:<?= lang('PersonalLife.sections.bucket-list.filters.' . $item['filter']) ?> / <?= $item['title'] ?>; description: <i class='bi bi-geo-alt'></i> <?= implode(get_comma($locale), $locations) ?> <i class='bi bi-calendar-heart'></i> <?= $date_str ?>"><i class="bi bi-plus-lg"></i></a>
                                             <?php if (!empty($item['link'])) : ?>
                                                 <a href="<?= str_replace('[[LOCALE]]', $locale, $item['link']) ?>" class="portfolio-details" target="_blank"><i class="bi bi-arrow-right"></i></a>
                                             <?php endif ?>
@@ -301,13 +301,13 @@
                             <div class="col-lg-3 col-md-4 col-6 portfolio-item isotope-item <?= 'filter-' . $category_code ?>">
                                 <div class="portfolio-card">
                                     <div class="portfolio-image-container">
-                                        <img src="<?= base_url('assets/img/bucket-lists/' . $code . '.jpg') ?>" alt="<?= $item['title'] ?>" class="img-fluid" loading="lazy">
+                                        <img src="<?= base_url('assets/img/bucket-lists/' . $code . '.webp') ?>" alt="<?= $item['title'] ?>" class="img-fluid" loading="lazy">
                                         <div class="portfolio-overlay">
                                             <div class="portfolio-info">
                                                 <h4><?= $item['title'] ?></h4>
                                             </div>
                                             <div class="portfolio-actions">
-                                                <a href="<?= base_url('assets/img/bucket-lists/' . $code . '.jpg') ?>" class="glightbox portfolio-link" data-glightbox="title:<?= lang('PersonalLife.sections.bucket-list.filters.' . $category_code) ?> / <?= $item['title'] ?>;"><i class="bi bi-plus-lg"></i></a>
+                                                <a href="<?= base_url('assets/img/bucket-lists/' . $code . '.webp') ?>" class="glightbox portfolio-link" data-glightbox="title:<?= lang('PersonalLife.sections.bucket-list.filters.' . $category_code) ?> / <?= $item['title'] ?>;"><i class="bi bi-plus-lg"></i></a>
                                             </div>
                                         </div>
                                     </div>
