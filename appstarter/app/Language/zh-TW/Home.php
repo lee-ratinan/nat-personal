@@ -230,4 +230,5 @@ return [
     'password'       => '密碼',
     'password-error' => '密碼錯誤',
     'submit'         => '提交',
+    'game'           => '遊戲中心',
 ];

@@ -230,4 +230,5 @@ return [
     'password'       => '𐑐𐑭𐑕𐑢𐑻𐑛',
     'password-error' => '𐑐𐑭𐑕𐑢𐑻𐑛 𐑦𐑟 𐑦𐑯𐑒𐑼𐑧𐑒𐑑',
     'submit'         => '𐑕𐑩𐑚𐑥𐑦𐑑',
+    'game'           => '𐑜𐑱𐑥 𐑕𐑧𐑯𐑑𐑼',
 ];

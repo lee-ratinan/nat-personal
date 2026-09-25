@@ -7,15 +7,18 @@
                 </a>
                 <p><?= lang('Home.system.footer-msg') ?></p>
                 <p>
-                    <i class="bi bi-calendar-week"></i>
+                    <i class="bi bi-calendar-week"></i>&nbsp;
                     <a href="<?= base_url($locale . '/calendar') ?>"><?= lang('Home.calendar') ?></a>
                     &nbsp; &nbsp;
-                    <i class="bi bi-person-vcard"></i>
+                    <i class="bi bi-person-vcard"></i>&nbsp;
                     <a href="<?= base_url($locale . '/business-card') ?>"><?= lang('BusinessCard.title') ?></a>
                 </p>
                 <p>
-                    <i class="bi bi-award"></i>
+                    <i class="bi bi-award"></i>&nbsp;
                     <a href="<?= base_url($locale . '/certifications') ?>"><?= lang('Certifications.title') ?></a>
+                    &nbsp; &nbsp;
+                    <i class="bi bi-controller"></i>&nbsp;
+                    <a href="<?= base_url('/game') ?>"><?= lang('Home.game') ?></a>
                 </p>
             </div>
             <div class="col-lg-3 col-6 footer-links">

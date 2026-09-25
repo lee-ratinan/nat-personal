@@ -230,4 +230,5 @@ return [
     'password'       => 'Password',
     'password-error' => 'Password is incorrect',
     'submit'         => 'Submit',
+    'game'           => 'Game Center',
 ];

@@ -19,6 +19,7 @@
             <a href="<?= ('calendar' == $slug ? '#' : base_url($locale . '/calendar')) ?>"><?= lang('Home.calendar') ?></a>
             <a href="<?= ('business-card' == $slug ? '#' : base_url($locale . '/business-card')) ?>"><?= lang('BusinessCard.title') ?></a>
             <a href="<?= ('certifications' == $slug ? '#' : base_url($locale . '/certifications')) ?>"><?= lang('Certifications.title') ?></a>
+            <a href="<?= ('game' == $slug ? '#' : base_url('/game')) ?>"><?= lang('Home.game') ?></a>
         </p>
     </div>
 </div>
