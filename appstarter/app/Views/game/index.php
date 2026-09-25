@@ -23,6 +23,14 @@
         applySystemTheme(colorSchemeQuery);
         colorSchemeQuery.addEventListener('change', applySystemTheme);
     </script>
+    <style>
+        a.game {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -30,14 +38,22 @@
       <div class="col-12">
           <h1>Game Center</h1>
       </div>
-      <div class="col-6 col-md-4 col-lg-3">
-          <a href="<?= base_url('game/scrum') ?>">
-              <img src="<?= base_url('assets/img/game/scrum.webp') ?>" alt="Scrum Game">
+      <div class="col-4 col-md-3 col-lg-2 p-3">
+          <a class="game" href="<?= base_url('game/scrum') ?>">
+              <img class="img-fluid rounded-5" src="<?= base_url('assets/img/game/scrum.webp') ?>" alt="Scrum Game">
+              Scrum Game
           </a>
       </div>
-      <div class="col-6 col-md-4 col-lg-3">
-          <a href="<?= base_url('game/japanese') ?>">
-              <img src="<?= base_url('assets/img/game/japanese.webp') ?>" alt="Japanese Game">
+      <div class="col-4 col-md-3 col-lg-2 p-3">
+          <a class="game" href="<?= base_url('game/japanese') ?>">
+              <img class="img-fluid rounded-5" src="<?= base_url('assets/img/game/japanese.webp') ?>" alt="Japanese Game">
+              Japanese Game
+          </a>
+      </div>
+      <div class="col-4 col-md-3 col-lg-2 p-3">
+          <a class="game" href="<?= base_url('game/shavian') ?>">
+              <img class="img-fluid rounded-5" src="<?= base_url('assets/img/game/shavian.webp') ?>" alt="Shavian Game">
+              Shavian Game
           </a>
       </div>
   </div>

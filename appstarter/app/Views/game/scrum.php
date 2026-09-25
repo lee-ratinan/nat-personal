@@ -171,6 +171,8 @@
             <p class="text-xs text-slate-500 mt-6">
                 <i class="fa-solid fa-circle-info mr-1"></i> Based on the official Scrum Guide (2020). Fill in standard terms in any box.
             </p>
+            <br/>
+            <p><a href="<?= base_url('game') ?>">Back to Game Center</a></p>
         </div>
     </section>
 
@@ -482,6 +484,10 @@
                 <i class="fa-solid fa-rotate-right"></i>
                 <span>Try Again</span>
             </button>
+            <br/>
+            <br/>
+            <br/>
+            <p><a href="<?= base_url('game') ?>">Back to Game Center</a></p>
         </div>
 
         <!-- DETAILED REVIEW SECTION (STACKED BELOW TOP SCORE) -->
