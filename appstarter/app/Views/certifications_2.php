@@ -142,6 +142,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                    <?php $max_date = max(array_column($db_rows, 'completed_date')); ?>
                     <?php foreach ($db_rows as $row) : ?>
                         <tr <?= (empty($row['certification_link']) ? 'class="wishlisted"' : '') ?>>
                             <td class="text-center small" data-sort="<?= $row['completed_date'] ?? '9999-12-31' ?>"><?= !empty($row['completed_date']) ? format_date([$row['completed_date']], $locale) : '<i class="fa-solid fa-bullseye"></i>' ?></td>
@@ -203,7 +204,7 @@
         <div class="col-12 mb-5">
             <?php include "_professional_certifications.php"; ?>
             <hr/>
-            <p class="small text-end">Updated: 14 Sep 2026</p>
+            <p class="small text-end">Updated: <?= date('d M Y', strtotime($max_date)) ?></p>
         </div>
     </div>
     <?php $slug="certifications"; include_once "_footer_menu.php"; ?>

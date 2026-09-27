@@ -14,7 +14,7 @@
             <a href="<?= base_url($locale) ?>"><?= lang('Home.sections.home.title') ?></a>
             <a href="<?= base_url($locale . '/personal-life') ?>"><?= lang('Home.system.pages.personal-life') ?></a>
             <a href="<?= base_url($locale . '/portfolio') ?>"><?= lang('Home.sections.portfolio.title') ?></a>
-            <a href="<?= base_url($locale . '/writing') ?>"><?= lang('Writing.title') ?></a>
+<!--            <a href="--><?php //= base_url($locale . '/writing') ?><!--">--><?php //= lang('Writing.title') ?><!--</a>-->
             <a href="<?= base_url($locale . '/blog') ?>"><?= lang('Home.system.pages.blog') ?></a>
             <a href="<?= ('calendar' == $slug ? '#' : base_url($locale . '/calendar')) ?>"><?= lang('Home.calendar') ?></a>
             <a href="<?= ('business-card' == $slug ? '#' : base_url($locale . '/business-card')) ?>"><?= lang('BusinessCard.title') ?></a>

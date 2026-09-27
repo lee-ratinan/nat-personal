@@ -1398,6 +1398,20 @@ class Home extends BaseController
     }
 
     /**
+     * Portfolio page
+     * @return string
+     */
+    public function portfolio2(): string
+    {
+        $locale = $this->request->getLocale();
+        $data   = [
+            'slug'   => 'portfolio',
+            'locale' => $locale
+        ];
+        return view('portfolio_2', $data);
+    }
+
+    /**
      * Writing page
      * @return string
      */

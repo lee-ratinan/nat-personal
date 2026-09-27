@@ -145,13 +145,19 @@
             </ul>
             <hr/>
         </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
         <div class="col-12 mb-5">
             <?php include "_professional_certifications.php"; ?>
             <hr/>
             <p class="small text-end">Updated: 7 Sep 2026</p>
         </div>
+        <div class="col-12">
+            <?php $slug="business-card"; include_once "_footer_menu.php"; ?>
+        </div>
     </div>
-    <?php $slug="business-card"; include_once "_footer_menu.php"; ?>
 </div>
 </body>
 </html>
