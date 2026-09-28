@@ -31,7 +31,7 @@ $cert_list = [
     <?php foreach ($cert_list as $list) : ?>
         <div class="rounded-1 p-3 text-center cert-badge">
             <a href="<?= $list[3] ?>" target="_blank">
-                <img src="<?= base_url('assets/img/certifications/' . $list[0]) ?>" class="img-fluid" alt="<?= $list[1] ?>"/><br/>
+                <img src="<?= base_url('assets/img/certifications/' . $list[0]) ?>" class="img-fluid" alt="<?= $list[1] ?>" loading="lazy" /><br/>
                 <b><?= $list[1] ?></b><br/>
                 <small><?= $list[2] ?></small>
             </a>
@@ -42,7 +42,7 @@ $cert_list = [
     .credly-badge-container {display: flex;flex-wrap: wrap;justify-content: center;align-items: center;gap: 16px;margin: 0 auto;width: 100%;}
     .credly-badge-container div {max-width: 150px;}
     .credly-badge-container a {text-decoration: none; color: #222;}
-    [data-bs-theme="dark"] .credly-badge-container a {color: #ccc;}
+    [data-bs-theme="dark"] .credly-badge-container a {color: #ccc !important;}
     @media (max-width: 480px) { .credly-badge-container {max-width: 316px;gap: 12px;} }
     @media (min-width: 481px) and (max-width: 768px) { .credly-badge-container {max-width: 482px;} }
     @media (min-width: 769px) and (max-width: 1024px) { .credly-badge-container {max-width: 648px;} }

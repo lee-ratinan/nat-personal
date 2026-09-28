@@ -76,5 +76,42 @@ return [
     'blog'         => [
         'title'     => 'Read My Blog',
         'read-more' => 'Read More'
+    ],
+    // NEW SECTIONS:
+    'contact-me'   => 'Contact Me',
+    'reviews'      => [
+        'title' => 'Reviews'
+    ],
+    'about'        => [
+        'title' => 'About Me'
+    ],
+    'experience'   => [
+        'section-title' => 'Work Experience',
+        'title'         => [
+            'freelance'         => 'Freelance',
+            'tech-lead'         => 'Tech Lead',
+            'it-backend-lead'   => 'IT and Backend Web Lead',
+            'software-engineer' => 'Software Engineer',
+            'programmer'        => 'Programmer'
+        ],
+        'company'       => [
+            'freelance' => 'Freelance'
+        ],
+    ],
+    'school'       => [
+        'section-title' => 'Education',
+        'title'         => [
+            'ntu' => 'Nanyang Technological University',
+            'tu'  => 'Thammasat University'
+        ],
+        'program'       => [
+            'msc' => 'Master of Science (Information Systems)',
+            'bsc' => 'Bachelor of Science (Computer Science)',
+        ]
+    ],
+    'location'     => [
+        'remote'    => 'Remote',
+        'singapore' => 'Singapore',
+        'bangkok'   => 'Bangkok'
     ]
 ];
