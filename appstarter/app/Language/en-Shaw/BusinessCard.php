@@ -3,7 +3,7 @@ return [
     'title'         => '𐑚𐑦𐑟𐑯𐑩𐑕 𐑒𐑸𐑛',
     'name'          => '·𐑮𐑳𐑑𐑦𐑯𐑳𐑯 “𐑯𐑨𐑑” 𐑤𐑰',
     'name2'         => '',
-    'tagline'       => 'MSc, PSM™ I-II, PSPO™ I-II',
+    'tagline'       => 'MSc, PSM AI 𐑦𐑕𐑧𐑯𐑖𐑩𐑤𐑟, PSM I-II, PSPO I-II',
     'dob'           => '𐑚𐑻𐑔 𐑘𐑽: 1989',
     'passport'      => '·𐑑𐑲',
     'residency'     => '·𐑕𐑦𐑙𐑩𐑐𐑹',
@@ -40,6 +40,7 @@ return [
     'certification' => [
         'title' => '𐑕𐑻𐑑𐑦𐑓𐑦𐑒𐑱𐑖𐑩𐑯𐑟',
         'list'  => [
+            'PSM AI 𐑦𐑕𐑧𐑯𐑖𐑩𐑤𐑟',
             'PSM I, II (·𐑐𐑮𐑩𐑓𐑧𐑖𐑩𐑯𐑩𐑤 𐑕𐑒𐑮𐑳𐑥 𐑥𐑭𐑕𐑑𐑼™)',
             'PSPO I, II (·𐑐𐑮𐑩𐑓𐑧𐑖𐑩𐑯𐑩𐑤 𐑕𐑒𐑮𐑳𐑥 𐑐𐑮𐑪𐑛𐑳𐑒𐑑 𐑴𐑯𐑼™)',
             'CSM (·𐑕𐑻𐑑𐑦𐑓𐑲𐑛 𐑕𐑒𐑮𐑳𐑥 𐑥𐑭𐑕𐑑𐑼)',

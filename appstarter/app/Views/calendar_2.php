@@ -35,7 +35,7 @@
     <link rel="alternate" hreflang="ja" href="<?= base_url('ja/calendar') ?>"/>
     <link rel="alternate" hreflang="zh-TW" href="<?= base_url('zh-TW/calendar') ?>"/>
     <link rel="alternate" hreflang="en-Shaw" href="<?= base_url('en-Shaw/calendar') ?>"/>
-    <link rel="alternate" hreflang="x-default" href="<?= base_url('business-card') ?>"/>
+    <link rel="alternate" hreflang="x-default" href="<?= base_url('calendar') ?>"/>
     <link rel="canonical" href="<?= current_url() ?>">
     <style>
         body {

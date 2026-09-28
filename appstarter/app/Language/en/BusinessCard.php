@@ -3,7 +3,7 @@ return [
     'title'         => 'Business Card',
     'name'          => 'Ratinan “Nat” Lee',
     'name2'         => '',
-    'tagline'       => 'MSc, PSM™ I-II, PSPO™ I-II',
+    'tagline'       => 'MSc, PSM AI Essentials, PSM™ I-II, PSPO™ I-II',
     'dob'           => 'Birth Year: 1989',
     'passport'      => 'Thai',
     'residency'     => 'Singapore',
@@ -40,6 +40,7 @@ return [
     'certification' => [
         'title' => 'Certifications',
         'list'  => [
+            'PSM AI Essentials',
             'PSM I, II (Professional Scrum Master™)',
             'PSPO I, II (Professional Scrum product Owner™)',
             'CSM (Certified Scrum Master)',

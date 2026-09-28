@@ -3,7 +3,7 @@ return [
     'title'         => '名片',
     'name'          => '<ruby>李<rt>ㄌㄧˇ</rt>榮<rt>ㄖㄨㄥˊ</rt>欽<rt>ㄑㄧㄣ</rt></ruby>',
     'name2'         => '（NAT）',
-    'tagline'       => '理學碩士、PSM 1，2、PSPO 1，2',
+    'tagline'       => '理學碩士、PSM AI Essentials、PSM 1，2、PSPO 1，2',
     'dob'           => '出生年: 民國78年',
     'passport'      => '泰國',
     'residency'     => '新加坡',
@@ -40,6 +40,7 @@ return [
     'certification' => [
         'title' => '認證',
         'list'  => [
+            'PSM AI Essentials',
             'PSM I, II (Professional Scrum Master™)',
             'PSPO I, II (Professional Scrum product Owner™)',
             'CSM (Certified Scrum Master)',

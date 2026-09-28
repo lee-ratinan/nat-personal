@@ -3,7 +3,7 @@ return [
     'title'         => 'นามบัตร',
     'name'          => 'รตินันท์ “นัท” ลีลางามวงศา',
     'name2'         => '',
-    'tagline'       => 'วท.ม., PSM™ I-II, PSPO™ I-II',
+    'tagline'       => 'วท.ม., PSM AI Essentials, PSM I-II, PSPO I-II',
     'dob'           => 'ปีเกิด: 2532',
     'passport'      => 'ไทย',
     'residency'     => 'สิงคโปร์',
@@ -40,6 +40,7 @@ return [
     'certification' => [
         'title' => 'ประกาศนียบัตรวิชาชีพ',
         'list'  => [
+            'PSM AI Essentials',
             'PSM I, II (Professional Scrum Master™)',
             'PSPO I, II (Professional Scrum product Owner™)',
             'CSM (Certified Scrum Master)',
