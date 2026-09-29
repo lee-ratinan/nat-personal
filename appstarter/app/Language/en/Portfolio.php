@@ -1,9 +1,9 @@
 <?php
 return [
-    'title'        => 'PORTFOLIO',
-    'title-name'   => 'Ratinan “Nat” Lee',
-    'subtitle'     => 'Scrum in Action | My Journey as a Scrum Master, Tech Lead, Project Manager',
-    'intro'        => [
+    'title'          => 'PORTFOLIO',
+    'title-name'     => 'Ratinan “Nat” Lee',
+    'subtitle'       => 'Scrum in Action | My Journey as a Scrum Master, Tech Lead, Project Manager',
+    'intro'          => [
         'name'          => 'Ratinan “Nat” Leela-Ngamwongsa',
         'other-names'   => 'รตินันท์ ลีลางามวงศา (นัท) | 李榮欽 | 力川栄欽 | ·𐑮𐑳𐑑𐑦𐑯𐑳𐑯 𐑤𐑰',
         'nationality'   => 'Nationality: <b>Thai</b>',
@@ -12,16 +12,16 @@ return [
         'linkedin'      => 'LinkedIn:',
         'business-card' => 'Business Card:',
     ],
-    'who-am-i'     => [
+    'who-am-i'       => [
         'title' => 'Who am I?',
         'para'  => 'With <b>{0} years</b> of industry experience—including <b>{1} years</b> leading high-performing development teams in <b>e-Commerce</b> and <b>FinTech</b> — I specialize in driving <b>Agile</b> transformations that deliver high-impact products. A champion of continuous optimization, I combine hands-on technical leadership with advanced governance, backed by <b>PSM</b> II, <b>PSPO</b> II, <b>CSM</b>, Google <b>AI Essentials</b> and Google <b>Project Management</b> certifications. My expertise lies in building resilient cross-functional teams, streamlining workflows, and fostering a collaborative culture that translates complex engineering efforts into tangible business value.'
     ],
-    'para'         => [
+    'para'           => [
         'as-a-scrum-master' => 'As a <b>Scrum Master</b>, I focus on optimizing team dynamics, removing systemic impediments, and expanding cross-functional capabilities. As a <b>Product Owner</b>, I ensure we maximize product value with every sprint. Wearing the <b>Project Manager</b> hat, I balance the project management triangle—aligning scope, time, and cost to deliver predictable outcomes for stakeholders, engineers, and customers alike. I firmly believe that high performance shouldn’t come at the cost of sustainability; I actively manage boundaries to prevent scope creep and eliminate artificial urgency. My ultimate goal is to foster an environment where a team can deliver high-impact products consistently — without burnout.',
         'empowering'        => 'Empowering Teams for Sustainable Excellence',
         'true-leadership'   => 'True leadership is about unlocking potential through structured enablement. As a Project Manager, I optimize the triple constraints of time, resources, and scope to build a predictable engineering environment. As a Scrum Master, I protect the team’s focus, remove systemic impediments, and champion agile principles to steadily increase delivery velocity. Simultaneously, as a Product Owner, I maximize product value per sprint by ensuring developers operate with absolute requirement clarity. My ultimate goal is to remove friction and cultivate a resilient, self-organizing team equipped to deliver high-impact engineering excellence.',
     ],
-    'case-studies' => [
+    'case-studies'   => [
         'title'     => 'Case Studies',
         'challenge' => 'The Challenge',
         'solution'  => 'The Solution',
@@ -73,19 +73,19 @@ return [
             ]
         ]
     ],
-    'blog'         => [
+    'blog'           => [
         'title'     => 'Read My Blog',
         'read-more' => 'Read More'
     ],
     // NEW SECTIONS:
-    'contact-me'   => 'Contact Me',
-    'reviews'      => [
+    'contact-me'     => 'Contact Me',
+    'reviews'        => [
         'title' => 'Reviews'
     ],
-    'about'        => [
+    'about'          => [
         'title' => 'About Me'
     ],
-    'experience'   => [
+    'experience'     => [
         'section-title' => 'Work Experience',
         'title'         => [
             'freelance'         => 'Freelance',
@@ -98,7 +98,7 @@ return [
             'freelance' => 'Freelance'
         ],
     ],
-    'school'       => [
+    'school'         => [
         'section-title' => 'Education',
         'title'         => [
             'ntu' => 'Nanyang Technological University',
@@ -109,7 +109,10 @@ return [
             'bsc' => 'Bachelor of Science (Computer Science)',
         ]
     ],
-    'location'     => [
+    'certifications' => [
+        'section-title' => 'Certifications'
+    ],
+    'location'       => [
         'remote'    => 'Remote',
         'singapore' => 'Singapore',
         'bangkok'   => 'Bangkok'

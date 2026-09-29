@@ -73,15 +73,21 @@
 <body class="<?= $locale ?>">
 <div class="container">
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 pt-3">
             <div class="card border-0 shadow-sm overflow-visible">
-                <div class="position-relative">
-                    <img src="<?= base_url('assets/img/portfolio-page/banner.webp') ?>" class="card-img-top object-fit-cover" alt="Cover Banner" style="height: 250px;">
+                <div class="d-none d-md-block position-relative">
+                    <img src="<?= base_url('assets/img/portfolio-page/banner.webp') ?>" class="card-img-top object-fit-cover" alt="Cover Banner" style="height: 250px; object-position: right center;">
                     <div class="position-absolute start-0 translate-middle-y ms-4">
                         <img src="<?= base_url('assets/img/portfolio-page/profile.webp') ?>" class="rounded-circle border border-4 border-white shadow-sm" alt="Profile Picture" style="width: 200px; height: 200px; object-fit: cover;">
                     </div>
                 </div>
-                <div class="card-body mt-5 pt-5 mt-2 px-4">
+                <div class="d-block d-md-none">
+                    <img src="<?= base_url('assets/img/portfolio-page/banner.webp') ?>" class="card-img-top" alt="Cover Banner">
+                    <div class="text-center mt-3">
+                        <img src="<?= base_url('assets/img/portfolio-page/profile.webp') ?>" class="rounded-circle border border-2 border-white shadow-sm" alt="Profile Picture" style="width: 150px; height: 150px; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="card-body mt-md-5 pt-md-5 px-4">
                     <h3 class="card-title mt-3 fw-bold mb-0"><?= lang('Portfolio.title-name') ?></h3>
                     <p class="text-muted small">
                         <a href="https://www.linkedin.com/in/ratinanlee/" target="_blank"><i class="fa-brands fa-square-linkedin"></i> @ratinanlee</a>
@@ -102,97 +108,183 @@
                     </ul>
                     <div class="tab-content">
                         <div class="tab-page p-3" id="tab-portfolio">
-                            abc;adksjf;aklsdjf; a<br/>
-                            ads;kfja;sf<br/>
-                            asdkfja;s<br/>
-                            asdfkja<br/>
-                            sadfjask;<br/>
+                            <div class="row">
+                                <div class="col-12 p-1 mb-2">
+                                    <h3 class="my-3"><?= lang('Home.sections.portfolio.title') ?></h3>
+                                    ...
+                                </div>
+                            </div>
                         </div>
                         <div class="tab-page p-3 d-none" id="tab-reviews">
-                            defads;kfja;sf<br/>
-                            asdkfja;s<br/>
-                            asdfkja<br/>
-                            sadfjask;<br/>
+                            <div class="row">
+                                <div class="col-12 p-1 mb-2">
+                                    <h3 class="my-3"><?= lang('Portfolio.reviews.title') ?></h3>
+                                    ...
+                                </div>
+                            </div>
                         </div>
                         <div class="tab-page p-3 d-none" id="tab-about">
-                            <h3><?= lang('Portfolio.experience.section-title') ?></h3>
-                            <?php
-                            $work = [
-                                [
-                                    'freelance.webp', lang('Portfolio.experience.title.freelance'),
-                                    lang('Portfolio.experience.company.freelance'), lang('Portfolio.location.remote'),
-                                    2024, 0
-                                ],
-                                [
-                                    'moolahgo.webp', lang('Portfolio.experience.title.tech-lead'), 'Moolahgo (FinTech)',
-                                    lang('Portfolio.location.singapore'), 2021, 2024
-                                ],
-                                [
-                                    'irvins.webp', lang('Portfolio.experience.title.tech-lead'),
-                                    'Irvins (Salted Egg Snacks)', lang('Portfolio.location.singapore'), 2020, 2021
-                                ],
-                                [
-                                    'secretlab.webp', lang('Portfolio.experience.title.it-backend-lead'),
-                                    'Secretlab (Gaming Chairs)', lang('Portfolio.location.singapore'), 2018, 2020
-                                ],
-                                [
-                                    'buzzcity.webp', lang('Portfolio.experience.title.software-engineer'),
-                                    'BuzzCity-MobAds (AdsTech)', lang('Portfolio.location.singapore'), 2015, 2027
-                                ],
-                                [
-                                    'dst.webp', lang('Portfolio.experience.title.programmer'),
-                                    'DST Worldwide Services (Financial)', lang('Portfolio.location.bangkok'), 2012, 2014
-                                ],
-                            ];
-                            ?>
-                            <?php foreach ($work as $row) : ?>
-                                <div class="row">
-                                    <div class="col-12 p-1 mb-2">
-                                        <img src="<?= base_url('assets/img/portfolio-page/companies/' . $row[0]) ?>"
-                                             alt="<?= $row[2] ?>"
-                                             class="img-thumbnail bg-white p-1 me-3 mb-2 float-md-start"
-                                             style="max-width:80px;"/><br class="d-md-none"/>
-                                        <h6 class="mb-1"><?= $row[1] ?><br/><?= $row[2] ?></h6>
-                                        <p><?= $row[3] ?> &middot; <?= calculate_years([
-                                                $row[4], $row[5]
-                                            ], $locale, ' - ') ?></p>
-                                    </div>
+                            <div class="row">
+                                <div class="col-12 col-md-6 p-1 mb-2">
+                                    <h3 class="my-3"><?= lang('Portfolio.experience.section-title') ?></h3>
+                                    <?php
+                                    $work = [
+                                        [
+                                            'freelance.webp', lang('Portfolio.experience.title.freelance'),
+                                            lang('Portfolio.experience.company.freelance'), lang('Portfolio.location.remote'),
+                                            2024, 0
+                                        ],
+                                        [
+                                            'moolahgo.webp', lang('Portfolio.experience.title.tech-lead'), 'Moolahgo (FinTech)',
+                                            lang('Portfolio.location.singapore'), 2021, 2024
+                                        ],
+                                        [
+                                            'irvins.webp', lang('Portfolio.experience.title.tech-lead'),
+                                            'Irvins (Salted Egg Snacks)', lang('Portfolio.location.singapore'), 2020, 2021
+                                        ],
+                                        [
+                                            'secretlab.webp', lang('Portfolio.experience.title.it-backend-lead'),
+                                            'Secretlab (Gaming Chairs)', lang('Portfolio.location.singapore'), 2018, 2020
+                                        ],
+                                        [
+                                            'buzzcity.webp', lang('Portfolio.experience.title.software-engineer'),
+                                            'BuzzCity-MobAds (AdsTech)', lang('Portfolio.location.singapore'), 2015, 2017
+                                        ],
+                                        [
+                                            'dst.webp', lang('Portfolio.experience.title.programmer'),
+                                            'DST Worldwide Services (Financial)', lang('Portfolio.location.bangkok'), 2012, 2014
+                                        ],
+                                    ];
+                                    ?>
+                                    <?php foreach ($work as $row) : ?>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <img src="<?= base_url('assets/img/portfolio-page/companies/' . $row[0]) ?>"
+                                                     alt="<?= $row[2] ?>"
+                                                     class="img-thumbnail bg-white p-1 me-3 mb-3 float-md-start"
+                                                     style="max-width:80px;"/><br class="d-md-none"/>
+                                                <h6 class="mb-1"><?= $row[1] ?><br/><?= $row[2] ?></h6>
+                                                <p><?= $row[3] ?> &middot; <?= calculate_years([
+                                                        $row[4], $row[5]
+                                                    ], $locale, ' - ') ?></p>
+                                            </div>
+                                        </div>
+                                    <?php endforeach; ?>
                                 </div>
-                            <?php endforeach; ?>
-                            <h3><?= lang('Portfolio.school.section-title') ?></h3>
-                            <?php
-                            $school = [
-                                [
-                                    'ntu.webp', lang('Portfolio.school.title.ntu'),
-                                    lang('Portfolio.school.program.msc'), lang('Portfolio.location.singapore'), 2014,
-                                    2015
-                                ],
-                                [
-                                    'tu.webp', lang('Portfolio.school.title.tu'), lang('Portfolio.school.program.bsc'),
-                                    lang('Portfolio.location.bangkok'), 2008, 2012
-                                ],
-                            ];
-                            ?>
-                            <?php foreach ($school as $row) : ?>
-                                <div class="row">
-                                    <div class="col-12 p-1 mb-2">
-                                        <img src="<?= base_url('assets/img/portfolio-page/companies/' . $row[0]) ?>"
-                                             alt="<?= $row[1] ?>"
-                                             class="img-thumbnail bg-white p-1 me-3 mb-2 float-md-start"
-                                             style="max-width:80px;"/><br class="d-md-none"/>
-                                        <h6 class="mb-1"><?= $row[1] ?><br/><?= $row[2] ?></h6>
-                                        <p><?= $row[3] ?> &middot; <?= calculate_years([
-                                                $row[4], $row[5]
-                                            ], $locale, ' - ') ?></p>
-                                    </div>
+                                <div class="col-12 col-md-6 p-1 mb-2">
+                                    <h3 class="my-3"><?= lang('Portfolio.school.section-title') ?></h3>
+                                    <?php
+                                    $school = [
+                                        [
+                                            'ntu.webp', lang('Portfolio.school.title.ntu'),
+                                            lang('Portfolio.school.program.msc'), lang('Portfolio.location.singapore'), 2014,
+                                            2015
+                                        ],
+                                        [
+                                            'tu.webp', lang('Portfolio.school.title.tu'), lang('Portfolio.school.program.bsc'),
+                                            lang('Portfolio.location.bangkok'), 2008, 2012
+                                        ],
+                                    ];
+                                    ?>
+                                    <?php foreach ($school as $row) : ?>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <img src="<?= base_url('assets/img/portfolio-page/companies/' . $row[0]) ?>"
+                                                     alt="<?= $row[1] ?>"
+                                                     class="img-thumbnail bg-white p-1 me-3 mb-3 float-md-start"
+                                                     style="max-width:80px;"/><br class="d-md-none"/>
+                                                <h6 class="mb-1"><?= $row[1] ?><br/><?= $row[2] ?></h6>
+                                                <p><?= $row[3] ?> &middot; <?= calculate_years([
+                                                        $row[4], $row[5]
+                                                    ], $locale, ' - ') ?></p>
+                                            </div>
+                                        </div>
+                                    <?php endforeach; ?>
+                                    <h3 class="my-3"><?= lang('Portfolio.certifications.section-title') ?></h3>
+                                    <?php
+                                    $certifications = [
+                                        [
+                                            'scrum-org.webp',
+                                            'Scrum.org',
+                                            [
+                                                [
+                                                    'Professional Scrum Master', [
+                                                    ['PSM I', 2024],
+                                                    ['PSM II', 2024],
+                                                    ['PSM AI Essentials', 2026]
+                                                ]
+                                                ],
+                                                [
+                                                    'Professional Scrum Product Owner', [
+                                                    ['PSPO I', 2024],
+                                                    ['PSPO II', 2025]
+                                                ]
+                                                ]
+                                            ]
+                                        ],
+                                        [
+                                            'scrum-alliance.webp',
+                                            'Scrum Alliance',
+                                            [
+                                                [
+                                                    'Certified ScrumMaster',
+                                                    [
+                                                        ['CSM', 2025]
+                                                    ]
+                                                ]
+                                            ]
+                                        ],
+                                        [
+                                            'google.webp',
+                                            'Google',
+                                            [
+                                                [
+                                                    'Google Professional Certificate',
+                                                    [
+                                                        ['Google Project Management', 2024],
+                                                        ['Google AI Essentials', 2024],
+                                                        ['Google UX Design', 2024],
+                                                        ['Google Data Analytics', 2024]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ];
+                                    ?>
+                                    <?php foreach ($certifications as $row) : ?>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <img src="<?= base_url('assets/img/portfolio-page/companies/' . $row[0]) ?>"
+                                                     alt="<?= $row[1] ?>"
+                                                     class="img-thumbnail bg-white p-1 me-3 mb-3 float-md-start"
+                                                     style="max-width:80px;"/><br class="d-md-none"/>
+                                                <div class="float-md-start">
+                                                    <h6 class="mb-1"><?= $row[1] ?></h6>
+                                                    <?php foreach ($row[2] as $type) : ?>
+                                                        <ul>
+                                                            <li><?= $type[0] ?>
+                                                                <ul>
+                                                                    <?php foreach ($type[1] as $cert) : ?>
+                                                                        <li><?= $cert[0] ?>, <?= calculate_years([$cert[1]], $locale) ?></li>
+                                                                    <?php endforeach; ?>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    <?php endforeach; ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php endforeach; ?>
                                 </div>
-                            <?php endforeach; ?>
+                            </div>
+                            <?php include_once "_professional_certifications.php"; ?>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <hr class="my-5" />
     <?php $slug = "calendar"; include_once "_footer_menu.php"; ?>
 </div>
 </body>

@@ -60,7 +60,7 @@
                     <p><?= lang('Portfolio.title') ?></p>
                     <h1><?= lang('Portfolio.title-name') ?></h1>
                     <h2><?= lang('Portfolio.subtitle') ?></h2>
-                    <img class="img-fluid max-400 rounded my-3" src="<?= base_url('assets/img/portfolio-page/cover-1.jpg') ?>" alt="Portfolio Cover - Tokyo 2026" />
+                    <img class="img-fluid max-400 rounded my-3" src="<?= base_url('assets/img/portfolio-page/cover-1.webp') ?>" alt="Portfolio Cover - Tokyo 2026" />
                 </div>
                 <div class="col-12">
                     <p>
@@ -112,7 +112,7 @@
                                     </p>
                                 </div>
                                 <div class="col-12 col-lg-6 text-center text-lg-end mb-3">
-                                    <img class="img-fluid max-400 rounded" src="<?= base_url('assets/img/portfolio-page/education-msc-graduation.jpg') ?>" alt="MSc Graduation" />
+                                    <img class="img-fluid max-400 rounded" src="<?= base_url('assets/img/portfolio-page/education-msc-graduation.webp') ?>" alt="MSc Graduation" />
                                 </div>
                             </div>
                             <!-- experience -->
@@ -129,7 +129,7 @@
                                     <?php endfor; ?>
                                 </div>
                                 <div class="col-12 col-lg-6 text-center text-lg-start order-lg-1 mb-3">
-                                    <img class="img-fluid max-400 rounded" src="<?= base_url('assets/img/portfolio-page/experience-buzzcity.jpg') ?>" alt="BuzzCity Team" />
+                                    <img class="img-fluid max-400 rounded" src="<?= base_url('assets/img/portfolio-page/experience-buzzcity.webp') ?>" alt="BuzzCity Team" />
                                 </div>
                             </div>
                             <div class="text-center my-5">* * *</div>
@@ -141,9 +141,9 @@
                                     <div class="experience-cards">
                                         <?php
                                         $cs_img = [
-                                            '1' => [base_url('assets/img/portfolio-page/decoration-04.jpg'), 'Agile Board'],
-                                            '2' => [base_url('assets/img/portfolio-page/decoration-01.jpg'), 'Office Desk'],
-                                            '3' => [base_url('assets/img/portfolio-page/decoration-03.jpg'), 'Thumbs Up']
+                                            '1' => [base_url('assets/img/portfolio-page/decoration-04.webp'), 'Agile Board'],
+                                            '2' => [base_url('assets/img/portfolio-page/decoration-01.webp'), 'Office Desk'],
+                                            '3' => [base_url('assets/img/portfolio-page/decoration-03.webp'), 'Thumbs Up']
                                         ];
                                         ?>
                                         <?php for ($i = 1; $i <= 3; $i++) : ?>
@@ -182,7 +182,7 @@
                             <h3 class="text-center"><?= lang('Portfolio.para.empowering') ?></h3>
                             <p class="text-center my-5"><?= lang('Portfolio.para.true-leadership') ?></p>
                             <div class="text-center my-3">
-                                <img class="img-fluid max-400 rounded" src="<?= base_url('assets/img/portfolio-page/decoration-02.jpg') ?>" alt="Team at Dinner" />
+                                <img class="img-fluid max-400 rounded" src="<?= base_url('assets/img/portfolio-page/decoration-02.webp') ?>" alt="Team at Dinner" />
                             </div>
                         </div>
                         <div class="col-12 my-5">
