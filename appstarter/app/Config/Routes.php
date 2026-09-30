@@ -23,6 +23,7 @@ $routes->get('game/japanese', 'Game::japaneseHome');
 $routes->get('game/japanese/review', 'Game::japaneseReview');
 $routes->get('game/japanese/entry/(:any)/(:any)', 'Game::japaneseEntry/$1/$2');
 $routes->get('game/japanese/game/(:any)/(:any)', 'Game::japaneseGame/$1/$2');
+$routes->get('game/shavian', 'Game::shavianGame');
 // locale
 $routes->get('{locale}/personal-life', 'Home::personal_life');
 $routes->get('{locale}/portfolio', 'Home::portfolio');
