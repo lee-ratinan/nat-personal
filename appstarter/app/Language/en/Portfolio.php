@@ -22,7 +22,7 @@ return [
         'true-leadership'   => 'True leadership is about unlocking potential through structured enablement. As a Project Manager, I optimize the triple constraints of time, resources, and scope to build a predictable engineering environment. As a Scrum Master, I protect the team’s focus, remove systemic impediments, and champion agile principles to steadily increase delivery velocity. Simultaneously, as a Product Owner, I maximize product value per sprint by ensuring developers operate with absolute requirement clarity. My ultimate goal is to remove friction and cultivate a resilient, self-organizing team equipped to deliver high-impact engineering excellence.',
     ],
     'case-studies'   => [
-        'title'     => 'Success Studies',
+        'title'     => 'Success Stories',
         'challenge' => 'The Challenge',
         'solution'  => 'The Solution',
         'impact'    => 'The Impact',
@@ -77,7 +77,6 @@ return [
         'title'     => 'Read My Blog',
         'read-more' => 'Read More'
     ],
-    // NEW SECTIONS:
     'contact-me'     => 'Contact Me',
     'reviews'        => [
         'title' => 'Reviews'
@@ -107,7 +106,7 @@ return [
         ],
         'program'       => [
             'msc' => 'Master of Science (Information Systems)',
-            'bsc' => 'Bachelor of Science (Computer Science)',
+            'bsc' => 'Bachelor of Science (Computer Science) First Class Honors',
         ]
     ],
     'certifications' => [

@@ -1384,10 +1384,11 @@ class Home extends BaseController
     }
 
     /**
+     * @deprecated
      * Portfolio page
      * @return string
      */
-    public function portfolio(): string
+    public function portfolio_backup(): string
     {
         $locale = $this->request->getLocale();
         $data   = [
@@ -1401,7 +1402,7 @@ class Home extends BaseController
      * Portfolio page
      * @return string
      */
-    public function portfolio2(): string
+    public function portfolio(): string
     {
         $locale = $this->request->getLocale();
         $data   = [

@@ -22,7 +22,7 @@ return [
         'true-leadership'   => '真正的領導力在於透過結構化的賦能來釋放潛力。作為專案經理，我優化時間、資源與範疇等三重限制，以建立一個可預測的工程環境。作為 Scrum Master，我保護團隊的專注力、消除系統性障礙，並捍衛敏捷原則以穩步提升交付速度。與此同時，作為 Product Owner，我透過確保開發人員在需求絕對明確的情況下運作，來最大化每個 Sprint 的產品價值。我的終極目標是消除摩擦，並培養一個具備韌性、自我組織的團隊，使其有能力持續交付高影響力的卓越工程。',
     ],
     'case-studies' => [
-        'title'     => '案例研究',
+        'title'     => '成功案例',
         'challenge' => '面臨挑戰',
         'solution'  => '解決方案',
         'impact'    => '展現效益',
@@ -76,5 +76,45 @@ return [
     'blog'         => [
         'title'     => '瀏覽我的部落格',
         'read-more' => '閱讀更多'
+    ],
+    'contact-me'     => '聯絡我',
+    'reviews'        => [
+        'title' => '評價'
+    ],
+    'about'          => [
+        'title' => '關於我'
+    ],
+    'experience'     => [
+        'section-title' => '履歷',
+        'title'         => [
+            'freelance'         => '自由接案',
+            'tech-lead-sr'      => '資深技術主管',
+            'tech-lead'         => '技術主管',
+            'it-backend-lead'   => '技術主管',
+            'software-engineer' => '軟體工程師',
+            'programmer'        => '程序員'
+        ],
+        'company'       => [
+            'freelance' => '自由接案'
+        ],
+    ],
+    'school'         => [
+        'section-title' => '學歷',
+        'title'         => [
+            'ntu' => '南洋理工大學',
+            'tu'  => '泰國法政大學'
+        ],
+        'program'       => [
+            'msc' => '資訊系統理學碩士',
+            'bsc' => '電腦科學理學學士（一等榮譽）',
+        ]
+    ],
+    'certifications' => [
+        'section-title' => '認證'
+    ],
+    'location'       => [
+        'remote'    => '遠端工作',
+        'singapore' => '新加坡',
+        'bangkok'   => '曼谷'
     ]
 ];

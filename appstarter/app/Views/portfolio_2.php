@@ -351,6 +351,14 @@
         </div>
     </div>
     <hr class="my-5" />
+    <p class="small">
+        <i class="fa-solid fa-language me-3"></i>
+        <a class="btn btn-<?= 'en' == $locale ? '' : 'outline-' ?>success btn-xs" href="<?= base_url('en/portfolio') ?>">English</a>
+        <a class="btn btn-<?= 'th' == $locale ? '' : 'outline-' ?>success btn-xs" href="<?= base_url('th/portfolio') ?>">ภาษาไทย</a>
+        <a class="btn btn-<?= 'zh-TW' == $locale ? '' : 'outline-' ?>success btn-xs" href="<?= base_url('zh-TW/portfolio') ?>">國語</a>
+        <a class="btn btn-<?= 'ja' == $locale ? '' : 'outline-' ?>success btn-xs" href="<?= base_url('ja/portfolio') ?>">日本語</a>
+        <a class="btn btn-<?= 'en-Shaw' == $locale ? '' : 'outline-' ?>success btn-xs" href="<?= base_url('en-Shaw/portfolio') ?>">𐑖𐑱𐑝𐑾𐑯</a>
+    </p>
     <?php $slug = "calendar"; include_once "_footer_menu.php"; ?>
 </div>
 </body>
@@ -529,10 +537,12 @@
                 const $card = `
         <div class="col-6 col-lg-4 wp-post" data-id="${post.id}" data-slug="${_esc(post.slug)}">
             ${imgHtml}
-            <div class="wp-post__body">
+            <div class="wp-post__body mt-3">
                 <h6 class="wp-post__title"><a href="${postLink}" target="_blank">${title}</a></h6>
-                ${authorHtml}
-                <time class="wp-post__date" datetime="${post.date_gmt}"><i class="bi bi-calendar-plus"></i>  ${date}</time><br/>
+                <span class="small">
+                    ${authorHtml}
+                    <time class="wp-post__date" datetime="${post.date_gmt}"><i class="bi bi-calendar-plus"></i>  ${date}</time><br/>
+                </span>
                 <a href="${postLink}" target="_blank" class="float-end"><?= lang('Portfolio.blog.read-more') ?> <i class="bi bi-chevron-double-right"></i></a>
             </div>
         </div>
