@@ -39,6 +39,7 @@
     <link rel="alternate" hreflang="en-Shaw" href="<?= base_url('en-Shaw/portfolio') ?>"/>
     <link rel="alternate" hreflang="x-default" href="<?= base_url('portfolio') ?>"/>
     <link rel="canonical" href="<?= current_url() ?>">
+    <link href="<?= base_url('assets/vendor/bootstrap-icons/bootstrap-icons.css') ?>" rel="stylesheet">
     <style>
         body {
         <?php if (in_array($locale, ['en', 'vi', 'id', 'es'])) : ?> font-family: "Noto Serif", serif;
@@ -102,7 +103,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#" id="about-tab" data-target="tab-about"><?= lang('Portfolio.about.title') ?></a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item d-none">
                             <a class="nav-link" href="#" id="reviews-tab" data-target="tab-reviews"><?= lang('Portfolio.reviews.title') ?></a>
                         </li>
                     </ul>
@@ -119,24 +120,26 @@
                                                 $cs_img = [
                                                     '1' => 'from-chaos-to-clarity.webp',
                                                     '2' => 'decoration-01.webp',
-                                                    '3' => 'decoration-03.webp',
+                                                    '3' => 'taking-a-call.webp',
                                                 ];
                                                 ?>
                                                 <?php for ($i = 1; $i <= 3; $i++) : ?>
-                                                    <div class="col-6 col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-                                                        <a href="#story-<?= $i ?>" class="text-decoration-none success-story-btn" data-target="story-<?= $i ?>">
-                                                            <img src="<?= base_url('assets/img/portfolio-page/' . $cs_img[$i]) ?>" alt="<?= lang('Portfolio.case-studies.details.' . $i . '.title') ?>" class="img-fluid mb-3" data-target="story-<?= $i ?>" />
-                                                            <h6 data-target="story-<?= $i ?>"><?= lang('Portfolio.case-studies.details.' . $i . '.title') ?></h6>
-                                                        </a>
+                                                    <div class="col-6 col-lg-4 success-story-btn" data-target="story-<?= $i ?>">
+                                                        <img class="success-story-btn img-fluid mb-3" data-target="story-<?= $i ?>" src="<?= base_url('assets/img/portfolio-page/' . $cs_img[$i]) ?>" alt="<?= lang('Portfolio.case-studies.details.' . $i . '.title') ?>" loading="lazy" />
+                                                        <h6 class="success-story-btn" data-target="story-<?= $i ?>"><?= lang('Portfolio.case-studies.details.' . $i . '.title') ?></h6>
+                                                        <a class="float-end success-story-btn" data-target="story-<?= $i ?>" href="#"><?= lang('Portfolio.blog.read-more') ?> <i class="bi bi-chevron-double-right"></i></a>
                                                     </div>
                                                 <?php endfor; ?>
                                             </div>
                                             <hr class="my-3" />
+                                            <h4 class="my-4"><?= lang('Portfolio.blog.title') ?></h4>
+                                            <div class="row my-5" id="wordpress-posts"></div>
+                                            <div class="text-end mb-3"><a href="<?= base_url($locale . "/blog?m=tags&ms=portfolio&id=62") ?>" class="btn btn-outline-success" target="_blank"><?= lang('Portfolio.blog.read-more') ?> <i class="bi bi-chevron-double-right"></i></a></div>
                                         </div>
                                         <div class="col-12 col-md-6 col-lg-4">
                                             <?php for ($i = 1; $i <= 3; $i++) : ?>
-                                                <div class="success-story-section d-none" id="story-<?= $i ?>">
-                                                    <img src="<?= base_url('assets/img/portfolio-page/' . $cs_img[$i]) ?>" alt="<?= lang('Portfolio.case-studies.details.' . $i . '.title') ?>" class="img-fluid mb-3" />
+                                                <div class="success-story-section <?= (1 != $i ? 'd-none' : '') ?>" id="story-<?= $i ?>">
+                                                    <img src="<?= base_url('assets/img/portfolio-page/' . $cs_img[$i]) ?>" alt="<?= lang('Portfolio.case-studies.details.' . $i . '.title') ?>" class="img-fluid mb-3" loading="lazy" />
                                                     <h4><?= lang('Portfolio.case-studies.details.' . $i . '.title') ?></h4>
                                                     <h5><?= lang('Portfolio.case-studies.challenge') ?></h5>
                                                     <p><?= lang('Portfolio.case-studies.details.' . $i . '.challenge') ?></p>
@@ -352,6 +355,271 @@
 </div>
 </body>
 <script>
+    /**
+     * WordPress REST API — Posts Fetcher & Renderer
+     * Requires: jQuery
+     * Usage:
+     *   WPPosts.init({ baseUrl: 'https://your-site.com' });
+     */
+    const WPPosts = (() => {
+        // ─── Config ──────────────────────────────────────────────────────────────
+
+        const CONFIG = {
+            baseUrl: '',
+            perPage: 3,
+            currentPage: 1,
+            totalPages: 1,
+        };
+
+        // ─── Public: Initialise ──────────────────────────────────────────────────
+
+        function init(options = {}) {
+            CONFIG.baseUrl = (options.baseUrl || '').replace(/\/$/, '');
+            CONFIG.perPage = options.perPage || 3;
+            CONFIG.currentPage = 1;
+            _bindControls();
+            loadPage(1);
+        }
+
+        // ─── Core: Load a page ───────────────────────────────────────────────────
+
+        async function loadPage(page) {
+            CONFIG.currentPage = page;
+            _setLoading(true);
+
+            try {
+                // ── Step 1: fetch posts ─────────────────────────────────────────────
+                const posts = await _fetchPosts(page);
+
+                // ── Step 2: collect all unique IDs across every post ────────────────
+                const mediaIds  = _unique(posts.map((p) => p.featured_media).filter(Boolean));
+                const authorIds = _unique(posts.map((p) => p.author).filter(Boolean));
+
+                // ── Step 3: one batch request per resource type, all in parallel ─────
+                const [mediaMap, authorMap, tagMap] = await Promise.all([
+                    fetchMediaBatch(mediaIds),
+                    fetchAuthorBatch(authorIds),
+                ]);
+
+                // ── Step 4: merge lookup data back into each post ───────────────────
+                const enriched = posts.map((post) => ({
+                    ...post,
+                    mediaObj:  mediaMap[post.featured_media] || null,
+                    authorObj: authorMap[post.author]        || null,
+                }));
+
+                renderPosts(enriched);
+                _updatePagination();
+            } catch (err) {
+                _renderError(err);
+            } finally {
+                _setLoading(false);
+            }
+        }
+
+        // ─── Step 1: fetch raw posts ─────────────────────────────────────────────
+        async function _fetchPosts(page) {
+            const params = new URLSearchParams({
+                _fields: 'id,date_gmt,title,featured_media,slug,author',
+                per_page: CONFIG.perPage,
+                tags: 62,
+                page,
+            });
+            const response = await fetch(`${CONFIG.baseUrl}/wp-json/wp/v2/posts?${params}`);
+            CONFIG.totalPages = parseInt(response.headers.get('X-WP-TotalPages'), 10) || 1;
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return await response.json();
+        }
+
+        // ─── Batch sub-fetchers (each returns an id → object lookup map) ─────────
+
+        /**
+         * Fetch multiple media objects in one request.
+         * @param {number[]} ids
+         * @returns {Promise<Object>}  { [id]: mediaObject }
+         */
+        async function fetchMediaBatch(ids) {
+            if (!ids.length) return {};
+            try {
+                const params = new URLSearchParams({
+                    include: ids.join(','),
+                    per_page: ids.length,
+                    _fields: 'id,source_url,alt_text,media_details',
+                });
+                const response = await fetch(`${CONFIG.baseUrl}/wp-json/wp/v2/media?${params}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const results = await response.json();
+                return _toMap(results);
+            } catch {
+                return {};
+            }
+        }
+
+        /**
+         * Fetch multiple authors in one request.
+         * @param {number[]} ids
+         * @returns {Promise<Object>}  { [id]: authorObject }
+         */
+        async function fetchAuthorBatch(ids) {
+            if (!ids.length) return {};
+            try {
+                const params = new URLSearchParams({
+                    include: ids.join(','),
+                    per_page: ids.length,
+                    _fields: 'id,name,slug,link',
+                });
+                const response = await fetch(`${CONFIG.baseUrl}/wp-json/wp/v2/users?${params}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const results = await response.json();
+                return _toMap(results);
+            } catch {
+                return {};
+            }
+        }
+
+        // ─── Renderer ────────────────────────────────────────────────────────────
+        function renderDate(dateString) {
+            let locale = '<?= $locale ?>';
+            if ('th' === locale || 'zh-TW' === locale || 'ja' === locale) {
+                return new Date(dateString).toLocaleDateString(locale, {
+                    year: 'numeric', month: 'long', day: 'numeric',
+                });
+            } else if ('en-Shaw' === locale) {
+                let postDate = new Date(dateString);
+                let day = postDate.getDate(), month = postDate.getMonth(), year = postDate.getFullYear();
+                let monthArray = ['𐑡𐑨𐑯𐑘𐑫𐑼𐑦', '𐑓𐑧𐑚𐑮𐑫𐑼𐑦', '𐑥𐑸𐑗', '𐑱𐑐𐑮𐑩𐑤', '𐑥𐑱', '𐑡𐑵𐑯', '𐑡𐑩𐑤𐑲', '𐑷𐑜𐑩𐑕𐑑', '𐑕𐑧𐑐𐑑𐑧𐑥𐑚𐑼', '𐑪𐑒𐑑𐑴𐑚𐑼', '𐑯𐑴𐑝𐑧𐑥𐑚𐑼', '𐑛𐑦𐑕𐑧𐑥𐑚𐑼'];
+                return `${monthArray[month]} ${day}, ${year}`;
+            }
+            return new Date(dateString).toLocaleDateString('en-US', {
+                year: 'numeric', month: 'long', day: 'numeric',
+            });
+        }
+        function renderPosts(posts) {
+            const $container = document.getElementById('wordpress-posts');
+            $container.innerHTML = '';
+
+            if (!posts.length) {
+                $container.innerHTML = '<p class="wp-no-posts">No posts were found.</p>';
+                return;
+            }
+
+            posts.forEach((post) => {
+                const title   = post.title?.rendered   || '(Untitled)';
+                const date    = post.date_gmt ? renderDate(post.date_gmt) : '';
+
+                const imgSrc  = post.mediaObj?.source_url || '';
+                const imgAlt  = post.mediaObj?.alt_text   || title;
+                const imgHtml = imgSrc
+                    ? `<a href="<?= base_url($locale . '/blog-post') ?>/${_esc(post.id)}/${_esc(post.slug)}" target="_blank"><img class="img-fluid rounded" src="${imgSrc}" alt="${_esc(imgAlt)}"></a>`
+                    : '???';
+
+                const authorName = post.authorObj?.name || '';
+                const authorHtml = authorName
+                    ? `<i class="bi bi-person-circle"></i> ${_esc(authorName)} &nbsp; `
+                    : '';
+
+                const postLink = `<?= base_url($locale . '/blog-post') ?>/${_esc(post.id)}/${_esc(post.slug)}`;
+
+                const $card = `
+        <div class="col-6 col-lg-4 wp-post" data-id="${post.id}" data-slug="${_esc(post.slug)}">
+            ${imgHtml}
+            <div class="wp-post__body">
+                <h6 class="wp-post__title"><a href="${postLink}" target="_blank">${title}</a></h6>
+                ${authorHtml}
+                <time class="wp-post__date" datetime="${post.date_gmt}"><i class="bi bi-calendar-plus"></i>  ${date}</time><br/>
+                <a href="${postLink}" target="_blank" class="float-end"><?= lang('Portfolio.blog.read-more') ?> <i class="bi bi-chevron-double-right"></i></a>
+            </div>
+        </div>
+      `;
+                $container.innerHTML += $card;
+            });
+        }
+
+        // ─── Pagination ──────────────────────────────────────────────────────────
+
+        function _updatePagination() {
+            const { currentPage, totalPages } = CONFIG;
+            document.getElementById('wp-page-info').innerHTML = `<p>Page ${currentPage} of ${totalPages}</p>`;
+
+            const $prev = document.getElementById('wp-prev');
+            if (currentPage <= 1) {
+                $prev.addClass('is-disabled btn-outline-secondary').removeClass('btn-success').attr({ 'aria-disabled': 'true', tabindex: '-1' });
+            } else {
+                $prev.addClass('btn-success').removeClass('is-disabled btn-outline-secondary').removeAttr('aria-disabled').attr('tabindex', '0');
+            }
+            $prev.addClass('btn-sm me-3');
+
+            const $next = document.getElementById('wp-next');
+            if (currentPage >= totalPages) {
+                $next.addClass('is-disabled btn-outline-secondary').removeClass('btn-success').attr({ 'aria-disabled': 'true', tabindex: '-1' });
+            } else {
+                $next.addClass('btn-success').removeClass('is-disabled btn-outline-secondary').removeAttr('aria-disabled').attr('tabindex', '0');
+            }
+            $next.addClass('btn-sm ms-3');
+        }
+
+        function _bindControls() {
+            document.addEventListener('click', (event) => {
+                const prevBtn = event.target.closest('#wp-prev');
+                if (prevBtn && !prevBtn.classList.contains('is-disabled')) {
+                    loadPage(CONFIG.currentPage - 1);
+                    return;
+                }
+                const nextBtn = event.target.closest('#wp-next');
+                if (nextBtn && !nextBtn.classList.contains('is-disabled')) {
+                    loadPage(CONFIG.currentPage + 1);
+                }
+            });
+        }
+
+        // ─── Utility helpers ─────────────────────────────────────────────────────
+
+        /** Convert an array of objects with .id into a keyed lookup map. */
+        function _toMap(arr) {
+            return arr.reduce((acc, item) => { acc[item.id] = item; return acc; }, {});
+        }
+
+        /** Deduplicate an array of primitives. */
+        function _unique(arr) {
+            return [...new Set(arr)];
+        }
+
+        function _setLoading(state) {
+            const container = document.getElementById('wordpress-posts');
+            if (container) {
+                container.classList.toggle('is-loading', state);
+            }
+
+            const buttons = document.querySelectorAll('#wp-prev, #wp-next');
+            buttons.forEach((button) => {
+                button.disabled = Boolean(state);
+            });
+        }
+
+        function _renderError(err) {
+            const msg = err?.message || err?.statusText || 'Unknown error';
+            const container = document.getElementById('wordpress-posts');
+            if (!container) {
+                container.innerHTML = `<p class="wp-error">Failed to load posts: ${_esc(msg)}</p>`;
+            }
+        }
+
+        function _esc(str) {
+            return String(str)
+                .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        }
+
+        // ─── Public API ──────────────────────────────────────────────────────────
+
+        return { init, loadPage, fetchMediaBatch, fetchAuthorBatch, renderPosts };
+    })();
     document.addEventListener("DOMContentLoaded", function () {
         // tabs
         const tabButtons = document.querySelectorAll('.nav-link');
@@ -366,6 +634,8 @@
                 document.getElementById(target).classList.remove('d-none');
             });
         });
+        // WP
+        WPPosts.init({ baseUrl: 'https://blog.ratinan.com' });
         // cast stories
         const caseStoryBtns = document.querySelectorAll('.success-story-btn');
         caseStoryBtns.forEach((btn) => {
@@ -375,6 +645,10 @@
                 const caseStorySections = document.querySelectorAll('.success-story-section');
                 caseStorySections.forEach((section) => section.classList.add('d-none'));
                 document.getElementById(target).classList.remove('d-none');
+                const targetElement = document.getElementById(target);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             });
         });
     });
