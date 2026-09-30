@@ -6,6 +6,7 @@ $rules = [
     'romaji-type-kana' => 'Type the Kana<br>Read the Romaji on the screen and type the right (kana) as fast as possible.',
     'kana-pick-romaji' => 'Read it right<br>Read the (kana) on the screen and pick the right Romaji as fast as possible.',
     'kana-type-romaji' => 'Type the Romaji<br>Read the (kana) on the screen and type the right Romaji as fast as possible.',
+    'kanji'            => 'Read it right<br>Read the 漢字/meaning/reading on the screen and pick the right answer as fast as possible.',
 ];
 $the_kana = ucfirst($kana_set);
 if ('All' == $the_kana) {

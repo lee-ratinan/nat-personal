@@ -6,6 +6,7 @@ $rules = [
     'romaji-type-kana' => 'Type the Kana<br>Read the Romaji on the screen and type the right (kana) as fast as possible. Press enter when done.',
     'kana-pick-romaji' => 'Read it right<br>Read the (kana) on the screen and pick the right Romaji as fast as possible.',
     'kana-type-romaji' => 'Type the Romaji<br>Read the (kana) on the screen and type the right Romaji as fast as possible. Press enter when done.',
+    'kanji'            => 'Read it right<br>Read the 漢字/meaning/reading on the screen and pick the right answer as fast as possible.',
 ];
 ?>
     <div class="row">
@@ -15,7 +16,7 @@ $rules = [
             <hr>
             <div class="row">
                 <div class="col">
-                    <?php for ($i = 1; $i <= 15; $i++) : ?>
+                    <?php for ($i = 1; $i <= count($game_data); $i++) : ?>
                         <span class="badge bg-light text-dark" id="question-bubble-<?= $i ?>"><?= $i ?></span> &nbsp;
                     <?php endfor; ?>
                 </div>
@@ -33,7 +34,7 @@ $rules = [
                         <?php if ('pick' == $format) : ?>
                             <div class="row mx-5 g-3">
                                 <?php foreach ($game_row['choices'] as $answer) : ?>
-                                    <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                                    <div class="col-6 col-md-3">
                                         <button class="btn btn-outline-danger p-4 answer w-100"
                                                 data-question-no="<?= $question_no ?>"
                                                 data-correct-answer="<?= $game_row['answer'] == $answer ? 'Y' : 'N' ?>"
@@ -58,7 +59,7 @@ $rules = [
                 <h3><span id="result-seconds">0</span><br><small>seconds used</small></h3>
                 <h3><span id="result-score">0</span><br><small>correct answers</small></h3>
                 <p><b>Summary</b></p>
-                <?php for ($j = 1; $j <= 15; $j++) : ?>
+                <?php for ($j = 1; $j <= count($game_data); $j++) : ?>
                     <p><?= $j ?>. <?= $game_data[$j-1]['question'] ?> = <?= $game_data[$j-1]['answer'] ?> | Your answer = <b id="result-your-answer-<?= $j ?>"></b></p>
                 <?php endfor; ?>
                 <a class="btn btn-outline-danger" href="<?= base_url('game/japanese') ?>">Back to Japanese Home</a>
@@ -100,7 +101,7 @@ $rules = [
                 $('#result-your-answer-'+question_no).text(user_answer);
                 // close this question, go to the next
                 $('#question-'+question_no).hide();
-                if (15 === question_no) {
+                if (<?= count($game_data) ?> === question_no) {
                     // last question, show result
                     clearInterval(timer);
                     timer = null;
@@ -130,7 +131,7 @@ $rules = [
                 $('#result-your-answer-'+question_no).text(user_answer);
                 // close this question, go to the next
                 $('#question-'+question_no).hide();
-                if (15 === question_no) {
+                if (<?= count($game_data) ?> === question_no) {
                     // last question, show result
                     clearInterval(timer);
                     timer = null;
