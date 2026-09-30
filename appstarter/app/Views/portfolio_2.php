@@ -97,33 +97,79 @@
                     <p class="text-muted"><?= lang('Portfolio.subtitle') ?></p>
                     <ul class="nav nav-tabs" id="portfolio-tabs">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#" id="portfolio-tab" data-target="tab-portfolio"><?= lang('Home.sections.portfolio.title') ?></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" id="reviews-tab" data-target="tab-reviews"><?= lang('Portfolio.reviews.title') ?></a>
+                            <a class="nav-link active" href="#" id="case-studies-tab" data-target="tab-case-studies"><?= lang('Portfolio.case-studies.title') ?></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#" id="about-tab" data-target="tab-about"><?= lang('Portfolio.about.title') ?></a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="reviews-tab" data-target="tab-reviews"><?= lang('Portfolio.reviews.title') ?></a>
+                        </li>
                     </ul>
                     <div class="tab-content">
-                        <div class="tab-page p-3" id="tab-portfolio">
+                        <!-- TAB: CASE STUDIES -->
+                        <div class="tab-page p-3" id="tab-case-studies">
                             <div class="row">
                                 <div class="col-12 p-1 mb-2">
-                                    <h3 class="my-3"><?= lang('Home.sections.portfolio.title') ?></h3>
-                                    ...
+                                    <h3 class="my-3"><?= lang('Portfolio.case-studies.title') ?></h3>
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 col-lg-8">
+                                            <div class="row">
+                                                <?php
+                                                $cs_img = [
+                                                    '1' => 'from-chaos-to-clarity.webp',
+                                                    '2' => 'decoration-01.webp',
+                                                    '3' => 'decoration-03.webp',
+                                                ];
+                                                ?>
+                                                <?php for ($i = 1; $i <= 3; $i++) : ?>
+                                                    <div class="col-6 col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                                                        <a href="#story-<?= $i ?>" class="text-decoration-none success-story-btn" data-target="story-<?= $i ?>">
+                                                            <img src="<?= base_url('assets/img/portfolio-page/' . $cs_img[$i]) ?>" alt="<?= lang('Portfolio.case-studies.details.' . $i . '.title') ?>" class="img-fluid mb-3" data-target="story-<?= $i ?>" />
+                                                            <h6 data-target="story-<?= $i ?>"><?= lang('Portfolio.case-studies.details.' . $i . '.title') ?></h6>
+                                                        </a>
+                                                    </div>
+                                                <?php endfor; ?>
+                                            </div>
+                                            <hr class="my-3" />
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-4">
+                                            <?php for ($i = 1; $i <= 3; $i++) : ?>
+                                                <div class="success-story-section d-none" id="story-<?= $i ?>">
+                                                    <img src="<?= base_url('assets/img/portfolio-page/' . $cs_img[$i]) ?>" alt="<?= lang('Portfolio.case-studies.details.' . $i . '.title') ?>" class="img-fluid mb-3" />
+                                                    <h4><?= lang('Portfolio.case-studies.details.' . $i . '.title') ?></h4>
+                                                    <h5><?= lang('Portfolio.case-studies.challenge') ?></h5>
+                                                    <p><?= lang('Portfolio.case-studies.details.' . $i . '.challenge') ?></p>
+                                                    <h5><?= lang('Portfolio.case-studies.solution') ?></h5>
+                                                    <ul>
+                                                        <?php foreach (lang('Portfolio.case-studies.details.' . $i . '.solution') as $solution) : ?>
+                                                            <li><?= $solution ?></li>
+                                                        <?php endforeach; ?>
+                                                    </ul>
+                                                    <h5><?= lang('Portfolio.case-studies.impact') ?></h5>
+                                                    <ul>
+                                                        <?php foreach (lang('Portfolio.case-studies.details.' . $i . '.impact') as $impact) : ?>
+                                                            <li><?= $impact ?></li>
+                                                        <?php endforeach; ?>
+                                                    </ul>
+                                                </div>
+                                            <?php endfor; ?>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-page p-3 d-none" id="tab-reviews">
-                            <div class="row">
-                                <div class="col-12 p-1 mb-2">
-                                    <h3 class="my-3"><?= lang('Portfolio.reviews.title') ?></h3>
-                                    ...
-                                </div>
-                            </div>
-                        </div>
+                        <!-- TAB: ABOUT -->
                         <div class="tab-page p-3 d-none" id="tab-about">
+                            <div class="row">
+                                <div class="col-12 p-1 mb-2">
+                                    <p>
+                                        <b><?= lang('Portfolio.intro.name') ?></b><br>
+                                        <?= lang('Portfolio.intro.other-names') ?>
+                                    </p>
+                                    <p><?= lang('Portfolio.para.as-a-scrum-master') ?></p>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-12 col-md-6 p-1 mb-2">
                                     <h3 class="my-3"><?= lang('Portfolio.experience.section-title') ?></h3>
@@ -135,7 +181,7 @@
                                             2024, 0
                                         ],
                                         [
-                                            'moolahgo.webp', lang('Portfolio.experience.title.tech-lead'), 'Moolahgo (FinTech)',
+                                            'moolahgo.webp', lang('Portfolio.experience.title.tech-lead-sr'), 'Moolahgo (FinTech)',
                                             lang('Portfolio.location.singapore'), 2021, 2024
                                         ],
                                         [
@@ -170,6 +216,7 @@
                                             </div>
                                         </div>
                                     <?php endforeach; ?>
+                                    <div class="text-center"><img src="<?= base_url('assets/img/portfolio-page/experience-buzzcity.webp') ?>" alt="BuzzCity" class="img-thumbnail" style="max-width:300px;" loading="lazy"/></div>
                                 </div>
                                 <div class="col-12 col-md-6 p-1 mb-2">
                                     <h3 class="my-3"><?= lang('Portfolio.school.section-title') ?></h3>
@@ -200,6 +247,7 @@
                                             </div>
                                         </div>
                                     <?php endforeach; ?>
+                                    <div class="text-center"><img src="<?= base_url('assets/img/portfolio-page/education-msc-graduation.webp') ?>" alt="NTU" class="img-thumbnail" style="max-width:300px;" loading="lazy"/></div>
                                     <h3 class="my-3"><?= lang('Portfolio.certifications.section-title') ?></h3>
                                     <?php
                                     $certifications = [
@@ -277,7 +325,22 @@
                                     <?php endforeach; ?>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col px-md-5 text-center">
+                                    <h4><?= lang('Portfolio.para.empowering') ?></h4>
+                                    <p><?= lang('Portfolio.para.true-leadership') ?></p>
+                                </div>
+                            </div>
                             <?php include_once "_professional_certifications.php"; ?>
+                        </div>
+                        <!-- TAB: REVIEWS -->
+                        <div class="tab-page p-3 d-none" id="tab-reviews">
+                            <div class="row">
+                                <div class="col-12 p-1 mb-2">
+                                    <h3 class="my-3"><?= lang('Portfolio.reviews.title') ?></h3>
+                                    ...
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -290,6 +353,7 @@
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
+        // tabs
         const tabButtons = document.querySelectorAll('.nav-link');
         tabButtons.forEach((button) => {
             button.addEventListener('click', (event) => {
@@ -299,6 +363,17 @@
                 event.target.classList.add('active');
                 const tabPanes = document.querySelectorAll('.tab-page');
                 tabPanes.forEach((pane) => pane.classList.add('d-none'));
+                document.getElementById(target).classList.remove('d-none');
+            });
+        });
+        // cast stories
+        const caseStoryBtns = document.querySelectorAll('.success-story-btn');
+        caseStoryBtns.forEach((btn) => {
+            btn.addEventListener('click', (event) => {
+                event.preventDefault();
+                const target = event.target.getAttribute('data-target');
+                const caseStorySections = document.querySelectorAll('.success-story-section');
+                caseStorySections.forEach((section) => section.classList.add('d-none'));
                 document.getElementById(target).classList.remove('d-none');
             });
         });
