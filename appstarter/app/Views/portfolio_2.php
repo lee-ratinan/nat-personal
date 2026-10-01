@@ -122,7 +122,7 @@
                                                 <?php
                                                 $cs_img = [
                                                     '1' => 'from-chaos-to-clarity.webp',
-                                                    '2' => 'decoration-01.webp',
+                                                    '2' => 'presenting-projection.webp',
                                                     '3' => 'taking-a-call.webp',
                                                 ];
                                                 ?>
