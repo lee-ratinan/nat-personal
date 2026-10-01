@@ -59,6 +59,9 @@
         [data-bs-theme="dark"] a {
             color: #ccc;
         }
+        .success-story-btn:hover {
+            cursor: pointer;
+        }
     </style>
     <script>
         function applySystemTheme(e) {
@@ -337,6 +340,80 @@
                             <?php include_once "_professional_certifications.php"; ?>
                         </div>
                         <!-- TAB: REVIEWS -->
+                        <?php
+                        $reviews = [
+                            'linkedin' => [
+                                [
+                                    'name' => 'J. Rina, Secretlab',
+                                    'text' => [
+                                        'I highly recommend Ratinan for their exceptional problem-solving abilities, strong focus, and effective time management. He consistently develops practical solutions to challenges, stay dedicated to his tasks without losin gsight of priorities, and manages his time efficiently to ensure high-quality results are delivered on schedule.'
+                                    ]
+                                ],
+                                [
+                                    'name' => 'P. Saengsawang, Kamelo',
+                                    'text' => [
+                                        'Ratinan works for me as a freelance developer, and I can confidently say he is an expert in web development. From the start, he impressed me with his portfolio—full of well-designed and highly usable websites. He doesn’t just focus on aesthetics; he ensures that every site delivers a seamless user experience while maintaining robust functionality.',
+                                        'What truly sets Ratinan apart is his initiative and speed. Before I even finalized my requirements, he had already taken the time to study my logistics industry. This meant I didn’t have to explain much—he anticipated my needs and structured the project in a way that made sense. All I had to do was refine the details, and the final product was exactly what I needed.',
+                                        'If you’re looking for a developer who is skilled, proactive, and efficient, I highly recommend Ratinan.'
+                                    ]
+                                ],
+                                [
+                                    'name' => 'C.W. Kerk',
+                                    'text' => [
+                                        'I had the pleasure of working alongside Ratinan in the same company. He consistently stood out for his strong commitment to agile team culture and values. His passion for technology and collaborative approach made a noticeable impact across teams.',
+                                        'Ratinan has proven capabilities in senior and lead roles, demonstrating technical excellence in areas such as agile scrum team practices, web application development, and technical mentorship. His dedication to continuous improvement and knowledge sharing reflects both his expertise and growth mindset.',
+                                        'I highly recommend Ratinan for any role that values technical proficiency, a strong agile mindset, and a collaborative spirit.'
+                                    ]
+                                ],
+                                [
+                                    'name' => 'I. Tan, Secretlab',
+                                    'text' => [
+                                        'Had the opportunity to work with Nat during my time with Secretlab. His knowledge with the IT department is excellent and constantly giving careful thought to whatever ideas that the company or my team requires to continuously streamline our processes.',
+                                        'Even when the requirements are not practical, Nat will always carefully explain what’s the issue and how he and his team can go around it to still achieve our end goal.',
+                                        'I’ve no doubt that Nat will always value add to whichever team he works with or manages.'
+                                    ]
+                                ],
+                                [
+                                    'name' => 'J.T. Yuan, Secretlab',
+                                    'text' => [
+                                        'I am working together with Nat on a number of projects regarding SEO. He works really hard to fix the site without fail despite having a very tight deadline. I am sure with his skills and attitude, he’ll be a great addition to any team.'
+                                    ]
+                                ],
+                                [
+                                    'name' => 'K. Dhetchasethadee',
+                                    'text' => [
+                                        'I used to work with Ratinan at DNC Sportservice long time ago. That was when I met him. Anyway, after we graduated, I started my own project and invited him to join the team with all the technical stuff.',
+                                        'He helped our project to solve the bugs in WordPress plugin. He also handled the call to the data center when we were trying to get our SSL certificate installed and their system was bugged.',
+                                        'He was very dedicated and helpful despite his own full-time job which was very tough already. That’s my impression on him. I’d say that he’s professional and ready for any kind of technical challenges.'
+                                    ]
+                                ],
+                            ],
+                            'letter'   => [
+                                [
+                                    'name' => 'C. Chew, BuzzCity',
+                                    'text' => [
+                                        'Throughout his service at BuzzCity, Nat demonstrated his professionalism as well as proving to be a valuable team player. He is organized, reliable, and good in software development. Nat can work indepently and was able to follow projects through to completion. He is flexible and showed a lot of initiative in the projects assigned to him.',
+                                        'Nat is a disciplined and sincere person and performed well with his fellow colleagues. I believe this underscored his important contributions to BuzzCity.'
+                                    ]
+                                ],
+                            ],
+                            'fastwork' => [
+                                [
+                                    'name' => 'Jib',
+                                    'text' => [
+                                        'ทำงานใส่ใจ เป็นระบบ มีความเป็นมืออาชีพมากค่ะ ช่วยเสนอทางเลือกต่างๆ ในการตัดสินใจ และจัดทำเอกสารต่างๆ เรียบร้อยดีค่ะ ช่วยดูเรื่อง SEO และการทำ Google Search Console ด้วย ดีมากเลยค่ะ',
+                                        'ตอบเร็ว support ดูแลดีค่ะ'
+                                    ]
+                                ],
+                                [
+                                    'name' => 'zm475vep',
+                                    'text' => [
+                                        'ช่วยคิด solution, update งาน ในแต่ละวัน, รวดเร็วตามตกลง'
+                                    ]
+                                ],
+                            ]
+                        ];
+                        ?>
                         <div class="tab-page p-3 d-none" id="tab-reviews">
                             <div class="row">
                                 <div class="col-12 p-1 mb-2">
@@ -344,74 +421,40 @@
                                     <div class="row">
                                         <div class="col-12 col-md-6">
                                             <h5>LinkedIn</h5>
-                                            <div class="card mb-3">
-                                                <div class="card-body">
-                                                    <p>I highly recommend Ratinan for their exceptional problem-solving abilities, strong focus, and effective time management. He consistently develops practical solutions to challenges, stay dedicated to his tasks without losin gsight of priorities, and manages his time efficiently to ensure high-quality results are delivered on schedule.</p>
-                                                    <p>- J. Rina, Secretlab</p>
+                                            <?php foreach ($reviews['linkedin'] as $review) : ?>
+                                                <div class="card mb-3">
+                                                    <div class="card-body">
+                                                        <?php foreach ($review['text'] as $line) : ?>
+                                                            <p><?= $line ?></p>
+                                                        <?php endforeach; ?>
+                                                        <p>- <?= $review['name'] ?></p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="card mb-3">
-                                                <div class="card-body">
-                                                    <p>Ratinan works for me as a freelance developer, and I can confidently say he is an expert in web development. From the start, he impressed me with his portfolio—full of well-designed and highly usable websites. He doesn’t just focus on aesthetics; he ensures that every site delivers a seamless user experience while maintaining robust functionality.</p>
-                                                    <p>What truly sets Ratinan apart is his initiative and speed. Before I even finalized my requirements, he had already taken the time to study my logistics industry. This meant I didn’t have to explain much—he anticipated my needs and structured the project in a way that made sense. All I had to do was refine the details, and the final product was exactly what I needed.</p>
-                                                    <p>If you’re looking for a developer who is skilled, proactive, and efficient, I highly recommend Ratinan.</p>
-                                                    <p>- P. Saengsawang, Kamelo</p>
-                                                </div>
-                                            </div>
-                                            <div class="card mb-3">
-                                                <div class="card-body">
-                                                    <p>I had the pleasure of working alongside Ratinan in the same company. He consistently stood out for his strong commitment to agile team culture and values. His passion for technology and collaborative approach made a noticeable impact across teams.</p>
-                                                    <p>Ratinan has proven capabilities in senior and lead roles, demonstrating technical excellence in areas such as agile scrum team practices, web application development, and technical mentorship. His dedication to continuous improvement and knowledge sharing reflects both his expertise and growth mindset.</p>
-                                                    <p>I highly recommend Ratinan for any role that values technical proficiency, a strong agile mindset, and a collaborative spirit.</p>
-                                                    <p>- C.W. Kerk</p>
-                                                </div>
-                                            </div>
-                                            <div class="card mb-3">
-                                                <div class="card-body">
-                                                    <p>Had the opportunity to work with Nat during my time with Secretlab. His knowledge with the IT department is excellent and constantly giving careful thought to whatever ideas that the company or my team requires to continuously streamline our processes.</p>
-                                                    <p>Even when the requirements are not practical, Nat will always carefully explain what's the issue and how he and his team can go around it to still achieve our end goal.</p>
-                                                    <p>I've no doubt that Nat will always value add to whichever team he works with or manages.</p>
-                                                    <p>- I. Tan, Secretlab</p>
-                                                </div>
-                                            </div>
-                                            <div class="card mb-3">
-                                                <div class="card-body">
-                                                    <p>I am working together with Nat on a number of projects regarding SEO. He works really hard to fix the site without fail despite having a very tight deadline. I am sure with his skills and attitude, he'll be a great addition to any team.</p>
-                                                    <p>- J.T. Yuan, Secretlab</p>
-                                                </div>
-                                            </div>
-                                            <div class="card mb-3">
-                                                <div class="card-body">
-                                                    <p>I used to work with Ratinan at DNC Sportservice long time ago. That was when I met him. Anyway, after we graduated, I started my own project and invited him to join the team with all the technical stuff.</p>
-                                                    <p>He helped our project to solve the bugs in WordPress plugin. He also handled the call to the data center when we were trying to get our SSL certificate installed and their system was bugged.</p>
-                                                    <p>He was very dedicated and helpful despite his own full-time job which was very tough already. That's my impression on him. I'd say that he's professional and ready for any kind of technical challenges.</p>
-                                                    <p>- K. Dhetchasethadee</p>
-                                                </div>
-                                            </div>
+                                            <?php endforeach; ?>
                                         </div>
                                         <div class="col-12 col-md-6">
                                             <h5>Letter of Recommendation</h5>
-                                            <div class="card mb-3">
-                                                <div class="card-body">
-                                                    <p>Throughout his service at BuzzCity, Nat demonstrated his professionalism as well as proving to be a valuable team player. He is organized, reliable, and good in software development. Nat can work indepently and was able to follow projects through to completion. He is flexible and showed a lot of initiative in the projects assigned to him.</p>
-                                                    <p>Nat is a disciplined and sincere person and performed well with his fellow colleagues. I believe this underscored his important contributions to BuzzCity.</p>
-                                                    <p>- C. Chew, BuzzCity</p>
+                                            <?php foreach ($reviews['letter'] as $review) : ?>
+                                                <div class="card mb-3">
+                                                    <div class="card-body">
+                                                        <?php foreach ($review['text'] as $line) : ?>
+                                                            <p><?= $line ?></p>
+                                                        <?php endforeach; ?>
+                                                        <p>- <?= $review['name'] ?></p>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            <?php endforeach; ?>
                                             <h5>FastWork</h5>
-                                            <div class="card mb-3">
-                                                <div class="card-body">
-                                                    <p>ทำงานใส่ใจ เป็นระบบ มีความเป็นมืออาชีพมากค่ะ ช่วยเสนอทางเลือกต่างๆ ในการตัดสินใจ และจัดทำเอกสารต่างๆ เรียบร้อยดีค่ะ ช่วยดูเรื่อง SEO และการทำ Google Search Console ด้วย ดีมากเลยค่ะ</p>
-                                                    <p>ตอบเร็ว support ดูแลดีค่ะ</p>
-                                                    <p>- Jib</p>
+                                            <?php foreach ($reviews['fastwork'] as $review) : ?>
+                                                <div class="card mb-3">
+                                                    <div class="card-body">
+                                                        <?php foreach ($review['text'] as $line) : ?>
+                                                            <p><?= $line ?></p>
+                                                        <?php endforeach; ?>
+                                                        <p>- <?= $review['name'] ?></p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="card mb-3">
-                                                <div class="card-body">
-                                                    <p>ช่วยคิด solution, update งาน ในแต่ละวัน, รวดเร็วตามตกลง</p>
-                                                    <p>- zm475vep</p>
-                                                </div>
-                                            </div>
+                                            <?php endforeach; ?>
                                         </div>
                                     </div>
                                 </div>
