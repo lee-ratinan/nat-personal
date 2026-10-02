@@ -70,6 +70,21 @@ return [
                     'Automated Elastic Volatility Management: Empowered the platform to automatically scale compute resources dynamically ahead of traffic curves, mitigating the risk of future campaign spikes.',
                     'Secured Strategic Infrastructure Buy-In: Transformed organizational culture by permanently closing the gap between marketing planning and engineering preparation, ensuring all future product launches are backed by aligned capacity planning.'
                 ]
+            ],
+            '4' => [
+                'title'     => 'Building Regional Ecosystem Integrations: Technical Execution, Telemetry, and Post-Launch Market Analytics',
+                'challenge' => 'Expanding financial and ecosystem integrations across Southeast and East Asia presented severe market-fit and regulatory hurdles. Regional initiatives—including a Weixin (WeChat) integration for China and a BPJS integration for Indonesian overseas workers—suffered from a fundamental disconnect from target user economics and ecosystem reality. Pre-launch evaluations revealed high switching costs, functional parity with native tools, and realistic income constraints among migrant workforces that severely limited adoption. Navigating these initiatives required delivering complex cross-border integrations while establishing objective evaluation standards amidst strong top-down directives.',
+                'solution'  => [
+                    'Executed Cross-Border Feasibility Assessments: Evaluated market mechanics, regulatory boundaries, and target demographic economic realities (such as disposable income thresholds and native app dominance) prior to development.',
+                    'Built Standardized Telemetry & Tracking Pipelines: Implemented granular event logging across regional features to monitor real-time user adoption, transaction behavior, and funnel drop-off points.',
+                    'Delivered High-Quality Localization Features: Successfully engineered and deployed regional integration pipelines to exact compliance and technical specifications.',
+                    'Documented Comparative Case Studies: Systematically analyzed cross-regional rollout performance to build data-backed post-mortems comparing initial feasibility risks against actual adoption outcomes.'
+                ],
+                'impact'    => [
+                    'Pioneered Data-Driven Validation Standards: Used empirical performance metrics from multiple regional rollouts to establish an Evidence-Based Management (EBM) framework, advocating for strict stage-gate criteria before capital allocation.',
+                    'Optimized Post-Launch Resource Allocation: Provided objective telemetry that allowed leadership to make data-backed decisions on deprecating low-traction features and reallocating engineering bandwidth to core high-value products.',
+                    'Refined Frameworks for Emerging Market Expansion: Developed internal strategic playbooks detailing critical go/no-go indicators for cross-border fintech and ecosystem integrations, specifically around user disposable income, switching friction, and local incumbent dynamics.',
+                ]
             ]
         ]
     ],

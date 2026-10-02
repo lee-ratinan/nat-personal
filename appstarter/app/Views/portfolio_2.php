@@ -50,18 +50,9 @@
         <?php elseif ('ko' == $locale) : ?> font-family: "Noto Serif KR", serif;
         <?php endif; ?>
         }
-
-        a {
-            text-decoration: none;
-            color: #222;
-        }
-
-        [data-bs-theme="dark"] a {
-            color: #ccc;
-        }
-        .success-story-btn:hover {
-            cursor: pointer;
-        }
+        a {text-decoration: none;color: #222;}
+        [data-bs-theme="dark"] a {color: #ccc;}
+        .success-story-btn:hover {cursor: pointer;}
     </style>
     <script>
         function applySystemTheme(e) {
@@ -124,9 +115,10 @@
                                                     '1' => 'from-chaos-to-clarity.webp',
                                                     '2' => 'presenting-projection.webp',
                                                     '3' => 'taking-a-call.webp',
+                                                    '4' => 'presenting-map.webp'
                                                 ];
                                                 ?>
-                                                <?php for ($i = 1; $i <= 3; $i++) : ?>
+                                                <?php for ($i = 1; $i <= 4; $i++) : ?>
                                                     <div class="col-6 col-md-4 col-lg-3 success-story-btn" data-target="story-<?= $i ?>">
                                                         <img class="success-story-btn img-fluid rounded-3 mb-3" data-target="story-<?= $i ?>" src="<?= base_url('assets/img/portfolio-page/' . $cs_img[$i]) ?>" alt="<?= lang('Portfolio.case-studies.details.' . $i . '.title') ?>" loading="lazy" />
                                                         <h6 class="success-story-btn" data-target="story-<?= $i ?>"><?= lang('Portfolio.case-studies.details.' . $i . '.title') ?></h6>
@@ -140,19 +132,19 @@
                                             <div class="text-end mb-3"><a href="<?= base_url($locale . "/blog?m=tags&ms=portfolio&id=62") ?>" class="btn btn-outline-success" target="_blank"><?= lang('Portfolio.blog.read-more') ?> <i class="bi bi-chevron-double-right"></i></a></div>
                                         </div>
                                         <div class="col-12 col-sm-10 col-md-8 col-lg-6">
-                                            <?php for ($i = 1; $i <= 3; $i++) : ?>
+                                            <?php for ($i = 1; $i <= 4; $i++) : ?>
                                                 <div class="success-story-section <?= (1 != $i ? 'd-none' : '') ?>" id="story-<?= $i ?>">
                                                     <img src="<?= base_url('assets/img/portfolio-page/' . $cs_img[$i]) ?>" alt="<?= lang('Portfolio.case-studies.details.' . $i . '.title') ?>" class="img-fluid mb-3 rounded-3" loading="lazy" />
                                                     <h4><?= lang('Portfolio.case-studies.details.' . $i . '.title') ?></h4>
-                                                    <h5><?= lang('Portfolio.case-studies.challenge') ?></h5>
+                                                    <h5 class="mt-4"><i class="bi bi-stars"></i> <?= lang('Portfolio.case-studies.challenge') ?></h5>
                                                     <p><?= lang('Portfolio.case-studies.details.' . $i . '.challenge') ?></p>
-                                                    <h5><?= lang('Portfolio.case-studies.solution') ?></h5>
+                                                    <h5 class="mt-4"><i class="bi bi-stars"></i> <?= lang('Portfolio.case-studies.solution') ?></h5>
                                                     <ul>
                                                         <?php foreach (lang('Portfolio.case-studies.details.' . $i . '.solution') as $solution) : ?>
                                                             <li><?= $solution ?></li>
                                                         <?php endforeach; ?>
                                                     </ul>
-                                                    <h5><?= lang('Portfolio.case-studies.impact') ?></h5>
+                                                    <h5 class="mt-4"><i class="bi bi-stars"></i> <?= lang('Portfolio.case-studies.impact') ?></h5>
                                                     <ul>
                                                         <?php foreach (lang('Portfolio.case-studies.details.' . $i . '.impact') as $impact) : ?>
                                                             <li><?= $impact ?></li>
