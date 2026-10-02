@@ -231,4 +231,6 @@ return [
     'password-error' => 'パスワードが間違っています',
     'submit'         => '送信',
     'game'           => 'ゲームセンター',
+    'new'            => '新着',
+    'advanced'       => '高尚',
 ];

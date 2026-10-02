@@ -231,4 +231,6 @@ return [
     'password-error' => 'Password is incorrect',
     'submit'         => 'Submit',
     'game'           => 'Game Center',
+    'new'            => 'New',
+    'advanced'       => 'Advanced',
 ];

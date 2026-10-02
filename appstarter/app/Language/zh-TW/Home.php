@@ -231,4 +231,6 @@ return [
     'password-error' => '密碼錯誤',
     'submit'         => '提交',
     'game'           => '遊戲中心',
+    'new'            => '新登場',
+    'advanced'       => '進階',
 ];
