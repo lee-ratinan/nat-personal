@@ -4362,3 +4362,7 @@ section,
 .portfolio-info h4 {
     background-color: rgba(136, 136, 136, 0.5);
 }
+
+rt {
+  margin-top: 4px;
+}
