@@ -62,9 +62,9 @@
                     <div class="mb-3">
                         <?php
                         $tag_links = [
-                            'blog?m=tags&ms=song%20translation&id=75' => 'Song Translation',
-                            'blog?m=tags&ms=Gallery&id=76'            => 'Gallery',
-                            'blog?m=tags&ms=portfolio&id=62' => 'Portfolio'
+                            'blog?m=tags&ms=portfolio&id=62' => 'Portfolio',
+                            'blog?m=tags&ms=gallery&id=76'   => 'Gallery',
+                            'blog?m=tags&ms=song&id=75'      => 'Song',
                         ];
                         foreach ($tag_links as $link => $name) {
                             echo '<a class="btn btn-outline-success btn-sm me-1" href="' . $link . '"><i class="bi bi-tag"></i> ' . $name . '</a>';
