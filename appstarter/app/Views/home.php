@@ -56,8 +56,8 @@ include "_header.php";
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
         <picture data-aos="fade-in">
-            <source media="(min-width: 768px)" srcset="<?= base_url('assets/img/profile/profile-hero.jpg') ?>">
-            <img src="<?= base_url('assets/img/profile/profile-hero-mobile.jpg') ?>" alt="Hero Image" />
+            <source media="(min-width: 768px)" srcset="<?= base_url('assets/img/profile/profile-hero.webp') ?>">
+            <img src="<?= base_url('assets/img/profile/profile-hero-mobile.webp') ?>" alt="Hero Image" />
         </picture>
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row justify-content-center">
@@ -87,7 +87,7 @@ include "_header.php";
                     <div class="profile-card">
                         <div class="profile-header">
                             <div class="profile-avatar">
-                                <img src="<?= base_url('assets/img/profile/profile-img.jpg') ?>" class="img-fluid" alt="<?= lang('Home.sections.about.ratinan-lee') ?>">
+                                <img src="<?= base_url('assets/img/profile/profile-img.webp') ?>" class="img-fluid" alt="<?= lang('Home.sections.about.ratinan-lee') ?>">
                                 <div class="status-indicator"></div>
                             </div>
                             <h3><?= lang('Home.sections.about.ratinan-lee') ?></h3>

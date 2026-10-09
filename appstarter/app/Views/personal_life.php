@@ -57,8 +57,8 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
         <picture data-aos="fade-in">
-            <source media="(min-width: 768px)" srcset="<?= base_url('assets/img/profile/profile-hero.jpg') ?>">
-            <img src="<?= base_url('assets/img/profile/profile-hero-mobile.jpg') ?>" alt="Hero Image" />
+            <source media="(min-width: 768px)" srcset="<?= base_url('assets/img/profile/profile-hero.webp') ?>">
+            <img src="<?= base_url('assets/img/profile/profile-hero-mobile.webp') ?>" alt="Hero Image" />
         </picture>
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row justify-content-center">
