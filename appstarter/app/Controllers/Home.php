@@ -619,7 +619,7 @@ class Home extends BaseController
             'filter'    => 'adventure',
             'title'     => 'Parasailing',
             'locations' => ['phuket'],
-            'dates'     => ['2022-05-17']
+            'dates'     => ['2022-05-17', '2026-10-15']
         ],
         [
             'code'      => 'snorkeling',
