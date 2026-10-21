@@ -109,11 +109,10 @@
                             </div>
                             <div class="col-6">
                                 <div class="stat-item text-center">
-                                    <div class="stat-number fw-bold" id="api_flight_count"><?= number_format($flight_cnt) ?></div>
+                                    <div class="stat-number fw-bold"><?= number_format($flight_cnt) ?></div>
                                     <div class="stat-label"><?= lang('PersonalLife.sections.about.box-4') ?></div>
                                 </div>
                             </div>
-                            <div class="col-12 text-center" id="flag-badges"></div>
                         </div>
                     </div>
                 </div>
@@ -196,7 +195,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container d-none">
             <div class="row">
                 <div class="col py-5 text-end">
                     <a href="<?= base_url($locale . '/trip') ?>"><?= lang('PersonalLife.trip.button') ?> <i class="bi bi-arrow-right-circle"></i></a>

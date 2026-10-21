@@ -1353,7 +1353,7 @@ class Home extends BaseController
         $data      = [
             'slug'                 => 'personal-life',
             'locale'               => $locale,
-            'galleries'            => $galleries,
+            'galleries'            => array_values($galleries),
             'bucket_lists'         => $this->bucket_lists,
             'bucket_lists_to_fill' => $this->bucket_lists_to_fill,
             'flight_cnt'           => $flight_cnt,
