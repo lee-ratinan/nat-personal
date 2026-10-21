@@ -5,6 +5,8 @@ namespace App\Controllers;
 use App\Models\CertificationMasterModel;
 use App\Models\JourneyMasterModel;
 use App\Models\JourneyTransportModel;
+use App\Models\TripBucketListLogModel;
+use App\Models\TripBucketListModel;
 use App\Models\TripLinkModel;
 use App\Models\TripMasterModel;
 use CodeIgniter\Exceptions\PageNotFoundException;
@@ -349,6 +351,10 @@ class Home extends BaseController
         ]
     ];
 
+    /**
+     * @deprecated
+     * @var array|array[]
+     */
     private array $bucket_lists = [
         // 2026
         [
@@ -1221,6 +1227,10 @@ class Home extends BaseController
         ]
     ];
 
+    /**
+     * @deprecated
+     * @var array|array[]
+     */
     private array $bucket_lists_to_fill = [
         'observatory' => [
             'lotte-world-tower'      => ['title' => 'Lotter World Tower', 'location' => ['seoul']],
@@ -1332,6 +1342,8 @@ class Home extends BaseController
         $model      = new JourneyTransportModel();
         $model2     = new JourneyMasterModel();
         $model3     = new TripMasterModel();
+        $model4     = new TripBucketListModel();
+        $model5     = new TripBucketListLogModel();
         // Count everything that departs before end of today
         $end_today  = date(DATE_FORMAT_DB) . ' 23:59:59';
         $raw_data   = $model->where('journey_status', 'as_planned')->where('departure_date_time <=', $end_today)->findAll();
@@ -1349,17 +1361,69 @@ class Home extends BaseController
         foreach ($countries as $country) {
             $country_cnt[$country['country_code']] = $country['country_count'];
         }
+        // Galleries
         $galleries = $model3->getGalleries($locale);
+        // Bucket List
+        $bl_cat_cnt     = [
+            'observatory' => 0,
+            'adventure'   => 0,
+            'pilgrimage'  => 0,
+            'cultural'    => 0,
+            'others'      => 0
+        ];
+        $bl_cat_chk_cnt = [
+            'observatory' => 0,
+            'adventure'   => 0,
+            'pilgrimage'  => 0,
+            'cultural'    => 0,
+            'others'      => 0
+        ];
+        $bl_raw         = $model4->orderBy('checked_since', 'DESC')->findAll();
+        $bl_proc        = [];
+        foreach ($bl_raw as $row) {
+            $bl_proc[$row['id']] = [
+                'code'   => $row['activity_code'],
+                'title'  => $row['activity_name'],
+                'filter' => $row['activity_type'],
+                'info'   => [],
+            ];
+            $bl_cat_cnt[$row['activity_type']]++;
+        }
+        $bl_log_raw   = $model5->orderBy('checked_date', 'DESC')->findAll();
+        $bucket_lists = [];
+        foreach ($bl_log_raw as $row) {
+            if (!isset($bucket_lists[$row['bucket_list_id']])) {
+                $bucket_lists[$row['bucket_list_id']] = $bl_proc[$row['bucket_list_id']];
+                $bl_cat_chk_cnt[$bl_proc[$row['bucket_list_id']]['filter']]++;
+                unset($bl_proc[$row['bucket_list_id']]);
+            }
+            $locations = explode(',', $row['location_code']);
+            $log_arr   = [];
+            foreach ($locations as $loc) {
+                $log_arr[] = lang('PersonalLife.locations.' . $loc);
+            }
+            $bucket_lists[$row['bucket_list_id']]['info'][] = [
+                'trip_id' => $row['trip_id'],
+                'detail'  => format_date([$row['checked_date']], $locale) . '@' . implode(', ', $log_arr)
+            ];
+        }
+        foreach ($bl_proc as $bl_id => $row) {
+            $bucket_lists[$bl_id] = $row;
+        }
+        // Data
         $data      = [
-            'slug'                 => 'personal-life',
-            'locale'               => $locale,
-            'galleries'            => array_values($galleries),
-            'bucket_lists'         => $this->bucket_lists,
-            'bucket_lists_to_fill' => $this->bucket_lists_to_fill,
-            'flight_cnt'           => $flight_cnt,
-            'country_count'        => count($country_cnt),
-            'country_breakdown'    => $country_cnt,
-            'journey_distance'     => [
+            'slug'                    => 'personal-life',
+            'locale'                  => $locale,
+            'galleries'               => array_values($galleries),
+            'bucket_list_data'        => array_values($bucket_lists),
+            'bucket_list_cat_cnt'     => $bl_cat_cnt,
+            'bucket_list_cat_chk_cnt' => $bl_cat_chk_cnt,
+            'bucket_lists'            => $this->bucket_lists,
+            'bucket_lists_to_fill'    => $this->bucket_lists_to_fill,
+            'flight_cnt'              => $flight_cnt,
+            'country_count'           => count($country_cnt),
+            'country_breakdown'       => $country_cnt,
+            'journey_distance'        => [
                 'km'   => $distance,
                 'mile' => round($distance / 1.609344)
             ]

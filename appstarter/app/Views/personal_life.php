@@ -220,40 +220,21 @@
         <div class="container">
             <div class="isotope-layout" data-default-filter=".filter-first-twelve" data-layout="masonry" data-sort="original-order">
                 <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
-                    <li data-filter="*" class="filter-active"><?= lang('PersonalLife.sections.bucket-list.filters.all') ?> <span id="count-bucket-all"></span></li>
-                    <li data-filter=".filter-observatory"><?= lang('PersonalLife.sections.bucket-list.filters.observatory') ?> <span id="count-bucket-observatory"></span></li>
-                    <li data-filter=".filter-adventure"><?= lang('PersonalLife.sections.bucket-list.filters.adventure') ?> <span id="count-bucket-adventure"></span></li>
-                    <li data-filter=".filter-cultural"><?= lang('PersonalLife.sections.bucket-list.filters.cultural') ?> <span id="count-bucket-cultural"></span></li>
-                    <li data-filter=".filter-pilgrimage"><?= lang('PersonalLife.sections.bucket-list.filters.pilgrimage') ?> <span id="count-bucket-pilgrimage"></span></li>
-                    <li data-filter=".filter-others"><?= lang('PersonalLife.sections.bucket-list.filters.others') ?> <span id="count-bucket-others"></span></li>
+                    <li data-filter="*" class="filter-active"><?= lang('PersonalLife.sections.bucket-list.filters.all') ?> (<?= array_sum($bucket_list_cat_chk_cnt) ?>/<?= array_sum($bucket_list_cat_cnt) ?>)</li>
+                    <li data-filter=".filter-observatory"><?= lang('PersonalLife.sections.bucket-list.filters.observatory') ?> (<?= $bucket_list_cat_chk_cnt['observatory'] ?>/<?= $bucket_list_cat_cnt['observatory'] ?>)</li>
+                    <li data-filter=".filter-adventure"><?= lang('PersonalLife.sections.bucket-list.filters.adventure') ?> (<?= $bucket_list_cat_chk_cnt['adventure'] ?>/<?= $bucket_list_cat_cnt['adventure'] ?>)</li>
+                    <li data-filter=".filter-cultural"><?= lang('PersonalLife.sections.bucket-list.filters.cultural') ?> (<?= $bucket_list_cat_chk_cnt['cultural'] ?>/<?= $bucket_list_cat_cnt['cultural'] ?>)</li>
+                    <li data-filter=".filter-pilgrimage"><?= lang('PersonalLife.sections.bucket-list.filters.pilgrimage') ?> (<?= $bucket_list_cat_chk_cnt['pilgrimage'] ?>/<?= $bucket_list_cat_cnt['pilgrimage'] ?>)</li>
+                    <li data-filter=".filter-others"><?= lang('PersonalLife.sections.bucket-list.filters.others') ?> (<?= $bucket_list_cat_chk_cnt['others'] ?>/<?= $bucket_list_cat_cnt['others'] ?>)</li>
                 </ul>
                 <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
-                    <?php
-                    $stats = [
-                            'observatory' => 0,
-                            'adventure'   => 0,
-                            'cultural'    => 0,
-                            'pilgrimage'  => 0,
-                            'others'      => 0
-                    ];
-                    ?>
-                    <?php foreach ($bucket_lists as $i => $item) : ?>
+                    <?php foreach ($bucket_list_data as $i => $item) : ?>
                         <?php
-                        if (isset($bucket_lists_to_fill[$item['filter']][$item['code']])) {
-                            unset($bucket_lists_to_fill[$item['filter']][$item['code']]);
+                        $info = [];
+                        foreach ($item['info'] as $row) {
+                            $info[] = $row['detail'];
                         }
-                        $stats[$item['filter']] += 1;
-                        $date_str = '';
-                        if (!empty($item['dates'])) {
-                            $date_str = format_date($item['dates'], $locale);
-                        } else if (isset($item['since'])) {
-                            $year     = calculate_years([$item['since']], $locale);
-                            $date_str = lang('PersonalLife.since', [$year]);
-                        }
-                        $locations = [];
-                        foreach ($item['locations'] as $location) {
-                            $locations[] = lang('PersonalLife.locations.' . $location);
-                        }
+                        $detail_str = implode(' / ', $info);
                         ?>
                         <div class="col-lg-3 col-md-4 col-6 portfolio-item isotope-item <?= ($i < 12 ? 'filter-first-twelve' : '') ?> <?= 'filter-' . $item['filter'] ?>">
                             <div class="portfolio-card">
@@ -264,88 +245,25 @@
                                             <h4><?= $item['title'] ?></h4>
                                         </div>
                                         <div class="portfolio-actions">
-                                            <a href="<?= base_url('assets/img/bucket-lists/' . $item['code'] . '.webp') ?>" class="glightbox portfolio-link" data-glightbox="title:<?= lang('PersonalLife.sections.bucket-list.filters.' . $item['filter']) ?> / <?= $item['title'] ?>; description: <i class='bi bi-geo-alt'></i> <?= implode(get_comma($locale), $locations) ?> <i class='bi bi-calendar-heart'></i> <?= $date_str ?>"><i class="bi bi-plus-lg"></i></a>
+                                            <a href="<?= base_url('assets/img/bucket-lists/' . $item['code'] . '.webp') ?>" class="glightbox portfolio-link" data-glightbox="title:<?= lang('PersonalLife.sections.bucket-list.filters.' . $item['filter']) ?> / <?= $item['title'] ?>; description: <i class='bi bi-geo-alt'></i> <?= $detail_str ?>"><i class="bi bi-plus-lg"></i></a>
                                             <?php if (!empty($item['link'])) : ?>
                                                 <a href="<?= str_replace('[[LOCALE]]', $locale, $item['link']) ?>" class="portfolio-details" target="_blank"><i class="bi bi-arrow-right"></i></a>
                                             <?php endif ?>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="portfolio-meta">
-                                    <div class="d-flex flex-nowrap overflow-x-auto gap-2 pb-2">
-                                        <span class="badge bg-success text-white text-nowrap">
-                                            <?= implode('</span><span class="badge bg-success text-white text-nowrap">', $locations) ?>
-                                        </span>
-                                    </div>
-                                </div>
                                 <div class="portfolio-meta overflow-x-auto">
                                     <span class="small text-nowrap">
-                                        <i class="bi bi-calendar-heart"></i> <?= $date_str ?>
+                                        <i class="bi bi-calendar-heart"></i> <?= $detail_str ?>
                                     </span>
                                 </div>
                             </div>
                         </div>
                     <?php endforeach; ?>
-                    <?php foreach ($bucket_lists_to_fill as $category_code => $category_items) : ?>
-                        <?php foreach ($category_items as $code => $item) : ?>
-                            <?php
-                            $locations = [];
-                            foreach ($item['location'] as $location) {
-                                $locations[] = lang('PersonalLife.locations.' . $location);
-                            }
-                            if (empty($locations)) {
-                                $locations[] = lang('PersonalLife.locations.unknown');
-                            }
-                            ?>
-                            <div class="col-lg-3 col-md-4 col-6 portfolio-item isotope-item <?= 'filter-' . $category_code ?>">
-                                <div class="portfolio-card">
-                                    <div class="portfolio-image-container">
-                                        <img src="<?= base_url('assets/img/bucket-lists/' . $code . '.webp') ?>" alt="<?= $item['title'] ?>" class="img-fluid" loading="lazy">
-                                        <div class="portfolio-overlay">
-                                            <div class="portfolio-info">
-                                                <h4><?= $item['title'] ?></h4>
-                                            </div>
-                                            <div class="portfolio-actions">
-                                                <a href="<?= base_url('assets/img/bucket-lists/' . $code . '.webp') ?>" class="glightbox portfolio-link" data-glightbox="title:<?= lang('PersonalLife.sections.bucket-list.filters.' . $category_code) ?> / <?= $item['title'] ?>;"><i class="bi bi-plus-lg"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio-meta">
-                                        <div class="d-flex flex-nowrap overflow-x-auto gap-2 pb-2">
-                                            <span class="badge bg-success text-white text-nowrap">
-                                                <?= implode('</span><span class="badge bg-success text-white text-nowrap">', $locations) ?>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio-meta overflow-x-auto">
-                                        <span class="small text-nowrap"><i class="bi bi-calendar-heart"></i> -</span>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
     </section><!-- /Bucket List Section -->
-    <?php
-    $totals = [
-            'observatory' => ($stats['observatory']+count($bucket_lists_to_fill['observatory'])),
-            'adventure'   => ($stats['adventure']+count($bucket_lists_to_fill['adventure'])),
-            'cultural'    => ($stats['cultural']+count($bucket_lists_to_fill['cultural'])),
-            'pilgrimage'  => ($stats['pilgrimage']+count($bucket_lists_to_fill['pilgrimage'])),
-            'others'      => ($stats['others']+count($bucket_lists_to_fill['others']))
-    ];
-    $grand_total = array_sum($totals);
-    ?>
-    <script>
-        document.getElementById('count-bucket-all').innerHTML = '(<?= count($bucket_lists) ?>/<?= $grand_total ?>)';
-        document.getElementById('count-bucket-observatory').innerHTML = '(<?= $stats['observatory'] ?>/<?= $totals['observatory'] ?>)';
-        document.getElementById('count-bucket-adventure').innerHTML = '(<?= $stats['adventure'] ?>/<?= $totals['adventure'] ?>)';
-        document.getElementById('count-bucket-cultural').innerHTML = '(<?= $stats['cultural'] ?>/<?= $totals['cultural'] ?>)';
-        document.getElementById('count-bucket-pilgrimage').innerHTML = '(<?= $stats['pilgrimage'] ?>/<?= $totals['pilgrimage'] ?>)';
-        document.getElementById('count-bucket-others').innerHTML = '(<?= $stats['others'] ?>/<?= $totals['others'] ?>)';
-    </script>
 </main>
 <?php include "_footer.php"; ?>
 </body>

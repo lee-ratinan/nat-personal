@@ -121,6 +121,10 @@ function format_date (array $dates, string $locale, string $separator = ', '): s
         $explode = explode('-', $date);
         $yyyy    = intval($explode[0]) + $year_adj[$locale];
         $mm      = intval($explode[1]);
+        if (0 == $mm) {
+            $outputs[] = calculate_years([$yyyy], $locale);
+            continue;
+        }
         $mm_ind  = $mm-1;
         $dd      = intval($explode[2]);
         if (0 == $dd) {
