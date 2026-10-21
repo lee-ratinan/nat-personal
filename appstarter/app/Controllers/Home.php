@@ -1402,9 +1402,10 @@ class Home extends BaseController
             foreach ($locations as $loc) {
                 $log_arr[] = lang('PersonalLife.locations.' . $loc);
             }
+            $dt = substr($row['checked_date'], 0, 4) . '-00-00';
             $bucket_lists[$row['bucket_list_id']]['info'][] = [
                 'trip_id' => $row['trip_id'],
-                'detail'  => format_date([$row['checked_date']], $locale) . '@' . implode(', ', $log_arr)
+                'detail'  => format_date([$dt], $locale) . '@' . implode(', ', $log_arr)
             ];
         }
         foreach ($bl_proc as $bl_id => $row) {

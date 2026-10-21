@@ -158,7 +158,8 @@
                         <?php
                         $regions[$gallery['filter']] += 1;
                         $locations = [];
-                        $date_str  = format_date($gallery['dates'], $locale, ' - ');
+                        $ym        = substr($gallery['dates'][0], 0, 7) . '-00';
+                        $date_str  = format_date([$ym], $locale);
                         foreach ($gallery['locations'] as $location) {
                             $locations[] = lang('PersonalLife.locations.' . $location);
                         }
@@ -251,11 +252,6 @@
                                             <?php endif ?>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="portfolio-meta overflow-x-auto">
-                                    <span class="small text-nowrap">
-                                        <i class="bi bi-calendar-heart"></i> <?= $detail_str ?>
-                                    </span>
                                 </div>
                             </div>
                         </div>
