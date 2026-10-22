@@ -19,10 +19,11 @@ $routes->get('blog-post/(:num)/(:any)', 'Home::blog_post/$1/$2');
 // game
 $routes->get('game', 'Game::index');
 $routes->get('game/scrum', 'Game::scrum');
-$routes->get('game/japanese', 'Game::japaneseHome');
-$routes->get('game/japanese/review', 'Game::japaneseReview');
-$routes->get('game/japanese/entry/(:any)/(:any)', 'Game::japaneseEntry/$1/$2');
-$routes->get('game/japanese/game/(:any)/(:any)', 'Game::japaneseGame/$1/$2');
+$routes->get('game/nihongo', 'Game::nihongoHome');
+$routes->get('game/nihongo/(:any)', 'Game::nihongoGame/$1');
+$routes->get('game/japanese', 'Game::nihongoHome'); // redirect to new game
+$routes->get('game/japanese/(:any)', 'Game::nihongoHome'); // redirect to new game
+$routes->get('game/japanese/(:any)/(:any)/(:any)', 'Game::nihongoHome'); // redirect to new game
 $routes->get('game/shavian', 'Game::shavianGame');
 // locale
 $routes->get('{locale}/personal-life', 'Home::personal_life');

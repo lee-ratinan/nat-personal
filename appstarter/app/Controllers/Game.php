@@ -497,6 +497,68 @@ class Game extends BaseController
         return view('game/japanese_game', $data);
     }
 
+    public function nihongoHome(): string
+    {
+        return view('game/nihongo_home');
+    }
+
+    public function nihongoGame(string $mode): string
+    {
+        $questions = [];
+        $num_q     = self::NO_OF_QUESTIONS;
+        $num_c     = self::NO_OF_CHOICES-1;
+        if ('vocabulary' == $mode) {
+            $questions = $this->generateKanjiQuestions();
+        } else {
+            $character_sets = $this->japaneseRetrieveCharacters([$mode]);
+            $characters     = $this->japaneseFlattenSet($character_sets[$mode]);
+            $count          = count($characters) - 1;
+            $swap_array     = [0 => 1, 1 => 0];
+            $picked_index   = [];
+            for ($i = 0; $i < $num_q; $i++) {
+                // pick questions
+                $the_question_index = rand(0, $count);
+                while (in_array($the_question_index, $picked_index)) {
+                    $the_question_index = rand(0, $count);
+                }
+                $picked_index[]     = $the_question_index;
+                $pick_q_type        = rand(0, 1);
+                // pick choices
+                if (70 >= $the_question_index) {
+                    $rand_min = 0;
+                    $rand_max = 70;
+                } else {
+                    $rand_min = 71;
+                    $rand_max = 103;
+                }
+                $picked_choices   = [];
+                $picked_choices[] = $the_question_index;
+                $the_choices      = [];
+                $the_choices[]    = $characters[$the_question_index][$swap_array[$pick_q_type]];
+                for ($j = 0; $j < $num_c; $j++) {
+                    $choice_index = rand($rand_min, $rand_max);
+                    while (in_array($choice_index, $picked_choices)) {
+                        $choice_index = rand($rand_min, $rand_max);
+                    }
+                    $picked_choices[] = $choice_index;
+                    $the_choices[]    = $characters[$choice_index][$swap_array[$pick_q_type]];
+                }
+                shuffle($the_choices);
+                $questions[]        = [
+                    'question' => $characters[$the_question_index][$pick_q_type],
+                    'answer'   => $characters[$the_question_index][$swap_array[$pick_q_type]],
+                    'choices'  => $the_choices
+                ];
+            }
+        }
+        $data = [
+            'title'     => 'The Japanese Game',
+            'back_btn'  => '<a href="' . base_url('game/nihongo') . '">Back to Japanese Game</a>',
+            'questions' => $questions
+        ];
+        return view('game/generic_game', $data);
+    }
+
     private function shavianWords(): array
     {
         return [

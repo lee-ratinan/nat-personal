@@ -16,22 +16,26 @@
     <!-- Vendor CSS Files -->
     <link href="<?= base_url('assets/vendor/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
     <link rel="canonical" href="<?= current_url() ?>">
-    <script>
-        function applySystemTheme(e) {
-            const isDark = e.matches;
-            document.documentElement.setAttribute('data-bs-theme', isDark ? 'dark' : 'light');
-        }
-
-        const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        applySystemTheme(colorSchemeQuery);
-        colorSchemeQuery.addEventListener('change', applySystemTheme);
-    </script>
     <style>
+        body {
+            background: #5f9c30;
+            background: linear-gradient(172deg, rgba(95, 156, 48, 1) 0%, rgba(148, 15, 15, 1) 44%, rgba(26, 75, 130, 1) 77%, rgba(252, 176, 69, 1) 100%);
+            color: white;
+            height: 100vh;
+            width: 100vw;
+        }
+        .footer-links a {
+            color: white !important;
+        }
+        .footer-links a:hover {
+            color: white !important;
+            text-decoration: underline;
+        }
         a.game {
             display: block;
             text-align: center;
             text-decoration: none;
-            color: inherit;
+            color: white !important;
         }
     </style>
 </head>
@@ -47,8 +51,15 @@
                 Scrum Game
             </a>
         </div>
+<!--        <div class="col-4 col-md-3 col-lg-2 p-3">-->
+<!--            <a class="game" href="--><?php //= base_url('game/japanese') ?><!--">-->
+<!--                <img class="img-fluid rounded-5" src="--><?php //= base_url('assets/img/game/japanese.webp') ?><!--"-->
+<!--                     alt="Japanese Game">-->
+<!--                Japanese Game-->
+<!--            </a>-->
+<!--        </div>-->
         <div class="col-4 col-md-3 col-lg-2 p-3">
-            <a class="game" href="<?= base_url('game/japanese') ?>">
+            <a class="game" href="<?= base_url('game/nihongo') ?>">
                 <img class="img-fluid rounded-5" src="<?= base_url('assets/img/game/japanese.webp') ?>"
                      alt="Japanese Game">
                 Japanese Game
